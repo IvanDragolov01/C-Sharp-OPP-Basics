@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Define a Class Person", "01.Define a Class Person\01.Define a Class Person.csproj", "{89E9A6D9-B16D-409A-ACC0-F1EB815E9257}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Define a Class Person", "01.Define a Class Person\01.Define a Class Person.csproj", "{89E9A6D9-B16D-409A-ACC0-F1EB815E9257}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.Creating Constructors", "02.Creating Constructors\02.Creating Constructors.csproj", "{B5726C50-DCB4-4639-AE30-40B64F70A06E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.Oldest Family Member", "03.Oldest Family Member\03.Oldest Family Member.csproj", "{6C066985-E5C9-4B87-8AD3-BF224FB06934}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.Company Roster", "06.Company Roster\06.Company Roster.csproj", "{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.FamilyTree", "13.FamilyTree\13.FamilyTree.csproj", "{1CBFB3E8-37A3-4E9A-9E15-0E2E5D61816C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{89E9A6D9-B16D-409A-ACC0-F1EB815E9257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89E9A6D9-B16D-409A-ACC0-F1EB815E9257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89E9A6D9-B16D-409A-ACC0-F1EB815E9257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5726C50-DCB4-4639-AE30-40B64F70A06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5726C50-DCB4-4639-AE30-40B64F70A06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5726C50-DCB4-4639-AE30-40B64F70A06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5726C50-DCB4-4639-AE30-40B64F70A06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C066985-E5C9-4B87-8AD3-BF224FB06934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C066985-E5C9-4B87-8AD3-BF224FB06934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C066985-E5C9-4B87-8AD3-BF224FB06934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C066985-E5C9-4B87-8AD3-BF224FB06934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CBFB3E8-37A3-4E9A-9E15-0E2E5D61816C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBFB3E8-37A3-4E9A-9E15-0E2E5D61816C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBFB3E8-37A3-4E9A-9E15-0E2E5D61816C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBFB3E8-37A3-4E9A-9E15-0E2E5D61816C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
