@@ -7,7 +7,6 @@ namespace _04.Opinion_Poll
 {
 	class PrintingPersons
 	{
-
 		private List<Person> people;
 
 		public PrintingPersons()
@@ -26,11 +25,9 @@ namespace _04.Opinion_Poll
 			people.Add(member);
 		}
 
-		IEnumerable<int> banned = Enumerable.Range(0, 29);
-
 		public Person GetAllАgesMoreThanMember()
 		{
-			return people.OrderByDescending(m => m.Age).Except(banned);
+			return people.OrderByDescending(m => m.Age).FirstOrDefault();
 		}
 	}
 }

@@ -21,9 +21,10 @@ namespace _13.FamilyTree
 				mainPerson.FullName = personInput;
 			}
 
-			string command = Console.ReadLine();
+			familyTree.Add(mainPerson);
+			string command;
 
-			while (command != "End")
+			while ((command = Console.ReadLine()) != "End")
 			{
 				string[] tokens = command.Split("-");
 
@@ -61,13 +62,13 @@ namespace _13.FamilyTree
 						SetChild(familyTree, currentPerson, secondPesron);
 					}
 				}
-
 				else
 				{
-					tokens = tokens[0].Split(" ");
+					tokens = tokens[0].Split();
 					string name = $"{tokens[0]} {tokens[1]}";
 					string birthday = tokens[2];
-					Person person = familyTree.FirstOrDefault(p => p.FullName == name|| p.Birthday == birthday);
+
+					Person person = familyTree.FirstOrDefault(p => p.FullName == name || p.Birthday == birthday);
 
 					if (person == null)
 					{
@@ -77,21 +78,25 @@ namespace _13.FamilyTree
 
 					person.FullName = name;
 					person.Birthday = birthday;
+
 					int index = familyTree.IndexOf(person) + 1;
 					int count = familyTree.Count - index;
 
 					Person[] copy = new Person[count];
 					familyTree.CopyTo(index, copy, 0, count);
 
-					int copyIndex = Array.IndexOf(copy, person);
+					Person copyPerson = copy.FirstOrDefault(p => p.FullName == name || p.Birthday == birthday);
 
-					if(copyIndex >= 0)
+					if (copyPerson != null)
 					{
-						familyTree.RemoveAt(index + copyIndex);
+						familyTree.Remove(copyPerson);
+						person.Parents.AddRange(copyPerson.Parents);
+						person.Parents = person.Parents.Distinct().ToList();
+
+						person.Children.AddRange(copyPerson.Children);
+						person.Children = person.Children.Distinct().ToList();
 					}
 				}
-
-				command = Console.ReadLine();
 			}
 
 			Console.WriteLine(mainPerson);

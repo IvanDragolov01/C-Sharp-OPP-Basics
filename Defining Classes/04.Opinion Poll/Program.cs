@@ -27,7 +27,7 @@ namespace _04.Opinion_Poll
 			}
 
 			Person allwithagesmorethanthirty = family.GetAllАgesMoreThanMember();
-
+			Console.WriteLine();
 			Console.WriteLine($"{allwithagesmorethanthirty.Name} {allwithagesmorethanthirty.Age}");
 		}
 	}
