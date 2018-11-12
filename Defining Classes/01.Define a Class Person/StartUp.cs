@@ -1,31 +1,28 @@
 ﻿using System;
 
-public class NameAndAge
+namespace _01.Define_a_Class_Person
 {
-	int age;
-	string name;
-
-	private NameAndAge(string name, int age)
+	class StartUp
 	{
-		Name = name;
-		Age = age;
-	}
+		static void Main(string[] args)
+		{
+			Person nameAndAge1 = new Person();
+			nameAndAge1.Name = "Pesho";
+			nameAndAge1.Age = 20;
+			Person nameAndAge2 = new Person();
+			nameAndAge2.Name = "Gosho";
+			nameAndAge2.Age = 18;
+			Person nameAndAge3 = new Person();
+			nameAndAge3.Name = "Stamat";
+			nameAndAge3.Age = 43;
 
-	public string Name { get => name; set => name = value; }
+			string result1 = nameAndAge1.PrintNameAndAge();
+			string result2 = nameAndAge2.PrintNameAndAge();
+			string result3 = nameAndAge3.PrintNameAndAge();
 
-	public int Age { get => age; set => age = value; }
-
-	string fullNameAndAge;
-
-	public NameAndAge()
-	{
-		fullNameAndAge = age + name;
-	}
-
-	public string PrintNameAndAge()
-	{
-		return $"{this.name} {this.age}";
+			Console.WriteLine(result1);
+			Console.WriteLine(result2);
+			Console.WriteLine(result3);
+		}
 	}
 }
-
-

@@ -46,5 +46,10 @@ namespace _13.FamilyTree
 			get { return children; }
 			set { children = value; }
 		}
+
+		public override string ToString()
+		{
+			return $"{this.FullName} {this.Birthday}";
+		}
 	}
 }

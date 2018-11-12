@@ -1,25 +1,33 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace _03.Oldest_Family_Member
 {
 	class Family
 	{
-		static void Main(string[] args)
+		private List<AddingPerson> people;
+
+		public Family()
 		{
-			int numberofperson = int.Parse(Console.ReadLine());
-			NameAndAge person = new NameAndAge();
+			people = new List<AddingPerson>();
+		}
 
-			for (int i = 0; i < numberofperson; i++)
-			{
-				person.Name = Console.ReadLine();
-				person.Age = int.Parse(Console.ReadLine());
-				
-			}
+		public List<AddingPerson> People
+		{
+			get { return people; }
+			set { people = value; }
+		}
 
-			string getOldesetMember = person.GetOldestMemberOfFamily(person.Name,person.Age);
-			Console.WriteLine(getOldesetMember);
+		public void AddMember(AddingPerson member)
+		{
+			people.Add(member);
+		}
+
+		public AddingPerson GetOldestMember()
+		{
+			return people.OrderByDescending(m => m.Age).FirstOrDefault();
 		}
 	}
 }

@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-	<RootNamespace>_01.Define_a_Class_Person</RootNamespace>
+    <RootNamespace>_04.Opinion_Poll</RootNamespace>
   </PropertyGroup>
 
 </Project>
