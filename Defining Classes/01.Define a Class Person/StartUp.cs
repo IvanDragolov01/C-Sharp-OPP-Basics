@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DefiningClasses;
+using System;
 
-namespace _01.Define_a_Class_Person
+namespace DefiningClasses
 {
-	class StartUp
+	public class StartUp
 	{
 		static void Main(string[] args)
 		{

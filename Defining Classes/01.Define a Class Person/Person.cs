@@ -1,6 +1,7 @@
-﻿using System;
+﻿
+using System;
 
-namespace _01.Define_a_Class_Person
+namespace DefiningClasses
 {
 	public class Person
 	{

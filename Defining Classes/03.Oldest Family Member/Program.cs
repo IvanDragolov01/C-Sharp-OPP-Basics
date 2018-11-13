@@ -9,12 +9,6 @@ namespace _03.Oldest_Family_Member
 		{
 			MethodInfo oldestMemberMethod = typeof(Family).GetMethod("GetOldestMember");
 			MethodInfo addMemberMethod = typeof(Family).GetMethod("AddMember");
-
-			if (oldestMemberMethod == null || addMemberMethod == null)
-			{
-				throw new Exception();
-			}
-
 			Family family = new Family();
 			int membersNumber = int.Parse(Console.ReadLine());
 
