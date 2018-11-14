@@ -3,7 +3,7 @@ using System;
 
 namespace DefiningClasses
 {
-	public class StartUp
+	class StartUp
 	{
 		static void Main(string[] args)
 		{

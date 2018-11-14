@@ -21,7 +21,7 @@ namespace _07.Speed_Racing
 			{
 				string[] carData = Console.ReadLine().Split();
 				AddingCar member = new AddingCar(carData[0], int.Parse(carData[1]));
-				car.AddCar(member);
+				//car.AddCar(member);
 				membersNumber--;
 			}
 		}

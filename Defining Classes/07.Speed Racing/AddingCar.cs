@@ -12,7 +12,7 @@ namespace _07.Speed_Racing
 		double fuelConsumptionForOneKilometer;
 		double traveledDistance;
 
-		public AddingCar()
+		public AddingCar(string v, int v1)
 		{
 			car = new List<AddingCar>();
 		}
@@ -23,7 +23,7 @@ namespace _07.Speed_Racing
 			set { car = value; }
 		}
 
-		public void AddMember(AddingCar member)
+		public void AddCar(AddingCar member)
 		{
 			car.Add(member);
 		}

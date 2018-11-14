@@ -9,58 +9,31 @@ namespace _13.FamilyTree
 		static void Main(string[] args)
 		{
 			var familyTree = new List<Person>();
-			string personInput = Console.ReadLine();
-			Person mainPerson = new Person();
-
-			if (IsBirthday(personInput))
-			{
-				mainPerson.Birthday = personInput;
-			}
-			else
-			{
-				mainPerson.FullName = personInput;
-			}
+			string mainpersonInput = Console.ReadLine();
+			Person mainPerson = Person.CreatePerson(mainpersonInput);
 
 			familyTree.Add(mainPerson);
 			string command;
 
 			while ((command = Console.ReadLine()) != "End")
 			{
-				string[] tokens = command.Split("-");
+				string[] tokens = command.Split(" - ");
 
 				if (tokens.Length > 1)
 				{
 					string firstPerson = tokens[0];
 					string secondPesron = tokens[1];
 
-					Person currentPerson;
+					Person currentPerson = familyTree
+						.FirstOrDefault(p => p.Birthday == firstPerson || p.FullName == firstPerson);
 
-					if (IsBirthday(firstPerson))
+					if (currentPerson == null)
 					{
-						currentPerson = familyTree.FirstOrDefault(p => p.Birthday == firstPerson);
-
-						if (currentPerson == null)
-						{
-							currentPerson = new Person();
-							currentPerson.Birthday = firstPerson;
-							familyTree.Add(currentPerson);
-						}
-
-						SetChild(familyTree, currentPerson, secondPesron);
+						currentPerson = Person.CreatePerson(firstPerson);
+						familyTree.Add(currentPerson);
 					}
-					else
-					{
-						currentPerson = familyTree.FirstOrDefault(p => p.FullName == firstPerson);
 
-						if (currentPerson == null)
-						{
-							currentPerson = new Person();
-							currentPerson.FullName = firstPerson;
-							familyTree.Add(currentPerson);
-						}
-
-						SetChild(familyTree, currentPerson, secondPesron);
-					}
+					SetChild(familyTree, currentPerson, secondPesron);
 				}
 				else
 				{
@@ -93,8 +66,36 @@ namespace _13.FamilyTree
 						person.Parents.AddRange(copyPerson.Parents);
 						person.Parents = person.Parents.Distinct().ToList();
 
+						foreach (Person parent in copyPerson.Parents)
+						{
+							int copyPersonIndex = parent.Children.IndexOf(copyPerson);
+
+							if (copyPersonIndex > -1)
+							{
+								parent.Children[copyPersonIndex] = person;
+							}
+							else
+							{
+								parent.Children.Add(person);
+							}
+						}
+
 						person.Children.AddRange(copyPerson.Children);
 						person.Children = person.Children.Distinct().ToList();
+
+						foreach (Person child in copyPerson.Children)
+						{
+							int copyPersonIndex = child.Parents.IndexOf(copyPerson);
+
+							if (copyPersonIndex > -1)
+							{
+								child.Parents[copyPersonIndex] = person;
+							}
+							else
+							{
+								child.Parents.Add(person);
+							}
+						}
 					}
 				}
 			}
@@ -102,49 +103,31 @@ namespace _13.FamilyTree
 			Console.WriteLine(mainPerson);
 			Console.WriteLine("Parents:");
 
-			foreach (var p in mainPerson.Parents)
+			foreach (Person p in mainPerson.Parents)
 			{
 				Console.WriteLine(p);
 			}
 
 			Console.WriteLine("Children:");
 
-			foreach (var c in mainPerson.Children)
+			foreach (Person c in mainPerson.Children)
 			{
 				Console.WriteLine(c);
 			}
 		}
 
-		private static void SetChild(List<Person> familyTree, Person parentPerson, string child)
+		private static void SetChild(List<Person> familyTree, Person parent, string childInput)
 		{
-			Person childPerson = new Person();
+			var child = familyTree.FirstOrDefault(c => c.FullName == childInput || c.Birthday == childInput);
 
-			if (IsBirthday(child))
+			if (child == null)
 			{
-				if (!familyTree.Any(p => p.Birthday == child))
-				{
-					childPerson.Birthday = child;
-				}
-				else
-				{
-					childPerson = familyTree.First(p => p.Birthday == child);
-				}
-			}
-			else
-			{
-				if (!familyTree.Any(p => p.FullName == child))
-				{
-					childPerson.FullName = child;
-				}
-				else
-				{
-					childPerson = familyTree.First(p => p.FullName == child);
-				}
+				child = Person.CreatePerson(childInput);
+				familyTree.Add(child);
 			}
 
-			parentPerson.Children.Add(childPerson);
-			parentPerson.Parents.Add(parentPerson);
-			familyTree.Add(childPerson);
+			parent.Children.Add(child);
+			child.Parents.Add(parent);
 		}
 
 		static bool IsBirthday(string input)
