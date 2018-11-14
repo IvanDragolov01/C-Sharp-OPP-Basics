@@ -129,10 +129,5 @@ namespace _13.FamilyTree
 			parent.Children.Add(child);
 			child.Parents.Add(parent);
 		}
-
-		static bool IsBirthday(string input)
-		{
-			return Char.IsDigit(input[0]);
-		}
 	}
 }
