@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Define a Class Person", "01.Define a Class Person\01.Define a Class Person.csproj", "{89E9A6D9-B16D-409A-ACC0-F1EB815E9257}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.Creating Constructors", "02.Creating Constructors\02.Creating Constructors.csproj", "{B5726C50-DCB4-4639-AE30-40B64F70A06E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.CreatingConstructors", "02.Creating Constructors\02.CreatingConstructors.csproj", "{B5726C50-DCB4-4639-AE30-40B64F70A06E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.Company Roster", "06.Company Roster\06.Company Roster.csproj", "{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.CompanyRoster", "06.Company Roster\06.CompanyRoster.csproj", "{02C88C95-9EF0-4F9C-832F-E7BF4FECDA9F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13.FamilyTree", "13.FamilyTree\13.FamilyTree.csproj", "{1CBFB3E8-37A3-4E9A-9E15-0E2E5D61816C}"
 EndProject
@@ -15,9 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.Oldest Family Member", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.DateModifier", "05.DateModifier\05.DateModifier.csproj", "{588921FE-8215-41A2-B9BB-5435B949285A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.Speed Racing", "07.Speed Racing\07.Speed Racing.csproj", "{876664A1-62E3-4015-AE99-B2FE0AA9955B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.Speed Racing", "07.Speed Racing\07.Speed Racing.csproj", "{876664A1-62E3-4015-AE99-B2FE0AA9955B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Opinion Poll", "04.Opinion Poll\04.Opinion Poll.csproj", "{22DFCD08-3811-4CDD-BF88-EF13AD7C4798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.Opinion Poll", "04.Opinion Poll\04.Opinion Poll.csproj", "{22DFCD08-3811-4CDD-BF88-EF13AD7C4798}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefiningClasses", "DefiningClasses\DefiningClasses.csproj", "{CEE57E2A-FF45-4D05-918C-2E7DA2D44613}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08.RawData", "08.Raw Data\08.RawData.csproj", "{54298200-5A76-4FCF-AD68-427E0B112CAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.PokemonTrainer", "11.PokemonTrainer\11.PokemonTrainer.csproj", "{6704964C-AE86-49EA-B745-8DFD0738298F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +63,18 @@ Global
 		{22DFCD08-3811-4CDD-BF88-EF13AD7C4798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22DFCD08-3811-4CDD-BF88-EF13AD7C4798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22DFCD08-3811-4CDD-BF88-EF13AD7C4798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE57E2A-FF45-4D05-918C-2E7DA2D44613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE57E2A-FF45-4D05-918C-2E7DA2D44613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE57E2A-FF45-4D05-918C-2E7DA2D44613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE57E2A-FF45-4D05-918C-2E7DA2D44613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54298200-5A76-4FCF-AD68-427E0B112CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54298200-5A76-4FCF-AD68-427E0B112CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54298200-5A76-4FCF-AD68-427E0B112CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54298200-5A76-4FCF-AD68-427E0B112CAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6704964C-AE86-49EA-B745-8DFD0738298F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6704964C-AE86-49EA-B745-8DFD0738298F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6704964C-AE86-49EA-B745-8DFD0738298F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6704964C-AE86-49EA-B745-8DFD0738298F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

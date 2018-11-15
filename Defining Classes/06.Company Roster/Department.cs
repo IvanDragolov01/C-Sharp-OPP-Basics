@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace _06.Company_Roster
+namespace _06.CompanyRoster
 {
 	public class Department
 	{

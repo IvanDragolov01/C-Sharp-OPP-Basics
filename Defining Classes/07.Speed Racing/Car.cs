@@ -4,12 +4,16 @@ using System.Text;
 
 namespace _07.Speed_Racing
 {
-	class Car
+	public class Car
 	{
-		string model;
-		double fuelAmount;
-		double fuelConsumptionForOneKilometer;
-		double traveledDistance;
+		private string model;
+		private double fuelAmount;
+		private double fuelConsumptionForOneKilometer;
+		private double traveledDistance;
 
+		public string Model(string model)
+		{
+
+		}
 	}
 }

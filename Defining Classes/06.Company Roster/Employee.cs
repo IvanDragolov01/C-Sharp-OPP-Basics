@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _06.Company_Roster
+namespace _06.CompanyRoster
 {
 	public class Employee
 	{

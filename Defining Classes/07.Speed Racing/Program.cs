@@ -15,14 +15,14 @@ namespace _07.Speed_Racing
 			}
 
 			Car car = new Car();
-			int membersNumber = int.Parse(Console.ReadLine());
 
-			while (membersNumber > 0)
+			string N;
+
+			while ((N = Console.ReadLine()) != "End")
 			{
 				string[] carData = Console.ReadLine().Split();
 				AddingCar member = new AddingCar(carData[0], int.Parse(carData[1]));
-				//car.AddCar(member);
-				membersNumber--;
+				
 			}
 		}
 	}

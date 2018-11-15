@@ -4,7 +4,7 @@ using System.Text;
 
 namespace _04.Opinion_Poll
 {
-	class Person
+	public class Person
 	{
 		private string name;
 		private int age;
@@ -18,13 +18,12 @@ namespace _04.Opinion_Poll
 		public string Name
 		{
 			get { return name; }
-			set { name = value; }
 		}
 
 		public int Age
 		{
 			get { return age; }
-			set { age = value; }
 		}
+
 	}
 }

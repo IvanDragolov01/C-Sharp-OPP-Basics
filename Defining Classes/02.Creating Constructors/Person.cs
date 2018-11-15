@@ -1,32 +1,22 @@
 ﻿using System;
 
-namespace _02.Creating_Constructors
+namespace DefiningClasses
 {
 	class Person
 	{
 		static void Main(string[] args)
 		{
 			StartUp nameAndAge1 = new StartUp();
-			nameAndAge1.Name = "Pesho";
-			nameAndAge1.Age = 20;
-			StartUp nameAndAge2 = new StartUp();
-			nameAndAge2.Name = "Gosho";
-			nameAndAge2.Age = 18;
-			StartUp nameAndAge3 = new StartUp();
-			nameAndAge3.Name = "Stamat";
-			nameAndAge3.Age = 43;
-
+			string[] information = Console.ReadLine().Split();
+			nameAndAge1.Name = information[0];
+			nameAndAge1.Age = int.Parse(information[1]);
 			string result1 = nameAndAge1.PrintNameAndAge();
-			string result2 = nameAndAge2.PrintNameAndAge();
-			string result3 = nameAndAge3.PrintNameAndAge();
 
 			Console.WriteLine(result1);
-			Console.WriteLine(result2);
-			Console.WriteLine(result3);
 
 			string secondresult1 = nameAndAge1.ChangeFirstNameAndAge();
-			string secondresult2 = nameAndAge2.ChangeSecondNameAndAge(nameAndAge2.Age);
-			string secondresult3 = nameAndAge3.ChangeThirdNameAndAge(nameAndAge3.Name, nameAndAge3.Age);
+			string secondresult2 = nameAndAge1.ChangeSecondNameAndAge(nameAndAge1.Age);
+			string secondresult3 = nameAndAge1.ChangeThirdNameAndAge(nameAndAge1.Name, nameAndAge1.Age);
 
 			Console.WriteLine(secondresult1);
 			Console.WriteLine(secondresult2);

@@ -1,11 +1,10 @@
-﻿using _06.Company_Roster;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace _06.Company_Roster
+namespace _06.CompanyRoster
 {
-	class Program
+	public class Program
 	{
 		static void Main(String[] args)
 		{

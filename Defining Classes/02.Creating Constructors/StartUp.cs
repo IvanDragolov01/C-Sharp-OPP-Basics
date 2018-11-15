@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _02.Creating_Constructors
+namespace _02.CreatingConstructors
 {
 	public class StartUp
 	{
