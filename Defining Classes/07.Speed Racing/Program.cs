@@ -1,28 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
-namespace _07.Speed_Racing
+namespace _07.SpeedRacing
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main()
 		{
-			MethodInfo addMemberMethod = typeof(Car).GetMethod("AddMember");
+			int number = int.Parse(Console.ReadLine());
+			List<Car> cars = new List<Car>();
 
-			if (addMemberMethod == null)
+			for (int i = 0; i < number; i++)
 			{
-				throw new Exception();
+				string[] inputParts = Console.ReadLine().Split(" ");
+				string model = inputParts[0];
+				double amountOfFuel = double.Parse(inputParts[1]);
+				double fuelComsumption = double.Parse(inputParts[2]);
+				Car car = new Car(model, amountOfFuel, fuelComsumption);
+				cars.Add(car);
 			}
 
-			Car car = new Car();
+			string input = Console.ReadLine();
 
-			string N;
-
-			while ((N = Console.ReadLine()) != "End")
+			while (input != "End")
 			{
-				string[] carData = Console.ReadLine().Split();
-				AddingCar member = new AddingCar(carData[0], int.Parse(carData[1]));
-				
+				string[] inputParts = input.Split(" ");
+				string carModel = inputParts[1];
+				int distance = int.Parse(inputParts[2]);
+				Car car = cars.FirstOrDefault(c => c.Model == carModel);
+				car.Drive(distance);
+				input = Console.ReadLine();
+			}
+
+			foreach (Car car in cars)
+			{
+				Console.WriteLine(car);
 			}
 		}
 	}
