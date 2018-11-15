@@ -1,50 +1,34 @@
 ﻿using System;
+using System.Reflection;
 
 namespace _02.CreatingConstructors
 {
 	public class StartUp
 	{
-		int age;
-		string name;
-
-		private StartUp(string name, int age)
+		public static void Main()
 		{
-			Name = name;
-			Age = age;
-		}
+			Type personType = typeof(Person);
+			ConstructorInfo emptyCtor = personType.GetConstructor(new Type[] { });
+			ConstructorInfo ageCtor = personType.GetConstructor(new[] { typeof(int) });
+			ConstructorInfo nameAgeCtor = personType.GetConstructor(new[] { typeof(string), typeof(int) });
+			bool swapped = false;
 
-		public string Name { get => name; set => name = value; }
+			if (nameAgeCtor == null)
+			{
+				nameAgeCtor = personType.GetConstructor(new[] { typeof(int), typeof(string) });
+				swapped = true;
+			}
 
-		public int Age { get => age; set => age = value; }
+			string name = Console.ReadLine();
+			int age = int.Parse(Console.ReadLine());
 
-		string fullNameAndAge;
+			Person basePerson = (Person)emptyCtor.Invoke(new object[] { });
+			Person personWithAge = (Person)ageCtor.Invoke(new object[] { age });
+			Person personWithAgeAndName = swapped ? (Person)nameAgeCtor.Invoke(new object[] { age, name }) : (Person)nameAgeCtor.Invoke(new object[] { name, age });
 
-		public StartUp()
-		{
-			fullNameAndAge = age + name;
-		}
-
-		public string PrintNameAndAge()
-		{
-			return $"{this.name} {this.age}";
-		}
-
-		public string ChangeFirstNameAndAge()
-		{
-			name = "No name";
-			age = 1;
-			return $"{this.name} {this.age}";
-		}
-
-		public string ChangeSecondNameAndAge(int age)
-		{
-			name = "No name";
-			return $"{this.name} {this.age}";
-		}
-
-		public string ChangeThirdNameAndAge(string name, int age)
-		{
-			return $"{this.name} {this.age}";
+			Console.WriteLine("{0} {1}", basePerson.Name, basePerson.Age);
+			Console.WriteLine("{0} {1}", personWithAge.Name, personWithAge.Age);
+			Console.WriteLine("{0} {1}", personWithAgeAndName.Name, personWithAgeAndName.Age);
 		}
 	}
 }

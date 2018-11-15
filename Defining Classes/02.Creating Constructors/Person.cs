@@ -1,26 +1,44 @@
 ﻿using System;
+using System.Linq;
 
-namespace DefiningClasses
+namespace _02.CreatingConstructors
 {
-	class Person
+	public class Person
 	{
-		static void Main(string[] args)
+		private string name;
+		private int age;
+
+		public Person() : this("No name", 1)
 		{
-			StartUp nameAndAge1 = new StartUp();
-			string[] information = Console.ReadLine().Split();
-			nameAndAge1.Name = information[0];
-			nameAndAge1.Age = int.Parse(information[1]);
-			string result1 = nameAndAge1.PrintNameAndAge();
+		}
 
-			Console.WriteLine(result1);
+		public Person(int age) : this("No name", age)
+		{
+		}
 
-			string secondresult1 = nameAndAge1.ChangeFirstNameAndAge();
-			string secondresult2 = nameAndAge1.ChangeSecondNameAndAge(nameAndAge1.Age);
-			string secondresult3 = nameAndAge1.ChangeThirdNameAndAge(nameAndAge1.Name, nameAndAge1.Age);
+		public Person(string name)
+		{
+			if (string.IsNullOrEmpty(name))
+			{
+				throw new NullReferenceException("Invalid name");
+			}
 
-			Console.WriteLine(secondresult1);
-			Console.WriteLine(secondresult2);
-			Console.WriteLine(secondresult3);
+			this.name = name;
+		}
+
+		public Person(string name, int age) : this(name)
+		{
+			this.age = age;
+		}
+
+		public string Name
+		{
+			get { return this.name; }
+		}
+
+		public int Age
+		{
+			get { return this.age; }
 		}
 	}
 }
