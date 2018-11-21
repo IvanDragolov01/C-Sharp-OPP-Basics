@@ -6,7 +6,7 @@ namespace _06.CompanyRoster
 	public class Department
 	{
 		private List<Employee> employees;
-		string name;
+		private string name;
 
 		public Department(string name)
 		{

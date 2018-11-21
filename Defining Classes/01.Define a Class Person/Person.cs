@@ -5,8 +5,8 @@ namespace DefiningClasses
 {
 	public class Person
 	{
-		int age;
-		string name;
+		private int age;
+		private string name;
 
 		private Person(string name, int age)
 		{
