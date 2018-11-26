@@ -47,7 +47,7 @@ namespace _10.CarSalesman
 
 			for (int i = 0; i < numberOfCars; i++)
 			{
-				string[] inputParts = Console.ReadLine().Split("");
+				string[] inputParts = Console.ReadLine().Split(" ");
 				string model = inputParts[0];
 				string engineModel = inputParts[1];
 				Engine engine = engines.FirstOrDefault(e => e.Model == engineModel);

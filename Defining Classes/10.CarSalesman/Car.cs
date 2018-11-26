@@ -56,6 +56,7 @@ namespace _10.CarSalesman
 			{
 				sb.AppendLine($"  Weight: {this.Weight}");
 			}
+
 			sb.AppendLine($"  Color: {this.Color}");
 
 			return sb.ToString().Trim();
