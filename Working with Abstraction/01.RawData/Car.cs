@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1.RawData
+namespace _01.RawData
 {
 	public class Car
 	{
@@ -15,6 +15,7 @@ namespace _1.RawData
 			this.cargoType = cargoType;
 			this.tires = new KeyValuePair<double, int>[] { KeyValuePair.Create(tire1Pressure, tire1Age), KeyValuePair.Create(tire2Pressure, tire2Age), KeyValuePair.Create(tire3Pressure, tire3age), KeyValuePair.Create(tire4Pressure, tire4age) };
 		}
+
 		public string model;
 		public int engineSpeed;
 		public int enginePower;

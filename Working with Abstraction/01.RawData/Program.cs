@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace _1.RawData
+namespace _01.RawData
 {
-	class RawData
+	class Program
 	{
 		static void Main(string[] args)
 		{
 			List<Car> cars = new List<Car>();
 			int lines = int.Parse(Console.ReadLine());
+
 			for (int i = 0; i < lines; i++)
 			{
 				string[] parameters = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -30,6 +30,7 @@ namespace _1.RawData
 			}
 
 			string command = Console.ReadLine();
+
 			if (command == "fragile")
 			{
 				List<string> fragile = cars
