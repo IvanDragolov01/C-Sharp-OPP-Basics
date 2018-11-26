@@ -6,8 +6,8 @@ namespace _05.DateModifier
 	{
 		static void Main(string[] args)
 		{
-			var firstDate = Console.ReadLine();
-			var secondDate = Console.ReadLine();
+			string firstDate = Console.ReadLine();
+			string secondDate = Console.ReadLine();
 			Console.WriteLine(DateModifier.GetDaysBetweenDates(firstDate, secondDate));
 		}
 	}

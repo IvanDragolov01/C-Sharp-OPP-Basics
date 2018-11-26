@@ -5,45 +5,45 @@ namespace _07.Family_Tree
 {
 	public class Person
 	{
-		private string name;
-		private string birthday;
-		private List<Person> parents;
-		private List<Person> children;
+		private string _name;
+		private string _birthday;
+		private List<Person> _parents;
+		private List<Person> _children;
 
 		public Person()
 		{
-			this.children = new List<Person>();
+			this._children = new List<Person>();
 			this.Parents = new List<Person>();
 		}
 
-		public Person(string name)
+		public Person(string _name)
 			: this()
 		{
-			this.name = name;
+			this._name = _name;
 		}
 
 		public string FullName
 		{
-			get { return name; }
-			set { name = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public string Birthday
 		{
-			get { return birthday; }
-			set { birthday = value; }
+			get { return _birthday; }
+			set { _birthday = value; }
 		}
 
 		public List<Person> Parents
 		{
-			get { return parents; }
-			set { parents = value; }
+			get { return _parents; }
+			set { _parents = value; }
 		}
 
 		public List<Person> Children
 		{
-			get { return children; }
-			set { children = value; }
+			get { return _children; }
+			set { _children = value; }
 		}
 
 		public static Person CreatePerson(string personInput)

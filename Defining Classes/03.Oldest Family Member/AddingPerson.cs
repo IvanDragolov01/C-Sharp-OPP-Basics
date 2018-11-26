@@ -6,25 +6,25 @@ namespace _03.Oldest_Family_Member
 {
 	class AddingPerson
 	{
-		private string name;
-		private int age;
+		private string _name;
+		private int _age;
 
-		public AddingPerson(string name, int age)
+		public AddingPerson(string _name, int _age)
 		{
-			this.name = name;
-			this.age = age;
+			this._name = _name;
+			this._age = _age;
 		}
 
 		public string Name
 		{
-			get { return name; }
-			set { name = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public int Age
 		{
-			get { return age; }
-			set { age = value; }
+			get { return _age; }
+			set { _age = value; }
 		}
 	}
 }

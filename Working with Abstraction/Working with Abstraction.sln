@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.RawData", "01.RawData\01.RawData.csproj", "{D1ECBBD8-3274-44B3-B0B2-5BEBC9321591}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.Family Tree", "07.Family Tree\07.Family Tree.csproj", "{889F4798-E872-45A9-9BDA-D0DC940A975F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.JedyGalaxy", "03.JedyGalaxy\03.JedyGalaxy.csproj", "{A1751F5B-9176-4C6D-B542-9BAC210ACDCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.JedyGalaxy", "03.JedyGalaxy\03.JedyGalaxy.csproj", "{A1751F5B-9176-4C6D-B542-9BAC210ACDCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CarSalesman", "02.CarSalesman\02.CarSalesman.csproj", "{69F66817-9947-42F6-AF02-1B4EB29B89CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.CarSalesman", "02.CarSalesman\02.CarSalesman.csproj", "{69F66817-9947-42F6-AF02-1B4EB29B89CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Hospital", "04.Hospital\04.Hospital.csproj", "{4D1BA0E8-BD41-4B3C-99D2-A7FD86135071}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.Hospital", "04.Hospital\04.Hospital.csproj", "{4D1BA0E8-BD41-4B3C-99D2-A7FD86135071}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.GreedyTimes", "05.GreedyTimes\05.GreedyTimes.csproj", "{C6C84E09-3671-47B5-B103-542415DE5B61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.GreedyTimes", "05.GreedyTimes\05.GreedyTimes.csproj", "{C6C84E09-3671-47B5-B103-542415DE5B61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.Sneaking", "06.Sneaking\06.Sneaking.csproj", "{00EF4FF6-8C0B-4CEF-9D98-C0E044949EE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.Sneaking", "06.Sneaking\06.Sneaking.csproj", "{00EF4FF6-8C0B-4CEF-9D98-C0E044949EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.RawData", "01.RawData\01.RawData.csproj", "{A644D456-B002-4406-9C94-A520CA2717EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1ECBBD8-3274-44B3-B0B2-5BEBC9321591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1ECBBD8-3274-44B3-B0B2-5BEBC9321591}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1ECBBD8-3274-44B3-B0B2-5BEBC9321591}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1ECBBD8-3274-44B3-B0B2-5BEBC9321591}.Release|Any CPU.Build.0 = Release|Any CPU
 		{889F4798-E872-45A9-9BDA-D0DC940A975F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{889F4798-E872-45A9-9BDA-D0DC940A975F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{889F4798-E872-45A9-9BDA-D0DC940A975F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{00EF4FF6-8C0B-4CEF-9D98-C0E044949EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00EF4FF6-8C0B-4CEF-9D98-C0E044949EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00EF4FF6-8C0B-4CEF-9D98-C0E044949EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A644D456-B002-4406-9C94-A520CA2717EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A644D456-B002-4406-9C94-A520CA2717EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A644D456-B002-4406-9C94-A520CA2717EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A644D456-B002-4406-9C94-A520CA2717EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

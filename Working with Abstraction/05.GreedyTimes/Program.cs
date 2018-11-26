@@ -20,7 +20,6 @@ namespace _05.GreedyTimes
 			{
 				string name = input[i];
 				long count = long.Parse(input[i + 1]);
-
 				string type = string.Empty;
 
 				if (name.Length == 3)

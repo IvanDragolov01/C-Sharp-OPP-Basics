@@ -6,11 +6,11 @@ namespace _12.Google
 {
 	class Person
 	{
-		private string name;
-		private Company company;
-		private List<Pokemon> pokemons;
-		private List<Parent> parents;
-		private List<Child> children;
+		private string _name;
+		private Company _company;
+		private List<Pokemon> _pokemons;
+		private List<Parent> _parents;
+		private List<Child> _children;
 		private Car car;
 
 		public Person(string name)
@@ -29,32 +29,32 @@ namespace _12.Google
 
 		public List<Child> Children
 		{
-			get { return this.children; }
-			set { this.children = value; }
+			get { return this._children; }
+			set { this._children = value; }
 		}
 
 		public List<Parent> Parents
 		{
-			get { return this.parents; }
-			set { this.parents = value; }
+			get { return this._parents; }
+			set { this._parents = value; }
 		}
 
 		public List<Pokemon> Pokemons
 		{
-			get { return this.pokemons; }
-			set { this.pokemons = value; }
+			get { return this._pokemons; }
+			set { this._pokemons = value; }
 		}
 
 		public Company Company
 		{
-			get { return this.company; }
-			set { this.company = value; }
+			get { return this._company; }
+			set { this._company = value; }
 		}
 
 		public string Name
 		{
-			get { return this.name; }
-			set { this.name = value; }
+			get { return this._name; }
+			set { this._name = value; }
 		}
 
 		public override string ToString()

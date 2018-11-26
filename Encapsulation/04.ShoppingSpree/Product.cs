@@ -6,32 +6,32 @@ namespace _04.ShoppingSpree
 {
 	public class Product
 	{
-		private string name;
-		private decimal price;
+		private string _name;
+		private decimal _price;
 
-		public Product(string productName, decimal productPrice)
+		public Product(string _productName, decimal _productPrice)
 		{
-			this.Name = productName;
-			this.Price = productPrice;
+			this.Name = _productName;
+			this.Price = _productPrice;
 		}
 
 		public string Name
 		{
-			get { return name; }
+			get { return _name; }
 			set
 			{
 				Validator.ValidateName(value);
-				name = value;
+				_name = value;
 			}
 		}
 
 		public decimal Price
 		{
-			get { return price; }
+			get { return _price; }
 			set
 			{
 				Validator.ValidateMoney(value);
-				price = value;
+				_price = value;
 			}
 		}
 

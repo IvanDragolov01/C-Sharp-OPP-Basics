@@ -6,24 +6,24 @@ namespace _03.AnimalFarms
 {
 	public class Chicken
 	{
-		protected string name;
-		internal int age;
+		protected string _name;
+		internal int _age;
 
-		public Chicken(string name, int age)
+		public Chicken(string _name, int _age)
 		{
-			this.name = name;
-			this.age = age;
+			this._name = _name;
+			this._age = _age;
 		}
 
 		public string Name
 		{
 			get
 			{
-				return this.name;
+				return this._name;
 			}
 			set
 			{
-				this.name = value;
+				this._name = value;
 			}
 		}
 
@@ -31,11 +31,11 @@ namespace _03.AnimalFarms
 		{
 			get
 			{
-				return this.age;
+				return this._age;
 			}
 			set
 			{
-				this.age = value;
+				this._age = value;
 			}
 		}
 

@@ -8,10 +8,9 @@ namespace _13.FamilyTree
 	{
 		static void Main(string[] args)
 		{
-			var familyTree = new List<Person>();
+			List<Person> familyTree = new List<Person>();
 			string mainpersonInput = Console.ReadLine();
 			Person mainPerson = Person.CreatePerson(mainpersonInput);
-
 			familyTree.Add(mainPerson);
 			string command;
 

@@ -6,24 +6,23 @@ namespace _04.Opinion_Poll
 {
 	public class Person
 	{
-		private string name;
-		private int age;
+		private string _name;
+		private int _age;
 
 		public Person(string name, int age)
 		{
-			this.name = name;
-			this.age = age;
+			this._name = name;
+			this._age = age;
 		}
 
 		public string Name
 		{
-			get { return name; }
+			get { return _name; }
 		}
 
 		public int Age
 		{
-			get { return age; }
+			get { return _age; }
 		}
-
 	}
 }

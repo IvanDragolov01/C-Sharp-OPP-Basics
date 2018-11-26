@@ -5,8 +5,8 @@ namespace _02.CreatingConstructors
 {
 	public class Person
 	{
-		private string name;
-		private int age;
+		private string _name;
+		private int _age;
 
 		public Person()
 			: this("No name", 1)
@@ -18,22 +18,22 @@ namespace _02.CreatingConstructors
 		{
 		}
 
-		public Person(string name, int age)
+		public Person(string _name, int _age)
 		{
-			this.Name = name;
-			this.Age = age;
+			this.Name = _name;
+			this.Age = _age;
 		}
 
 		public int Age
 		{
-			get { return this.age; }
-			set { this.age = value; }
+			get { return this._age; }
+			set { this._age = value; }
 		}
 
 		public string Name
 		{
-			get { return this.name; }
-			set { this.name = value; }
+			get { return this._name; }
+			set { this._name = value; }
 		}
 	}
 }

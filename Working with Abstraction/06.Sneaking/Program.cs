@@ -21,7 +21,7 @@ namespace _06.Sneaking
 				}
 			}
 
-			var moves = Console.ReadLine().ToCharArray();
+			char[] moves = Console.ReadLine().ToCharArray();
 			int[] samPosition = new int[2];
 
 			for (int row = 0; row < room.Length; row++)

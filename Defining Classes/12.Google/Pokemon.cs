@@ -6,8 +6,8 @@ namespace _12.Google
 {
 	class Pokemon
 	{
-		private string name;
-		private string type;
+		private string _name;
+		private string _type;
 
 		public Pokemon(string name, string type)
 		{
@@ -17,14 +17,14 @@ namespace _12.Google
 
 		public string Type
 		{
-			get { return this.type; }
-			set { this.type = value; }
+			get { return this._type; }
+			set { this._type = value; }
 		}
 
 		public string Name
 		{
-			get { return this.name; }
-			set { this.name = value; }
+			get { return this._name; }
+			set { this._name = value; }
 		}
 
 		public override string ToString()

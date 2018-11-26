@@ -6,25 +6,25 @@ namespace _12.Google
 {
 	class Car
 	{
-		private string model;
-		private int speed;
+		private string _model;
+		private int _speed;
 
 		public Car(string model, int speed)
 		{
-			this.Model = model;
+			this.Model = _model;
 			this.Speed = speed;
 		}
 
 		public int Speed
 		{
-			get { return this.speed; }
-			set { this.speed = value; }
+			get { return this._speed; }
+			set { this._speed = value; }
 		}
 
 		public string Model
 		{
-			get { return this.model; }
-			set { this.model = value; }
+			get { return this._model; }
+			set { this._model = value; }
 		}
 
 		public override string ToString()

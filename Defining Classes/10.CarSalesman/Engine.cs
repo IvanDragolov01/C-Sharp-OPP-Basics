@@ -6,10 +6,10 @@ namespace _10.CarSalesman
 {
 	class Engine
 	{
-		private string model;
-		private int power;
-		private int displacement;
-		private string efficiency;
+		private string _model;
+		private int _power;
+		private int _displacement;
+		private string _efficiency;
 
 		public Engine(string model, int power)
 		{
@@ -21,26 +21,26 @@ namespace _10.CarSalesman
 
 		public string Efficiency
 		{
-			get { return this.efficiency; }
-			set { this.efficiency = value; }
+			get { return this._efficiency; }
+			set { this._efficiency = value; }
 		}
 
 		public int Displacement
 		{
-			get { return this.displacement; }
-			set { this.displacement = value; }
+			get { return this._displacement; }
+			set { this._displacement = value; }
 		}
 
 		public int Power
 		{
-			get { return this.power; }
-			set { this.power = value; }
+			get { return this._power; }
+			set { this._power = value; }
 		}
 
 		public string Model
 		{
-			get { return this.model; }
-			set { this.model = value; }
+			get { return this._model; }
+			set { this._model = value; }
 		}
 
 		public override string ToString()

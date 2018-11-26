@@ -4,35 +4,35 @@ namespace _08.RawData
 {
 	public class Car
 	{
-		private string model;
-		private Engine engine;
-		private Cargo cargo;
+		private string _model;
+		private Engine _engine;
+		private Cargo _cargo;
 		private List<Tire> tires;
 
-		public Car(string model, Engine engine, Cargo cargo, List<Tire> tires)
+		public Car(string _model, Engine _engine, Cargo _cargo, List<Tire> tires)
 		{
-			this.Model = model;
-			this.Engine = engine;
-			this.Cargo = cargo;
+			this.Model = _model;
+			this.Engine = _engine;
+			this.Cargo = _cargo;
 			this.Tires = tires;
 		}
 
 		public string Model
 		{
-			get { return model; }
-			set { model = value; }
+			get { return _model; }
+			set { _model = value; }
 		}
 
 		public Engine Engine
 		{
-			get { return engine; }
-			set { engine = value; }
+			get { return _engine; }
+			set { _engine = value; }
 		}
 
 		public Cargo Cargo
 		{
-			get { return cargo; }
-			set { cargo = value; }
+			get { return _cargo; }
+			set { _cargo = value; }
 		}
 
 		public List<Tire> Tires

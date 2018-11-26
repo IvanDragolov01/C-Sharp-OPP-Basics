@@ -5,10 +5,10 @@ namespace _10.CarSalesman
 {
 	class Car
 	{
-		private string model;
-		private Engine engine;
-		private int weight;
-		private string color;
+		private string _model;
+		private Engine _engine;
+		private int _weight;
+		private string _color;
 
 		public Car(string model, Engine engine)
 		{
@@ -20,26 +20,26 @@ namespace _10.CarSalesman
 
 		public string Color
 		{
-			get { return this.color; }
-			set { this.color = value; }
+			get { return this._color; }
+			set { this._color = value; }
 		}
 
 		public int Weight
 		{
-			get { return this.weight; }
-			set { this.weight = value; }
+			get { return this._weight; }
+			set { this._weight = value; }
 		}
 
 		public Engine Engine
 		{
-			get { return this.engine; }
-			set { this.engine = value; }
+			get { return this._engine; }
+			set { this._engine = value; }
 		}
 
 		public string Model
 		{
-			get { return this.model; }
-			set { this.model = value; }
+			get { return this._model; }
+			set { this._model = value; }
 		}
 
 		public override string ToString()

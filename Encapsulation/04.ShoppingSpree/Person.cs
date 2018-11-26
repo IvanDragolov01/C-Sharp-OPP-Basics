@@ -6,8 +6,8 @@ namespace _04.ShoppingSpree
 {
 	class Person
 	{
-		private string name;
-		private decimal money;
+		private string _name;
+		private decimal _money;
 		private List<Product> Products { get; set; }
 
 		public Person()
@@ -15,30 +15,30 @@ namespace _04.ShoppingSpree
 			this.Products = new List<Product>();
 		}
 
-		public Person(string name, decimal money)
+		public Person(string _name, decimal _money)
 			: this()
 		{
-			this.Name = name;
-			this.Money = money;
+			this.Name = _name;
+			this.Money = _money;
 		}
 
 		public string Name
 		{
-			get { return name; }
+			get { return _name; }
 			set
 			{
 				Validator.ValidateName(value);
-				name = value;
+				_name = value;
 			}
 		}
 
 		private decimal Money
 		{
-			get { return money; }
+			get { return _money; }
 			set
 			{
 				Validator.ValidateMoney(value);
-				money = value;
+				_money = value;
 			}
 		}
 
@@ -46,13 +46,13 @@ namespace _04.ShoppingSpree
 		{
 			if (this.Money < product.Price)
 			{
-				return $"{this.name} can't afford {product.Name}";
+				return $"{this._name} can't afford {product.Name}";
 			}
 
 			this.Money = Money - product.Price;
 			this.Products.Add(product);
 
-			return $"{this.name} bought {product.Name}";
+			return $"{this._name} bought {product.Name}";
 		}
 
 		public override string ToString()

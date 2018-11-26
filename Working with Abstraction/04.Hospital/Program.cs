@@ -15,11 +15,11 @@ namespace _04.Hospital
 			while (command != "Output")
 			{
 				string[] tokens = command.Split();
-				var departament = tokens[0];
+				string departament = tokens[0];
 				string firstName = tokens[1];
-				var lastName = tokens[2];
-				var patient = tokens[3];
-				var fullName = firstName + lastName;
+				string lastName = tokens[2];
+				string patient = tokens[3];
+				string fullName = firstName + lastName;
 
 				if (!doctors.ContainsKey(firstName + lastName))
 				{

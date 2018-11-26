@@ -51,17 +51,17 @@ namespace _11.PokemonTrainer
 
 		private static Queue<Trainer> GetTrainers()
 		{
-			var trainers = new Queue<Trainer>();
-			var playerData = Console.ReadLine().Split().Select(x => x.Trim()).ToArray();
+			Queue<Trainer> trainers = new Queue<Trainer>();
+			string[] playerData = Console.ReadLine().Split().Select(x => x.Trim()).ToArray();
 
 			while (playerData[0] != "Tournament")
 			{
-				var trainerName = playerData[0];
-				var pokemonName = playerData[1];
-				var element = playerData[2];
-				var health = int.Parse(playerData[3]);
-				var currentPokemon = new Pokemon(pokemonName, element, health);
-				var currentTrainer = trainers.Where(t => t.Name == trainerName).FirstOrDefault();
+				string trainerName = playerData[0];
+				string pokemonName = playerData[1];
+				string element = playerData[2];
+				int health = int.Parse(playerData[3]);
+				Pokemon currentPokemon = new Pokemon(pokemonName, element, health);
+				Trainer currentTrainer = trainers.Where(t => t.Name == trainerName).FirstOrDefault();
 
 				if (currentTrainer == null)
 				{

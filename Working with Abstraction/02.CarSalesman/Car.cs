@@ -8,50 +8,50 @@ namespace _02.CarSalesman
 	{
 		private const string offset = "  ";
 
-		public string model;
-		public Engine engine;
-		public int weight;
-		public string color;
+		public string _model;
+		public Engine _engine;
+		public int _weight;
+		public string _color;
 
-		public Car(string model, Engine engine)
+		public Car(string _model, Engine _engine)
 		{
-			this.model = model;
-			this.engine = engine;
-			this.weight = -1;
-			this.color = "n/a";
+			this._model = _model;
+			this._engine = _engine;
+			this._weight = -1;
+			this._color = "n/a";
 		}
 
-		public Car(string model, Engine engine, int weight)
+		public Car(string _model, Engine _engine, int _weight)
 		{
-			this.model = model;
-			this.engine = engine;
-			this.weight = weight;
-			this.color = "n/a";
+			this._model = _model;
+			this._engine = _engine;
+			this._weight = _weight;
+			this._color = "n/a";
 		}
 
-		public Car(string model, Engine engine, string color)
+		public Car(string _model, Engine _engine, string _color)
 		{
-			this.model = model;
-			this.engine = engine;
-			this.weight = -1;
-			this.color = color;
+			this._model = _model;
+			this._engine = _engine;
+			this._weight = -1;
+			this._color = _color;
 		}
 
-		public Car(string model, Engine engine, int weight, string color)
+		public Car(string model, Engine _engine, int _weight, string _color)
 		{
-			this.model = model;
-			this.engine = engine;
-			this.weight = weight;
-			this.color = color;
+			this._model = model;
+			this._engine = _engine;
+			this._weight = _weight;
+			this._color = _color;
 		}
 
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendFormat("{0}:\n", this.model);
-			sb.Append(this.engine.ToString());
-			sb.AppendFormat("{0}Weight: {1}\n", offset, this.weight == -1 ? "n/a" : this.weight.ToString());
-			sb.AppendFormat("{0}Color: {1}", offset, this.color);
+			sb.AppendFormat("{0}:\n", this._model);
+			sb.Append(this._engine.ToString());
+			sb.AppendFormat("{0}Weight: {1}\n", offset, this._weight == -1 ? "n/a" : this._weight.ToString());
+			sb.AppendFormat("{0}Color: {1}", offset, this._color);
 
 			return sb.ToString();
 		}

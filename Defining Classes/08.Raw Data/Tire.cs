@@ -4,8 +4,8 @@ namespace _08.RawData
 {
 	public class Tire
 	{
-		private int age;
-		private double pressure;
+		private int _age;
+		private double _pressure;
 
 		public Tire(int age, double pressure)
 		{
@@ -15,14 +15,14 @@ namespace _08.RawData
 
 		public int Age
 		{
-			get { return age; }
-			set { age = value; }
+			get { return _age; }
+			set { _age = value; }
 		}
 
 		public double Pressure
 		{
-			get { return pressure; }
-			set { pressure = value; }
+			get { return _pressure; }
+			set { _pressure = value; }
 		}
 	}
 }

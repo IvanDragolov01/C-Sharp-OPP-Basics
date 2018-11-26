@@ -48,7 +48,7 @@ namespace _02.CarSalesman
 				string[] parameters = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 				string model = parameters[0];
 				string engineModel = parameters[1];
-				Engine engine = engines.FirstOrDefault(x => x.model == engineModel);
+				Engine engine = engines.FirstOrDefault(x => x._model == engineModel);
 				int weight = -1;
 
 				if (parameters.Length == 3 && int.TryParse(parameters[2], out weight))
