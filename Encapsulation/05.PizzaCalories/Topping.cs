@@ -36,8 +36,7 @@ namespace _05.PizzaCalories
 		{
 			if (weight < minWeight || weight > maxWeight)
 			{
-				throw new ArgumentException($"{type} weight should be in the range [{minWeight}.." +
-					$"{maxWeight}]");
+				throw new ArgumentException($"{type} weight should be in the range [{minWeight}..{maxWeight}].");
 			}
 		}
 

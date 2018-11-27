@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 
 namespace _03.Oldest_Family_Member
 {
@@ -7,8 +6,6 @@ namespace _03.Oldest_Family_Member
 	{
 		static void Main(string[] args)
 		{
-			MethodInfo oldestMemberMethod = typeof(Family).GetMethod("GetOldestMember");
-			MethodInfo addMemberMethod = typeof(Family).GetMethod("AddMember");
 			Family family = new Family();
 			int membersNumber = int.Parse(Console.ReadLine());
 
@@ -21,7 +18,6 @@ namespace _03.Oldest_Family_Member
 			}
 
 			AddingPerson oldestMember = family.GetOldestMember();
-
 			Console.WriteLine($"{oldestMember.Name} {oldestMember.Age}");
 		}
 	}

@@ -28,6 +28,13 @@ namespace _05.PizzaCalories
 		private string flourType;
 		private string bakingTechnique;
 
+		public Dough(string flourType, string bakingTechnique, double weight)
+		{
+			this.FlourType = flourType;
+			this.BakingTechnique = bakingTechnique;
+			this.Weight = weight;
+		}
+
 		private double FlourMultiplier => validFlourTypes[this.FlourType];
 
 		private double BakingTechniqueMultiplier => validBakingTechnique[this.BakingTechnique];
@@ -42,8 +49,7 @@ namespace _05.PizzaCalories
 			{
 				if (value < minWeight || value > maxWeight)
 				{
-					throw new ArgumentException($"Dough weight should be in the range [{minWeight}.." +
-						$" {maxWeight}].");
+					throw new ArgumentException($"Dough weight should be in the range [{minWeight}..{maxWeight}].");
 				}
 
 				weight = value;
@@ -74,7 +80,7 @@ namespace _05.PizzaCalories
 		{
 			if (!dictionary.Any(f => f.Key == type.ToLower()))
 			{
-				throw new ArgumentException("Invalid type of dough");
+				throw new ArgumentException("Invalid type of dough.");
 			}
 		}
 	}
