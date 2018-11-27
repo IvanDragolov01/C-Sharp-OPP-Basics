@@ -1,4 +1,4 @@
-﻿using System;
+﻿	using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +8,7 @@ namespace _07.Family_Tree
 	{
 		static void Main(string[] args)
 		{
-			var familyTree = new List<Person>();
+			List<Person> familyTree = new List<Person>();
 			string mainpersonInput = Console.ReadLine();
 			Person mainPerson = Person.CreatePerson(mainpersonInput);
 
@@ -40,7 +40,6 @@ namespace _07.Family_Tree
 					tokens = tokens[0].Split();
 					string name = $"{tokens[0]} {tokens[1]}";
 					string birthday = tokens[2];
-
 					Person person = familyTree.FirstOrDefault(p => p.FullName == name || p.Birthday == birthday);
 
 					if (person == null)

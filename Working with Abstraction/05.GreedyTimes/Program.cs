@@ -11,7 +11,7 @@ namespace _05.GreedyTimes
 			long bagCapacity = long.Parse(Console.ReadLine());
 			string[] input = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-			var bag = new Dictionary<string, Dictionary<string, long>>();
+			Dictionary<string, Dictionary<string, long>> bag = new Dictionary<string, Dictionary<string, long>>();
 			long gold = 0;
 			long gem = 0;
 			long cash = 0;

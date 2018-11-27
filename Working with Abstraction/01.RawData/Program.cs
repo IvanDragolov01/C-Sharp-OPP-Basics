@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _01.RawData
 {
@@ -18,15 +19,15 @@ namespace _01.RawData
 				int enginePower = int.Parse(parameters[2]);
 				int cargoWeight = int.Parse(parameters[3]);
 				string cargoType = parameters[4];
-				double tire1Pressure = double.Parse(parameters[5]);
-				int tire1age = int.Parse(parameters[6]);
-				double tire2Pressure = double.Parse(parameters[7]);
-				int tire2age = int.Parse(parameters[8]);
-				double tire3Pressure = double.Parse(parameters[9]);
-				int tire3age = int.Parse(parameters[10]);
-				double tire4Pressure = double.Parse(parameters[11]);
-				int tire4age = int.Parse(parameters[12]);
-				cars.Add(new Car(model, engineSpeed, enginePower, cargoWeight, cargoType, tire1Pressure, tire1age, tire2Pressure, tire2age, tire3Pressure, tire3age, tire4Pressure, tire4age));
+				double tireFirstPressure = double.Parse(parameters[5]);
+				int tireFirstage = int.Parse(parameters[6]);
+				double tireSecondPressure = double.Parse(parameters[7]);
+				int tireSecondage = int.Parse(parameters[8]);
+				double tireThirdPressure = double.Parse(parameters[9]);
+				int tireThirdage = int.Parse(parameters[10]);
+				double tireFourthPressure = double.Parse(parameters[11]);
+				int tireFourthage = int.Parse(parameters[12]);
+				cars.Add(new Car(model, engineSpeed, enginePower, cargoWeight, cargoType, tireFirstPressure, tireFirstage, tireSecondPressure, tireSecondage, tireThirdPressure, tireThirdage, tireFourthPressure, tireFourthage));
 			}
 
 			string command = Console.ReadLine();

@@ -68,9 +68,9 @@ namespace _04.Hospital
 				{
 					Console.WriteLine(string.Join("\n", departments[args[0]].Where(x => x.Count > 0).SelectMany(x => x)));
 				}
-				else if (args.Length == 2 && int.TryParse(args[1], out int staq))
+				else if (args.Length == 2 && int.TryParse(args[1], out int room))
 				{
-					Console.WriteLine(string.Join("\n", departments[args[0]][staq - 1].OrderBy(x => x)));
+					Console.WriteLine(string.Join("\n", departments[args[0]][room - 1].OrderBy(x => x)));
 				}
 				else
 				{

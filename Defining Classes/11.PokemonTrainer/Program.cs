@@ -10,7 +10,7 @@ namespace _11.PokemonTrainer
 
 		public static void Main()
 		{
-			var trainers = GetTrainers();
+			Queue<Trainer> trainers = GetTrainers();
 			PlayWithElements(trainers);
 			PrintTrainers(trainers);
 		}
@@ -24,7 +24,7 @@ namespace _11.PokemonTrainer
 
 		private static void PlayWithElements(Queue<Trainer> trainers)
 		{
-			var element = Console.ReadLine().Trim();
+			string element = Console.ReadLine().Trim();
 
 			while (element != "End")
 			{
