@@ -27,7 +27,7 @@ namespace _06.CompanyRoster
 				department.AddEmployee(employee);
 			}
 
-			var maxAverageSalary = departments.OrderByDescending(d => d.AverageSalary).First();
+			Department maxAverageSalary = departments.OrderByDescending(d => d.AverageSalary).First();
 			//Console.WriteLine();
 			Console.WriteLine($"Highest Average Salary: {maxAverageSalary.Name}");
 			//Console.WriteLine();
