@@ -67,7 +67,7 @@ namespace _05.PizzaCalories
 
 			if (this.Toppings.Count > maxTopping)
 			{
-				throw new ArgumentException($"Number of topping should be in range [{minTopping}..{maxTopping}]");
+				throw new ArgumentException($"Number of toppings should be in range [{minTopping}..{maxTopping}].");
 			}
 		}
 

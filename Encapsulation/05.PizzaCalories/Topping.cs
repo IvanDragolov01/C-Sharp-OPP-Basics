@@ -16,7 +16,7 @@ namespace _05.PizzaCalories
 			["meat"] = 1.2,
 			["veggies"] = 0.8,
 			["cheese"] = 1.1,
-			["a sauce"] = 0.9,
+			["sauce"] = 0.9,
 		};
 
 		private string type;
@@ -29,8 +29,8 @@ namespace _05.PizzaCalories
 			this.Weight = weight;
 		}
 
-		private double typeMultiplier => validTypes[type];
-		public double Calories => defaultMultiplier * this.Weight * typeMultiplier;
+		private double TypeMultiplier => validTypes[type];
+		public double Calories => defaultMultiplier * this.Weight * TypeMultiplier;
 
 		private void ValidateWeight(string type, double weight)
 		{
