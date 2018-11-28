@@ -28,11 +28,11 @@ namespace _11.PokemonTrainer
 
 			while (element != "End")
 			{
-				foreach (var trainer in trainers)
+				foreach (Trainer trainer in trainers)
 				{
 					if (trainer.Pokemons.Where(p => p.Element == element).FirstOrDefault() == null)
 					{
-						foreach (var pokemon in trainer.Pokemons)
+						foreach (Pokemon pokemon in trainer.Pokemons)
 						{
 							pokemon.ReduceHealth();
 						}
@@ -52,7 +52,9 @@ namespace _11.PokemonTrainer
 		private static Queue<Trainer> GetTrainers()
 		{
 			Queue<Trainer> trainers = new Queue<Trainer>();
-			string[] playerData = Console.ReadLine().Split().Select(x => x.Trim()).ToArray();
+			string[] players = Console.ReadLine().Split();
+			IEnumerable<string> playersdata = players.Select(x => x.Trim());
+			string[] playerData = playersdata.ToArray();
 
 			while (playerData[0] != "Tournament")
 			{

@@ -67,7 +67,9 @@ namespace _07.Family_Tree
 
 						foreach (Person parent in copyPerson.Parents)
 						{
-							int copyPersonIndex = parent.Children.IndexOf(copyPerson);
+							Person copyPerInd = parent;
+							List<Person> copyPerInd2 = copyPerInd.Children;
+							int copyPersonIndex = copyPerInd2.IndexOf(copyPerson);
 
 							if (copyPersonIndex > -1)
 							{
@@ -79,12 +81,17 @@ namespace _07.Family_Tree
 							}
 						}
 
-						person.Children.AddRange(copyPerson.Children);
-						person.Children = person.Children.Distinct().ToList();
+						List<Person> per = person.Children;
+						per.AddRange(copyPerson.Children);
+						List<Person> persAndChild = person.Children;
+						IEnumerable<Person> persAndChild2 = persAndChild.Distinct();
+						person.Children = persAndChild2.ToList();
 
 						foreach (Person child in copyPerson.Children)
 						{
-							int copyPersonIndex = child.Parents.IndexOf(copyPerson);
+							Person copyPerInd = child;
+							List<Person> copyPerInd2 = copyPerInd.Parents;
+							int copyPersonIndex = copyPerInd2.IndexOf(copyPerson);
 
 							if (copyPersonIndex > -1)
 							{
@@ -101,15 +108,17 @@ namespace _07.Family_Tree
 
 			Console.WriteLine(mainPerson);
 			Console.WriteLine("Parents:");
+			List<Person> mainPer = mainPerson.Parents;
 
-			foreach (Person p in mainPerson.Parents)
+			foreach (Person p in mainPer)
 			{
 				Console.WriteLine(p);
 			}
 
 			Console.WriteLine("Children:");
+			List<Person> mainPerAndChild = mainPerson.Children;
 
-			foreach (Person c in mainPerson.Children)
+			foreach (Person c in mainPerAndChild)
 			{
 				Console.WriteLine(c);
 			}

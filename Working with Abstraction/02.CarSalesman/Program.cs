@@ -20,8 +20,9 @@ namespace _02.CarSalesman
 				string model = parameters[0];
 				int power = int.Parse(parameters[1]);
 				int displacement = -1;
+				bool parseparameters = int.TryParse(parameters[2], out displacement);
 
-				if (parameters.Length == 3 && int.TryParse(parameters[2], out displacement))
+				if (parameters.Length == 3 && parseparameters)
 				{
 					engines.Add(new Engine(model, power, displacement));
 				}
@@ -50,8 +51,9 @@ namespace _02.CarSalesman
 				string engineModel = parameters[1];
 				Engine engine = engines.FirstOrDefault(x => x._model == engineModel);
 				int weight = -1;
+				bool parameter = int.TryParse(parameters[2], out weight);
 
-				if (parameters.Length == 3 && int.TryParse(parameters[2], out weight))
+				if (parameters.Length == 3 && parameter)
 				{
 					cars.Add(new Car(model, engine, weight));
 				}
@@ -71,7 +73,7 @@ namespace _02.CarSalesman
 				}
 			}
 
-			foreach (var car in cars)
+			foreach (Car car in cars)
 			{
 				Console.WriteLine(car);
 			}

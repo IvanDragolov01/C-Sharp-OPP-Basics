@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace _06.CompanyRoster
@@ -32,11 +33,17 @@ namespace _06.CompanyRoster
 			private set { this.employees = value; }
 		}
 
-		public decimal AverageSalary => this.Employees.Select(e => e.Salary).Average();
+		public decimal AverageSalary => this.Employees.Select(e => e.Salary)
+			.Average();
 
 		public void AddEmployee(Employee employee)
 		{
-			this.Employees.Add(employee);
+			if (employee == null)
+			{
+				throw new ArgumentNullException();
+			}
+
+			Employees.Add(employee);
 		}
 	}
 }

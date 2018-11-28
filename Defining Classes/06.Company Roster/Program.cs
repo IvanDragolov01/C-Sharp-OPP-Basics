@@ -27,12 +27,14 @@ namespace _06.CompanyRoster
 				department.AddEmployee(employee);
 			}
 
-			Department maxAverageSalary = departments.OrderByDescending(d => d.AverageSalary).First();
+			Department maxAverageSalary = departments.OrderByDescending(d => d.AverageSalary)
+				.First();
 			//Console.WriteLine();
 			Console.WriteLine($"Highest Average Salary: {maxAverageSalary.Name}");
 			//Console.WriteLine();
+			IOrderedEnumerable<Employee> employees = maxAverageSalary.Employees.OrderByDescending(e => e.Salary);
 
-			foreach (var emp in maxAverageSalary.Employees.OrderByDescending(e => e.Salary))
+			foreach (Employee emp in employees)
 			{
 				Console.WriteLine($"{emp.Name} {emp.Salary:f2} {emp.Email} {emp.Age}");
 				//Console.WriteLine();

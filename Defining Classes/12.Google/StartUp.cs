@@ -60,7 +60,8 @@ namespace _12.Google
 			}
 
 			string searchedName = Console.ReadLine();
-			Person person = people.Values.FirstOrDefault(p => p.Name == searchedName);
+			Dictionary<string, Person>.ValueCollection persons = people.Values;
+			Person person = persons.FirstOrDefault(p => p.Name == searchedName);
 			Console.WriteLine(person);
 		}
 	}

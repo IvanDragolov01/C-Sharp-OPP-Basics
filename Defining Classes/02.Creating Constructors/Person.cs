@@ -8,32 +8,30 @@ namespace _02.CreatingConstructors
 		private string _name;
 		private int _age;
 
-		public Person()
-			: this("No name", 1)
+		public Person() : this("No name", 1)
 		{
+
 		}
 
-		public Person(int age)
-			: this("No name", age)
+		public Person(int age) : this("No name", age)
 		{
+
 		}
 
-		public Person(string _name, int _age)
+		public Person(string name, int age)
 		{
-			this.Name = _name;
-			this.Age = _age;
-		}
-
-		public int Age
-		{
-			get { return this._age; }
-			set { this._age = value; }
+			_name = name;
+			_age = age;
 		}
 
 		public string Name
 		{
-			get { return this._name; }
-			set { this._name = value; }
+			get { return _name; }
+		}
+
+		public int Age
+		{
+			get { return _age; }
 		}
 	}
 }

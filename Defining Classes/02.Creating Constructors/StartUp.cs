@@ -5,10 +5,18 @@ namespace _02.CreatingConstructors
 {
 	public class StartUp
 	{
-		public static void Main()
+		static void Main(string[] args)
 		{
-			Person person = new Person("Ivan", 20);
-			Console.WriteLine($"{person.Name} {person.Age}");
+			string name = Console.ReadLine();
+			int age = int.Parse(Console.ReadLine());
+
+			var person = new Person();
+			Person personWithAge = new Person(age);
+			Person personWithAgeAndName = new Person(name, age);
+
+			Console.WriteLine("{0} {1}", person.Name, person.Age);
+			Console.WriteLine("{0} {1}", personWithAge.Name, personWithAge.Age);
+			Console.WriteLine("{0} {1}", personWithAgeAndName.Name, personWithAgeAndName.Age);
 		}
 	}
 }

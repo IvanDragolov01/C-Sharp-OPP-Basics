@@ -15,10 +15,13 @@ namespace _04.Opinion_Poll
 
 		private static void PrintPeopleOlderThanthirthy(HashSet<Person> people)
 		{
-			Console.WriteLine(string.Join(Environment.NewLine, people
+			IEnumerable<string> peopleolderThanThirty = people
 				.Where(p => p.Age > 30)
 				.OrderBy(p => p.Name)
-				.Select(p => $"{p.Name} - {p.Age}")));
+				.Select(p => $"{p.Name} - {p.Age}");
+
+			string print = string.Join(Environment.NewLine, peopleolderThanThirty);
+			Console.WriteLine(print);
 		}
 
 		private static HashSet<Person> GetPeople()
@@ -29,7 +32,9 @@ namespace _04.Opinion_Poll
 			while (numberOfPeople > 0)
 			{
 				string[] personData = Console.ReadLine().Split();
-				people.Add(new Person(personData[0], int.Parse(personData[1])));
+				string name = personData[0];
+				int age = int.Parse(personData[1]);
+				people.Add(new Person(name,age));
 				numberOfPeople--;
 			}
 

@@ -22,6 +22,11 @@ namespace _05.GreedyTimes
 				long count = long.Parse(input[i + 1]);
 				string type = string.Empty;
 
+				Dictionary<string, Dictionary<string, long>>.ValueCollection sum = bag.Values;
+				IEnumerable<long> sum2 = sum.Select(x => x.Values.Sum());
+				long sum3 = sum2.Sum();
+
+
 				if (name.Length == 3)
 				{
 					type = "Cash";
@@ -39,7 +44,8 @@ namespace _05.GreedyTimes
 				{
 					continue;
 				}
-				else if (bagCapacity < bag.Values.Select(x => x.Values.Sum()).Sum() + count)
+				
+				else if (bagCapacity < sum3 + count)
 				{
 					continue;
 				}
@@ -113,11 +119,17 @@ namespace _05.GreedyTimes
 				}
 			}
 
-			foreach (var x in bag)
+			foreach (KeyValuePair<string, Dictionary<string, long>> x in bag)
 			{
-				Console.WriteLine($"<{x.Key}> ${x.Value.Values.Sum()}");
+				string printKey = x.Key;
+				Dictionary<string, long>.ValueCollection printValue = x.Value.Values;
+				long printValueSum = printValue.Sum();
+				Console.WriteLine($"<{printKey}> ${printValueSum}");
+				Dictionary<string, long> x1 = x.Value;
+				IOrderedEnumerable<KeyValuePair<string, long>> x2 = x1.OrderByDescending(y => y.Key);
+				IOrderedEnumerable<KeyValuePair<string, long>> x3 = x2.ThenBy(y => y.Value);
 
-				foreach (var item in x.Value.OrderByDescending(y => y.Key).ThenBy(y => y.Value))
+				foreach (KeyValuePair<string, long> item in x3)
 				{
 					Console.WriteLine($"##{item.Key} - {item.Value}");
 				}

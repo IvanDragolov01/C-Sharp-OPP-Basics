@@ -42,13 +42,13 @@ namespace _08.RawData
 
 			if (command == "fragile")
 			{
-				resultCars = cars.Where(x => x.Cargo.CargoType == "fragile" && x.Tires.Any(s => s.Pressure < 1)).
-					ToList();
+				resultCars = cars.Where(x => x.Cargo.CargoType == "fragile" && x.Tires.Any(s => s.Pressure < 1))
+					.ToList();
 			}
 			else
 			{
-				resultCars = cars.Where(x => x.Cargo.CargoType == "flamable" && x.Engine.Power > 250).
-					ToList();
+				resultCars = cars.Where(x => x.Cargo.CargoType == "flamable" && x.Engine.Power > 250)
+					.ToList();
 			}
 
 			foreach (Car c in resultCars)

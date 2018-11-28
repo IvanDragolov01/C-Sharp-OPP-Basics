@@ -34,20 +34,18 @@ namespace _01.RawData
 
 			if (command == "fragile")
 			{
-				List<string> fragile = cars
-					.Where(x => x.cargoType == "fragile" && x.tires.Any(y => y.Key < 1))
-					.Select(x => x.model)
-					.ToList();
+				IEnumerable<Car> frag = cars.Where(x => x.cargoType == "fragile" && x.tires.Any(y => y.Key < 1));
+				IEnumerable<string> frag2 = frag.Select(x => x.model);
+				List<string> fragile = frag2.ToList();
+					
 
 				Console.WriteLine(string.Join(Environment.NewLine, fragile));
 			}
 			else
 			{
-				List<string> flamable = cars
-					.Where(x => x.cargoType == "flamable" && x.enginePower > 250)
-					.Select(x => x.model)
-					.ToList();
-
+				IEnumerable<Car> flam =  cars.Where(x => x.cargoType == "flamable" && x.enginePower > 250);
+				IEnumerable<string> flam2 = flam.Select(x => x.model);
+				List<string> flamable = flam2.ToList();
 				Console.WriteLine(string.Join(Environment.NewLine, flamable));
 			}
 		}

@@ -50,7 +50,8 @@ namespace _02.CarSalesman
 			StringBuilder sb = new StringBuilder();
 			sb.AppendFormat("{0}{1}:\n", offset, this._model);
 			sb.AppendFormat("{0}{0}Power: {1}\n", offset, this._power);
-			sb.AppendFormat("{0}{0}Displacement: {1}\n", offset, this._displacement == -1 ? "n/a" : this._displacement.ToString());
+			sb.AppendFormat("{0}{0}Displacement: {1}\n", offset, this._displacement == -1 ? "n/a" : this._displacement
+				.ToString());
 			sb.AppendFormat("{0}{0}Efficiency: {1}\n", offset, this._efficiency);
 
 			return sb.ToString();
