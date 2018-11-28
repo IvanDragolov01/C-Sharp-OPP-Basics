@@ -44,7 +44,10 @@ namespace _05.PizzaCalories
 			get { return name; }
 			set
 			{
-				if (string.IsNullOrEmpty(value) || value.Length > maxLength)
+				bool valueNull = string.IsNullOrEmpty(value);
+				bool valueLength = value.Length > maxLength;
+
+				if (valueNull || valueLength)
 				{
 					throw new ArgumentException($"Pizza name should be between {minLength} and {maxLength} symbols.");
 				}
@@ -64,8 +67,9 @@ namespace _05.PizzaCalories
 		public void AddToping(Topping topping)
 		{
 			this.Toppings.Add(topping);
+			int toppingscount = this.Toppings.Count;
 
-			if (this.Toppings.Count > maxTopping)
+			if (toppingscount > maxTopping)
 			{
 				throw new ArgumentException($"Number of toppings should be in range [{minTopping}..{maxTopping}].");
 			}

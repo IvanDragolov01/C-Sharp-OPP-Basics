@@ -54,7 +54,9 @@ namespace _04.ShoppingSpree
 
 				foreach (var productInput in productsInput)
 				{
-					string[] tokens = productInput.Split("=");
+					string prodinput = productInput;
+					string[] prodinput2 = prodinput.Split("=");
+					string[] tokens = prodinput2;
 					string productName = tokens[0];
 					decimal productPrice = decimal.Parse(tokens[1]);
 
@@ -68,13 +70,14 @@ namespace _04.ShoppingSpree
 
 		private static List<Person> ParsePeople()
 		{
-			string[] peopleInput = Console.ReadLine().
-			Split(';');
+			string peopleInp = Console.ReadLine();
+			string[] peopleInput = peopleInp.Split(';');
 			List<Person> people = new List<Person>();
 
 			foreach (string personInput in peopleInput)
 			{
-				string[] tokens = personInput.Split("=");
+				string personinput = personInput;
+				string[] tokens = personinput.Split("=");
 				string personName = tokens[0];
 				decimal personMoney = decimal.Parse(tokens[1]);
 

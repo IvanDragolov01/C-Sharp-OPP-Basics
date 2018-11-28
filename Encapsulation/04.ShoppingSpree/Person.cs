@@ -57,9 +57,14 @@ namespace _04.ShoppingSpree
 
 		public override string ToString()
 		{
-			string productsOutput = this.Products.Count > 0 ?
-				string.Join(", ", this.Products) : "Nothing bought";
-			string result = $"{this.Name} - {productsOutput}";
+			int product = Products.Count;
+			string productsJoin = string.Join(", ", this.Products);
+			string report = "Nothing bought";
+			string productsOutput = product > 0 ?
+				 productsJoin : report;
+			string name = this.Name;
+			string productsOut = productsOutput;
+			string result = $"{name} - {productsOut}";
 			return result;
 		}
 	}
