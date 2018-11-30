@@ -5,61 +5,53 @@ namespace _10.CarSalesman
 {
 	class Car
 	{
-		private string _model;
-		private Engine _engine;
-		private int _weight;
-		private string _color;
+		private const string OFFSET = "  ";
+		public string _model;
+		public Engine _engine;
+		public int _weight;
+		public string _color;
 
 		public Car(string model, Engine engine)
 		{
-			this.Model = model;
-			this.Engine = engine;
-			this.Weight = 0;
-			this.Color = "n/a";
+			_model = model;
+			_engine = engine;
+			_weight = -1;
+			_color = "n/a";
 		}
 
-		public string Color
+		public Car(string model, Engine engine, int weight)
 		{
-			get { return this._color; }
-			set { this._color = value; }
+			_model = model;
+			_engine = engine;
+			_weight = weight;
+			_color = "n/a";
 		}
 
-		public int Weight
+		public Car(string model, Engine engine, string color)
 		{
-			get { return this._weight; }
-			set { this._weight = value; }
+			_model = model;
+			_engine = engine;
+			_weight = -1;
+			_color = color;
 		}
 
-		public Engine Engine
+		public Car(string model, Engine engine, int weight, string color)
 		{
-			get { return this._engine; }
-			set { this._engine = value; }
-		}
-
-		public string Model
-		{
-			get { return this._model; }
-			set { this._model = value; }
+			_model = model;
+			_engine = engine;
+			_weight = weight;
+			_color = color;
 		}
 
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendLine($"{this.Model}:")
-				.AppendLine($"  {this.Engine}");
+			sb.AppendFormat("{0}:\n", _model);
+			sb.Append(_engine.ToString());
+			sb.AppendFormat("{0}Weight: {1}\n", OFFSET, _weight == -1 ? "n/a" : _weight.ToString());
+			sb.AppendFormat("{0}Color: {1}", OFFSET, _color);
 
-			if (this.Weight == 0)
-			{
-				sb.AppendLine($"  Weight: n/a");
-			}
-			else
-			{
-				sb.AppendLine($"  Weight: {this.Weight}");
-			}
-
-			sb.AppendLine($"  Color: {this.Color}");
-
-			return sb.ToString().Trim();
+			return sb.ToString();
 		}
 	}
 }

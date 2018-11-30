@@ -6,61 +6,53 @@ namespace _10.CarSalesman
 {
 	class Engine
 	{
-		private string _model;
-		private int _power;
-		private int _displacement;
-		private string _efficiency;
+		private const string OFFSET = "  ";
+		public string _model;
+		public int _power;
+		public int _displacement;
+		public string _efficiency;
 
 		public Engine(string model, int power)
 		{
-			this.Model = model;
-			this.Power = power;
-			this.Displacement = 0;
-			this.Efficiency = "n/a";
+			_model = model;
+			_power = power;
+			_displacement = -1;
+			_efficiency = "n/a";
 		}
 
-		public string Efficiency
+		public Engine(string model, int power, int displacement)
 		{
-			get { return this._efficiency; }
-			set { this._efficiency = value; }
+			_model = model;
+			_power = power;
+			_displacement = displacement;
+			_efficiency = "n/a";
 		}
 
-		public int Displacement
+		public Engine(string model, int power, string efficiency)
 		{
-			get { return this._displacement; }
-			set { this._displacement = value; }
+			_model = model;
+			_power = power;
+			_displacement = -1;
+			_efficiency = efficiency;
 		}
 
-		public int Power
+		public Engine(string model, int power, int displacement, string efficiency)
 		{
-			get { return this._power; }
-			set { this._power = value; }
-		}
-
-		public string Model
-		{
-			get { return this._model; }
-			set { this._model = value; }
+			_model = model;
+			_power = power;
+			_displacement = displacement;
+			_efficiency = efficiency;
 		}
 
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendLine($"  {this.Model}:").
-			AppendLine($"    Power: {this.Power}");
+			sb.AppendFormat("{0}{1}:\n", OFFSET, _model);
+			sb.AppendFormat("{0}{0}Power: {1}\n", OFFSET, _power);
+			sb.AppendFormat("{0}{0}Displacement: {1}\n", OFFSET, _displacement == -1 ? "n/a" : _displacement.ToString());
+			sb.AppendFormat("{0}{0}Efficiency: {1}\n", OFFSET, _efficiency);
 
-			if (this.Displacement == 0)
-			{
-				sb.AppendLine($"    Displacement: n/a");
-			}
-			else
-			{
-				sb.AppendLine($"    Displacement: {this.Displacement}");
-			}
-
-			sb.AppendLine($"    Efficiency: {this.Efficiency}");
-
-			return sb.ToString().Trim();
+			return sb.ToString();
 		}
 	}
 }
