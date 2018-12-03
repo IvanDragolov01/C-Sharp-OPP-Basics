@@ -60,7 +60,7 @@ namespace _03.Mankind
 			builder.AppendLine(base.ToString())
 				.AppendLine($"Week Salary: {this.WeekSalary:f2}")
 				.AppendLine($"Hours per day: {this.WorkHoursPerDay:f2}")
-				.AppendLine($"Salary per hour: {SalaryPerHour:f 2}");
+				.AppendLine($"Salary per hour: {SalaryPerHour:f2}");
 			string result = builder.ToString().TrimEnd();
 			return result;
 		}
