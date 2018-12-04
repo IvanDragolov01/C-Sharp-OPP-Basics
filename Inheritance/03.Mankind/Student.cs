@@ -11,7 +11,7 @@ namespace _03.Mankind
 		private string facultyNumber;
 
 		public Student(string firstName, string lastName, string facultyNumber)
-			:base(firstName, lastName)
+			: base(firstName, lastName)
 		{
 			this.FacultyNumber = facultyNumber;
 		}
@@ -23,7 +23,7 @@ namespace _03.Mankind
 			{
 				if (!Regex.IsMatch(value, FacultyNumberPattern))
 				{
-					throw new ArgumentException("Invalid faculty number!");
+					throw new ArgumentException(" Invalid faculty number!");
 				}
 
 				facultyNumber = value;

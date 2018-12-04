@@ -45,7 +45,7 @@ namespace _03.Mankind
 			get { return workHoursPerDay; }
 			set
 			{
-				if (value < MinWorkHours || value > MaxWorkHours)
+				if (value <= MinWorkHours || value >= MaxWorkHours)
 				{
 					throw new ArgumentException(string.Format(Error, nameof(WorkHoursPerDay)));
 				}
