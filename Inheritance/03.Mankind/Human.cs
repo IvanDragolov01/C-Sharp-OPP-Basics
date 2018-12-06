@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace _03.Mankind
@@ -8,16 +7,13 @@ namespace _03.Mankind
 	{
 		private const int LastNameMinLength = 3;
 		private const int FirstNameMinLength = 4;
-		private const string CapitalLetterError = "Expected upper case letter! Argument: {0}";
-		private const string LengthError = "Expected length at least {0} symbols! Argument: {1}"; 
-
 		private string firstName;
 		private string lastName;
 
 		public Human(string firstName, string lastName)
 		{
-			this.FirstName = firstName;
-			this.LastName = lastName;
+			FirstName = firstName;
+			LastName = lastName;
 		}
 
 		public string FirstName
@@ -25,7 +21,16 @@ namespace _03.Mankind
 			get { return firstName; }
 			set
 			{
-				ValidateName(value, nameof(firstName), FirstNameMinLength);
+				if (char.IsLower(value[0]))
+				{
+					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(firstName)}");
+				}
+
+				if (value.Length < FirstNameMinLength)
+				{
+					throw new ArgumentException($"Expected length at least {FirstNameMinLength} symbols! Argument: {nameof(firstName)}");
+				}
+
 				firstName = value;
 			}
 		}
@@ -35,33 +40,26 @@ namespace _03.Mankind
 			get { return lastName; }
 			set
 			{
-				ValidateName(value, nameof(lastName), LastNameMinLength);
+				if (char.IsLower(value[0]))
+				{
+					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(lastName)}");
+				}
+
+				if (value.Length < LastNameMinLength)
+				{
+					throw new ArgumentException($"Expected length at least {LastNameMinLength} symbols! Argument: {nameof(lastName)}");
+				}
+
 				lastName = value;
 			}
-		}
-
-		private static void ValidateName(string value, string type,int minLength)
-		{
-			if (char.IsLower(value[0]))
-			{
-				throw new ArgumentException(string.Format(CapitalLetterError, type));
-			}
-
-			if (value.Length < minLength)
-			{
-				throw new ArgumentException(string.Format(LengthError, minLength,type));
-			}
-			
 		}
 
 		public override string ToString()
 		{
 			StringBuilder builder = new StringBuilder();
-			builder.AppendLine($"First Name: {this.firstName}")
-				.AppendLine($"Last Name: {this.lastName}");
-			string result = builder.ToString().TrimEnd();
+			builder.AppendLine($"First Name: {firstName}").AppendLine($"Last Name: {lastName}");
 
-			return result;
+			return builder.ToString();
 		}
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -7,23 +7,24 @@ namespace _03.Mankind
 {
 	public class Student : Human
 	{
-		private const string FacultyNumberPattern = @"^[A-Za-z\d]{5,10}$";
+		private const int FacNumMinLength = 5;
+		private const int FacNumMaxLength = 10;
 		private string facultyNumber;
 
 		public Student(string firstName, string lastName, string facultyNumber)
 			: base(firstName, lastName)
 		{
-			this.FacultyNumber = facultyNumber;
+			FacultyNumber = facultyNumber;
 		}
 
-		public string FacultyNumber
+		private string FacultyNumber
 		{
-			get { return facultyNumber; }
 			set
 			{
-				if (!Regex.IsMatch(value, FacultyNumberPattern))
+				if (value.Length < FacNumMinLength || value.Length > FacNumMaxLength ||
+					!value.All(char.IsLetterOrDigit))
 				{
-					throw new ArgumentException(" Invalid faculty number!");
+					throw new ArgumentException("Invalid faculty number!");
 				}
 
 				facultyNumber = value;
@@ -33,11 +34,10 @@ namespace _03.Mankind
 		public override string ToString()
 		{
 			StringBuilder builder = new StringBuilder();
-			builder.AppendLine(base.ToString())
-				.AppendLine($"Faculty number: {this.facultyNumber}");
 
-			string result = builder.ToString().TrimEnd();
-			return result;
+			builder.Append(base.ToString()).AppendLine($"Faculty number: {facultyNumber}");
+
+			return builder.ToString();
 		}
 	}
 }

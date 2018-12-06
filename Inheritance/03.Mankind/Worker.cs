@@ -1,68 +1,65 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace _03.Mankind
 {
 	public class Worker : Human
 	{
-		private const int MinWorkHours = 1;
-		private const int MaxWorkHours = 12;
-		private const int MinSalary = 10;
-		private const int WorkDaysPerWeek = 5;
-
+		private const decimal MinWeekSalary = 10;
+		private const int MinWorkingHoursPerDay = 1;
+		private const int MaxWorkingHoursPerDay = 12;
 		private decimal weekSalary;
 		private double workHoursPerDay;
 
-		private const string Error = "Expected value mismatch! Argument: {0}";
-
-		public Worker(string firstName, string lastName, decimal weekSalary, double workHours)
+		public Worker(string firstName, string lastName, decimal weekSalary, double workHoursPerDay)
 			: base(firstName, lastName)
 		{
-			this.WeekSalary = weekSalary;
-			this.WorkHoursPerDay = workHours;
+			WeekSalary = weekSalary;
+			WorkHoursPerDay = workHoursPerDay;
 		}
 
-		public decimal SalaryPerHour => weekSalary / (decimal)(workHoursPerDay * WorkDaysPerWeek);
-
-
-		public decimal WeekSalary
+		private decimal WeekSalary
 		{
-			get { return weekSalary; }
 			set
 			{
-				if (value <= MinSalary)
+				if (value <= MinWeekSalary)
 				{
-					throw new ArgumentException(string.Format(Error, nameof(weekSalary)));
+					throw new ArgumentException($"Expected value mismatch! Argument: {nameof(weekSalary)}");
 				}
 
 				weekSalary = value;
 			}
 		}
 
-		public double WorkHoursPerDay
+		private double WorkHoursPerDay
 		{
-			get { return workHoursPerDay; }
 			set
 			{
-				if (value <= MinWorkHours || value >= MaxWorkHours)
+				if (value < MinWorkingHoursPerDay || value > MaxWorkingHoursPerDay)
 				{
-					throw new ArgumentException(string.Format(Error, nameof(WorkHoursPerDay)));
+					throw new ArgumentException($"Expected value mismatch! Argument: {nameof(workHoursPerDay)}");
 				}
 
 				workHoursPerDay = value;
 			}
 		}
 
+		private decimal GetSalaryPerHour()
+		{
+			decimal salaryPerDay = weekSalary / 5;
+			return salaryPerDay / (decimal)workHoursPerDay;
+		}
+
 		public override string ToString()
 		{
 			StringBuilder builder = new StringBuilder();
-			builder.AppendLine(base.ToString())
-				.AppendLine($"Week Salary: {this.WeekSalary:f2}")
-				.AppendLine($"Hours per day: {this.WorkHoursPerDay:f2}")
-				.AppendLine($"Salary per hour: {SalaryPerHour:f2}");
-			string result = builder.ToString().TrimEnd();
-			return result;
+
+			builder.Append(base.ToString())
+				.AppendLine($"Week Salary: {weekSalary:F2}")
+				.AppendLine($"Hours per day: {workHoursPerDay:F2}")
+				.AppendLine($"Salary per hour: {GetSalaryPerHour():F2}");
+
+			return builder.ToString();
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace _03.Mankind
 {
-	class Program
+	public class Program
 	{
 		static void Main(string[] args)
 		{
@@ -23,9 +23,10 @@ namespace _03.Mankind
 
 				Worker worker = new Worker(workerFirstName, workerLastName, weekSalary, workHours);
 
-				Console.WriteLine(student + Environment.NewLine);
+				Console.WriteLine(student);
 				Console.WriteLine(worker);
 			}
+
 			catch (ArgumentException e)
 			{
 				Console.WriteLine(e.Message);
