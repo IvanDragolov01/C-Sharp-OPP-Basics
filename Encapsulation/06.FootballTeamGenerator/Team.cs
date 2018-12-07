@@ -12,7 +12,7 @@ namespace _06.FootballTeamGenerator
 
 		public Team(string name)
 		{
-			this.Name = name;
+			_name = name;
 			_players = new HashSet<Player>();
 		}
 
@@ -69,7 +69,7 @@ namespace _06.FootballTeamGenerator
 			}
 			else
 			{
-				throw new InvalidOperationException($"Player {playerName} is not in {this.Name} team.");
+				throw new InvalidOperationException($"Player {playerName} is not in {Name} team.");
 			}
 		}
 	}

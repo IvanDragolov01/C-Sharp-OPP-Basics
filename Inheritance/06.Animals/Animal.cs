@@ -7,30 +7,33 @@ namespace _06.Animals
 	public class Animal : ISoundProducable
 	{
 		private const string ErrorMessage = "Invalid input!";
-		private string name;
-		private int age;
-		private string gender;
+		private string _name;
+		private int _age;
+		private string _gender;
 
 		public Animal(string name, int age, string gender)
 		{
-			this.Name = name;
-			this.Age = age;
-			this.Gender = gender;
+			_name = name;
+			_age = age;
+			_gender = gender;
 		}
 
 		public string Name
 		{
-			get { return name; }
+			get { return _name; }
 			set
 			{
 				NotEmptyValidation(value);
-				name = value;
+				_name = value;
 			}
 		}
 
 		public int Age
 		{
-			get { return age; }
+			get
+			{
+				return _age;
+			}
 			set
 			{
 				if (value <= 0)
@@ -38,13 +41,16 @@ namespace _06.Animals
 					throw new ArgumentException(ErrorMessage);
 				}
 
-				age = value;
+				_age = value;
 			}
 		}
 
 		public string Gender
 		{
-			get { return gender; }
+			get
+			{
+				return _gender;
+			}
 			set
 			{
 				NotEmptyValidation(value);
@@ -54,7 +60,7 @@ namespace _06.Animals
 					throw new ArgumentException(ErrorMessage);
 				}
 
-				gender = value;
+				_gender = value;
 			}
 		}
 
@@ -75,7 +81,7 @@ namespace _06.Animals
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine($"{this.GetType().Name}")
-				.AppendLine($"{this.Name} {this.Age} {this.Gender}")
+				.AppendLine($"{this.Name} {Age} {Gender}")
 				.AppendLine(this.ProduceSound());
 
 			string result = sb.ToString().TrimEnd();

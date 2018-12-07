@@ -1,33 +1,34 @@
-﻿
-using System;
-
-namespace DefiningClasses
+﻿namespace DefiningClasses
 {
 	public class Person
 	{
 		private int _age;
 		private string _name;
 
-		private Person(string _name, int _age)
+		public Person(string name, int age)
 		{
-			Name = _name;
-			Age = _age;
+			_name = name;
+			_age = age;
 		}
 
-		public string Name { get => _name; set => _name = value; }
-
-		public int Age { get => _age; set => _age = value; }
-
-		string fullNameAndAge;
-
-		public Person()
+		public string Name
 		{
-			fullNameAndAge = _age + _name;
+			get => _name;
+			set => _name = value;
 		}
 
-		public string PrintNameAndAge()
+		public int Age
 		{
-			return $"{this._name} {this._age}";
+			get => _age;
+			set => _age = value;
+		}
+
+		public string FullName
+		{
+			get
+			{
+				return $"{_name} {_age}";
+			}
 		}
 	}
 }

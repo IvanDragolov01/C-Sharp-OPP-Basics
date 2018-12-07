@@ -38,7 +38,7 @@ namespace _11.PokemonTrainer
 						}
 
 						trainer.ClearDeadPokemons();
-					}				
+					}
 					else
 					{
 						trainer.AddABadge();

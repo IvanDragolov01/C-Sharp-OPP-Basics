@@ -1,6 +1,6 @@
 ﻿namespace _02.Multiple_Implementation
 {
-	internal interface IIdentifiable
+	public interface IIdentifiable
 	{
 		string Id { get; }
 	}

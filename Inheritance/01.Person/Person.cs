@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace _01.Person
@@ -12,7 +11,10 @@ namespace _01.Person
 
 		public virtual string Name
 		{
-			get { return _name; }
+			get
+			{
+				return _name;
+			}
 			set
 			{
 				if (value.Length < 3)
@@ -26,7 +28,10 @@ namespace _01.Person
 
 		public virtual int Age
 		{
-			get { return _age; }
+			get
+			{
+				return _age;
+			}
 			set
 			{
 				if (value < 0)

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace _02.CarSalesman
 {
@@ -13,45 +11,45 @@ namespace _02.CarSalesman
 		public int _weight;
 		public string _color;
 
-		public Car(string _model, Engine _engine)
+		public Car(string model, Engine engine)
 		{
-			this._model = _model;
-			this._engine = _engine;
-			this._weight = -1;
-			this._color = "n/a";
+			_model = model;
+			_engine = engine;
+			_weight = -1;
+			_color = "n/a";
 		}
 
-		public Car(string _model, Engine _engine, int _weight)
+		public Car(string model, Engine engine, int weight)
 		{
-			this._model = _model;
-			this._engine = _engine;
-			this._weight = _weight;
-			this._color = "n/a";
+			_model = model;
+			_engine = engine;
+			_weight = weight;
+			_color = "n/a";
 		}
 
-		public Car(string _model, Engine _engine, string _color)
+		public Car(string model, Engine engine, string color)
 		{
-			this._model = _model;
-			this._engine = _engine;
-			this._weight = -1;
-			this._color = _color;
+			_model = model;
+			_engine = engine;
+			_weight = -1;
+			_color = color;
 		}
 
-		public Car(string model, Engine _engine, int _weight, string _color)
+		public Car(string model, Engine engine, int weight, string color)
 		{
-			this._model = model;
-			this._engine = _engine;
-			this._weight = _weight;
-			this._color = _color;
+			_model = model;
+			_engine = engine;
+			_weight = weight;
+			_color = color;
 		}
 
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendFormat("{0}:\n", this._model);
+			sb.AppendFormat("{0}:\n", _model);
 			sb.Append(this._engine.ToString());
-			sb.AppendFormat("{0}Weight: {1}\n", offset, this._weight == -1 ? "n/a" : this._weight.ToString());
-			sb.AppendFormat("{0}Color: {1}", offset, this._color);
+			sb.AppendFormat("{0}Weight: {1}\n", offset, _weight == -1 ? "n/a" : _weight.ToString());
+			sb.AppendFormat("{0}Color: {1}", offset, _color);
 
 			return sb.ToString();
 		}

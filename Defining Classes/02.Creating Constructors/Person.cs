@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace _02.CreatingConstructors
+﻿namespace _02.CreatingConstructors
 {
 	public class Person
 	{

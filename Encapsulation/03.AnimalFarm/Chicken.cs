@@ -1,29 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _03.AnimalFarms
+﻿namespace _03.AnimalFarms
 {
 	public class Chicken
 	{
 		protected string _name;
 		internal int _age;
 
-		public Chicken(string _name, int _age)
+		public Chicken(string name, int age)
 		{
-			this._name = _name;
-			this._age = _age;
+			_name = name;
+			age = age;
 		}
 
 		public string Name
 		{
 			get
 			{
-				return this._name;
+				return _name;
 			}
 			set
 			{
-				this._name = value;
+				_name = value;
 			}
 		}
 

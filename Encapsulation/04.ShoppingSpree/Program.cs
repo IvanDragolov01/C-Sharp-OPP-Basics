@@ -52,7 +52,7 @@ namespace _04.ShoppingSpree
 					Split(';', StringSplitOptions.RemoveEmptyEntries);
 				List<Product> products = new List<Product>();
 
-				foreach (var productInput in productsInput)
+				foreach (string productInput in productsInput)
 				{
 					string prodinput = productInput;
 					string[] prodinput2 = prodinput.Split("=");

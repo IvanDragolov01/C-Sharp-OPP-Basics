@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace _03.Ferrari
 {
 	public class Car : ICar
 	{
-		private string driver;
-		private string model;
+		private string _driver;
+		private string _model;
 
 		public string Model
 		{
-			get { return model; }
-			set { model = value; }
+			get { return _model; }
+			set { _model = value; }
 		}
 
 		public string Driver
 		{
-			get { return driver; }
-			set { driver = value; }
+			get { return _driver; }
+			set { _driver = value; }
 		}
 
 		public void Break()

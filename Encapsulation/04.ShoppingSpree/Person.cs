@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace _04.ShoppingSpree
 {
@@ -15,16 +13,19 @@ namespace _04.ShoppingSpree
 			this.Products = new List<Product>();
 		}
 
-		public Person(string _name, decimal _money)
+		public Person(string name, decimal money)
 			: this()
 		{
-			this.Name = _name;
-			this.Money = _money;
+			_name = name;
+			_money = money;
 		}
 
 		public string Name
 		{
-			get { return _name; }
+			get
+			{
+				return _name;
+			}
 			set
 			{
 				Validator.ValidateName(value);
@@ -34,7 +35,10 @@ namespace _04.ShoppingSpree
 
 		private decimal Money
 		{
-			get { return _money; }
+			get
+			{
+				return _money;
+			}
 			set
 			{
 				Validator.ValidateMoney(value);
@@ -44,21 +48,21 @@ namespace _04.ShoppingSpree
 
 		public string TryBuyProduct(Product product)
 		{
-			if (this.Money < product.Price)
+			if (Money < product.Price)
 			{
 				return $"{this._name} can't afford {product.Name}";
 			}
 
-			this.Money = Money - product.Price;
-			this.Products.Add(product);
+			Money = Money - product.Price;
+			Products.Add(product);
 
-			return $"{this._name} bought {product.Name}";
+			return $"{_name} bought {product.Name}";
 		}
 
 		public override string ToString()
 		{
 			int product = Products.Count;
-			string productsJoin = string.Join(", ", this.Products);
+			string productsJoin = string.Join(", ", Products);
 			string report = "Nothing bought";
 			string productsOutput = product > 0 ?
 				 productsJoin : report;

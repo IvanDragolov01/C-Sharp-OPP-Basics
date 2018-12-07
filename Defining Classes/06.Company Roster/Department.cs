@@ -6,34 +6,34 @@ namespace _06.CompanyRoster
 {
 	public class Department
 	{
-		private List<Employee> employees;
-		private string name;
+		private List<Employee> _employees;
+		private string _name;
 
 		public Department(string name)
 		{
-			this.Employees = new List<Employee>();
-			this.Name = name;
+			_employees = new List<Employee>();
+			_name = name;
 		}
 
 		public string Name
 		{
 			get
 			{
-				return this.name;
+				return _name;
 			}
 			set
 			{
-				this.name = value;
+				_name = value;
 			}
 		}
 
 		public List<Employee> Employees
 		{
-			get { return employees; }
-			private set { this.employees = value; }
+			get { return _employees; }
+			private set { _employees = value; }
 		}
 
-		public decimal AverageSalary => this.Employees.Select(e => e.Salary)
+		public decimal AverageSalary => Employees.Select(e => e.Salary)
 			.Average();
 
 		public void AddEmployee(Employee employee)

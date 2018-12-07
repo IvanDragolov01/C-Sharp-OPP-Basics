@@ -6,38 +6,56 @@ namespace _12.Google
 {
 	class Company
 	{
-		private string name;
-		private string department;
-		private decimal salary;
+		private string _name;
+		private string _department;
+		private decimal _salary;
 
 		public Company(string name, string department, decimal salary)
 		{
-			this.Name = name;
-			this.Department = department;
-			this.Salary = salary;
+			_name = name;
+			_department = department;
+			_salary = salary;
 		}
 
 		public decimal Salary
 		{
-			get { return this.salary; }
-			set { this.salary = value; }
+			get
+			{
+				return _salary;
+			}
+			set
+			{
+				_salary = value;
+			}
 		}
 
 		public string Department
 		{
-			get { return this.department; }
-			set { this.department = value; }
+			get
+			{
+				return _department;
+			}
+			set
+			{
+				_department = value;
+			}
 		}
 
 		public string Name
 		{
-			get { return this.name; }
-			set { this.name = value; }
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				_name = value;
+			}
 		}
 
 		public override string ToString()
 		{
-			return $"{this.Name} {this.Department} {this.Salary:F2}";
+			return $"{Name} {Department} {Salary:F2}";
 		}
 	}
 }

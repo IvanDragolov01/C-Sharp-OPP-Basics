@@ -11,14 +11,17 @@ namespace _02.BookShop
 
 		public Book(string author, string title, double price)
 		{
-			this.Author = author;
-			this.Title = title;
-			this.Price = price;
+			_author = author;
+			_title = title;
+			_price = price;
 		}
 
 		public string Title
 		{
-			get { return _title; }
+			get
+			{
+				return _title;
+			}
 			set
 			{
 				if (value.Length < 3)
@@ -32,7 +35,10 @@ namespace _02.BookShop
 
 		public string Author
 		{
-			get { return _author; }
+			get
+			{
+				return _author;
+			}
 			set
 			{
 				string[] authorNames = value.Split();
@@ -48,7 +54,10 @@ namespace _02.BookShop
 
 		public virtual double Price
 		{
-			get { return _price; }
+			get
+			{
+				return _price;
+			}
 			set
 			{
 				if (value <= 0)

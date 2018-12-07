@@ -11,46 +11,46 @@ namespace _07.SpeedRacing
 		private double _fuelConsumption;
 		private int _distance;
 
-		public Car(string _model, double _amountOfFuel, double _fuelConsumption)
+		public Car(string model, double amountOfFuel, double fuelConsumption)
 		{
-			this.Model = _model;
-			this.AmountOfFuel = _amountOfFuel;
-			this.FuelConsumption = _fuelConsumption;
-			this.Distance = 0;
+			_model = model;
+			_amountOfFuel = amountOfFuel;
+			_fuelConsumption = fuelConsumption;
+			_distance = 0;
 		}
 
 		public int Distance
 		{
-			get { return this._distance; }
-			set { this._distance = value; }
+			get { return _distance; }
+			set { _distance = value; }
 		}
 
 		public double FuelConsumption
 		{
-			get { return this._fuelConsumption; }
-			set { this._fuelConsumption = value; }
+			get { return _fuelConsumption; }
+			set { _fuelConsumption = value; }
 		}
 
 		public double AmountOfFuel
 		{
-			get { return this._amountOfFuel; }
-			set { this._amountOfFuel = value; }
+			get { return _amountOfFuel; }
+			set { _amountOfFuel = value; }
 		}
 
 		public string Model
 		{
-			get { return this._model; }
-			set { this._model = value; }
+			get { return _model; }
+			set { _model = value; }
 		}
 
 		public void Drive(int distance)
 		{
-			double neededFuel = distance * this.FuelConsumption;
+			double neededFuel = distance * FuelConsumption;
 
-			if (neededFuel <= this.AmountOfFuel)
+			if (neededFuel <= AmountOfFuel)
 			{
-				this.AmountOfFuel -= neededFuel;
-				this.Distance += distance;
+				AmountOfFuel -= neededFuel;
+				Distance += distance;
 			}
 			else
 			{
@@ -60,7 +60,7 @@ namespace _07.SpeedRacing
 
 		public override string ToString()
 		{
-			return $"{this.Model} {this.AmountOfFuel:F2} {this.Distance}";
+			return $"{Model} {AmountOfFuel:F2} {Distance}";
 		}
 	}
 }

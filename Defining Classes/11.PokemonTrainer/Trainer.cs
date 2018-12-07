@@ -12,18 +12,24 @@ namespace _11.PokemonTrainer
 
 		public Trainer(string name)
 		{
-			this.Name = name;
-			this._badges = 0;
-			this._pokemons = new Stack<Pokemon>();
+			_name = name;
+			_badges = 0;
+			_pokemons = new Stack<Pokemon>();
 		}
 
-		public Stack<Pokemon> Pokemons { get { return this._pokemons; } }
+		public Stack<Pokemon> Pokemons
+		{
+			get
+			{
+				return _pokemons;
+			}
+		}
 
 		public string Name
 		{
 			get
 			{
-				return this._name;
+				return _name;
 			}
 
 			private set
@@ -33,22 +39,22 @@ namespace _11.PokemonTrainer
 					throw new ArgumentException("Name can not be empty.");
 				}
 
-				this._name = value;
+				_name = value;
 			}
 		}
 
-		public int Badges { get { return this._badges; } }
+		public int Badges { get { return _badges; } }
 
 		public void AddABadge()
 		{
-			this._badges++;
+			_badges++;
 		}
 
 		internal void ClearDeadPokemons()
 		{
-			if (this._pokemons.Count > 0 && this._pokemons.Where(p => p.Health <= 0).FirstOrDefault() != null)
+			if (_pokemons.Count > 0 && _pokemons.Where(p => p.Health <= 0).FirstOrDefault() != null)
 			{
-				this._pokemons = new Stack<Pokemon>(this._pokemons.Where(p => p.Health > 0));
+				_pokemons = new Stack<Pokemon>(_pokemons.Where(p => p.Health > 0));
 			}
 		}
 	}

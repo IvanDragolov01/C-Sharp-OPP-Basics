@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 
 namespace _02.CreatingConstructors
 {
@@ -10,7 +9,7 @@ namespace _02.CreatingConstructors
 			string name = Console.ReadLine();
 			int age = int.Parse(Console.ReadLine());
 
-			var person = new Person();
+			Person person = new Person();
 			Person personWithAge = new Person(age);
 			Person personWithAgeAndName = new Person(name, age);
 

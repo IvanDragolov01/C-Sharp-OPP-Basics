@@ -15,13 +15,13 @@ namespace _06.CompanyRoster
 		//	this.email = "n/a";
 		//	this.Age = -1;
 		//}
-		public Employee(string _name, string _position, decimal _salary, int _age = - 1, string _email = "n/a")
+		public Employee(string name, string position, decimal salary, int age = - 1, string email = "n/a")
 		{
-			this.Name = _name;
-			this.Position = _position;
-			this.Salary = _salary;
-			this.Age = _age;
-			this.Email = _email;
+			_name = name;
+			_position = position;
+			_salary = salary;
+			_age = age;
+			_email = email;
 		}
 
 		public string Name

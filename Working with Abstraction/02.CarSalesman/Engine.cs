@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace _02.CarSalesman
 {
@@ -13,36 +11,36 @@ namespace _02.CarSalesman
 		public int _displacement;
 		public string _efficiency;
 
-		public Engine(string _model, int _power)
+		public Engine(string model, int power)
 		{
-			this._model = _model;
-			this._power = _power;
-			this._displacement = -1;
-			this._efficiency = "n/a";
+			_model = model;
+			_power = power;
+			_displacement = -1;
+			_efficiency = "n/a";
 		}
 
-		public Engine(string _model, int _power, int _displacement)
+		public Engine(string model, int power, int displacement)
 		{
-			this._model = _model;
-			this._power = _power;
-			this._displacement = _displacement;
-			this._efficiency = "n/a";
+			_model = model;
+			_power = power;
+			_displacement = displacement;
+			_efficiency = "n/a";
 		}
 
-		public Engine(string _model, int _power, string _efficiency)
+		public Engine(string model, int power, string efficiency)
 		{
-			this._model = _model;
-			this._power = _power;
-			this._displacement = -1;
-			this._efficiency = _efficiency;
+			_model = model;
+			_power = power;
+			_displacement = -1;
+			_efficiency = efficiency;
 		}
 
-		public Engine(string _model, int _power, int _displacement, string _efficiency)
+		public Engine(string model, int power, int displacement, string efficiency)
 		{
-			this._model = _model;
-			this._power = _power;
-			this._displacement = _displacement;
-			this._efficiency = _efficiency;
+			_model = model;
+			_power = power;
+			_displacement = displacement;
+			_efficiency = efficiency;
 		}
 
 		public override string ToString()

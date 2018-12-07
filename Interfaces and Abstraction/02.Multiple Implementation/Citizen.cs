@@ -4,10 +4,10 @@
 	{
 		public Citizen(string name, int age, string id, string birthdate)
 		{
-			this.Name = name;
-			this.Age = age;
-			this.Id = id;
-			this.Birthdate = birthdate;
+			Name = name;
+			Age = age;
+			Id = id;
+			Birthdate = birthdate;
 		}
 
 		public string Name { get; private set; }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace _03.Oldest_Family_Member
 {
@@ -16,8 +14,14 @@ namespace _03.Oldest_Family_Member
 
 		public List<AddingPerson> People
 		{
-			get { return people; }
-			set { people = value; }
+			get
+			{
+				return people;
+			}
+			set
+			{
+				people = value;
+			}
 		}
 
 		public void AddMember(AddingPerson member)

@@ -14,11 +14,11 @@ namespace _09.RectangleIntersection
 
 		public Rectangle(string id, double width, double height, double topLeftX, double topLeftY)
 		{
-			this._id = id;
-			this._width = Math.Abs(width);
-			this._height = Math.Abs(height);
-			this._topLeftX = topLeftX;
-			this._topLeftY = topLeftY;
+			_id = id;
+			_width = Math.Abs(width);
+			_height = Math.Abs(height);
+			_topLeftX = topLeftX;
+			_topLeftY = topLeftY;
 		}
 
 		public string Id
@@ -29,10 +29,10 @@ namespace _09.RectangleIntersection
 
 		public bool IsThereIntersection(Rectangle rectangle)
 		{
-			return rectangle._topLeftX + rectangle._width >= this._topLeftX &&
-				rectangle._topLeftX <= this._topLeftX + this._width &&
-				rectangle._topLeftY >= this._topLeftY - this._height &&
-				rectangle._topLeftY - rectangle._height <= this._topLeftY;
+			return rectangle._topLeftX + rectangle._width >= _topLeftX &&
+				rectangle._topLeftX <= _topLeftX + _width &&
+				rectangle._topLeftY >= _topLeftY - _height &&
+				rectangle._topLeftY - rectangle._height <= _topLeftY;
 		}
 	}
 }

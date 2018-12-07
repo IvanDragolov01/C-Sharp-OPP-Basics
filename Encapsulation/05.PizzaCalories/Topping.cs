@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace _05.PizzaCalories
 {
@@ -24,9 +23,9 @@ namespace _05.PizzaCalories
 
 		public Topping(string type, double weight)
 		{
-			this.Type = type;
+			Type = type;
 			ValidateWeight(type ,weight);
-			this.Weight = weight;
+			Weight = weight;
 		}
 
 		private double TypeMultiplier => validTypes[type];
@@ -42,10 +41,13 @@ namespace _05.PizzaCalories
 
 		public string Type
 		{
-			get { return type; }
+			get
+			{
+				return type;
+			}
 			set
 			{
-				if (!this.validTypes.Any(t => t.Key == value.ToLower()))
+				if (!validTypes.Any(t => t.Key == value.ToLower()))
 				{
 					throw new ArgumentException($"Cannot place {value} on top of your pizza.");
 				}
@@ -56,7 +58,10 @@ namespace _05.PizzaCalories
 
 		public double Weight
 		{
-			get { return weight; }
+			get
+			{
+				return weight;
+			}
 			set
 			{
 				weight = value;

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace _02.ClassBoxDataValidation
 {
 	public class Box
@@ -12,14 +9,17 @@ namespace _02.ClassBoxDataValidation
 
 		public Box(double length, double width, double height)
 		{
-			this.Length = length;
-			this.Width = width;
-			this.Height = height;
+			_length = length;
+			_width = width;
+			_height = height;
 		}
 
 		public double Length
 		{
-			get { return _length; }
+			get
+			{
+				return _length;
+			}
 			private set
 			{
 				if (value <= 0)
@@ -47,7 +47,10 @@ namespace _02.ClassBoxDataValidation
 
 		public double Height
 		{
-			get { return _height; }
+			get
+			{
+				return _height;
+			}
 			private set
 			{
 				if (value <= 0)

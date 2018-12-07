@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _11.PokemonTrainer
+﻿namespace _11.PokemonTrainer
 {
 	class Pokemon
 	{
@@ -12,18 +8,30 @@ namespace _11.PokemonTrainer
 
 		public Pokemon(string name, string element, int health)
 		{
-			this._name = name;
-			this._element = element;
-			this._health = health;
+			_name = name;
+			_element = element;
+			_health = health;
 		}
 
-		public int Health { get { return this._health; } }
+		public int Health
+		{
+			get
+			{
+				return _health;
+			}
+		}
 
-		public string Element { get { return this._element; } }
+		public string Element
+		{
+			get
+			{
+				return _element;
+			}
+		}
 
 		public void ReduceHealth()
 		{
-			this._health -= 10;
+			_health -= 10;
 		}
 	}
 }

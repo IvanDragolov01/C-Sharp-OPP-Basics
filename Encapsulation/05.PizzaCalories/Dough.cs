@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace _05.PizzaCalories
 {
@@ -30,21 +29,24 @@ namespace _05.PizzaCalories
 
 		public Dough(string flourType, string bakingTechnique, double weight)
 		{
-			this.FlourType = flourType;
-			this.BakingTechnique = bakingTechnique;
-			this.Weight = weight;
+			FlourType = flourType;
+			BakingTechnique = bakingTechnique;
+			Weight = weight;
 		}
 
-		private double FlourMultiplier => validFlourTypes[this.FlourType];
+		private double FlourMultiplier => validFlourTypes[FlourType];
 
-		private double BakingTechniqueMultiplier => validBakingTechnique[this.BakingTechnique];
+		private double BakingTechniqueMultiplier => validBakingTechnique[BakingTechnique];
 
 		public double Calories =>
-			defaultMultiplier * this.Weight * FlourMultiplier * BakingTechniqueMultiplier;
+			defaultMultiplier * Weight * FlourMultiplier * BakingTechniqueMultiplier;
 
 		public double Weight
 		{
-			get { return weight; }
+			get
+			{
+				return weight;
+			}
 			set
 			{
 				if (value < minWeight || value > maxWeight)
@@ -58,7 +60,10 @@ namespace _05.PizzaCalories
 
 		public string FlourType
 		{
-			get { return flourType; }
+			get
+			{
+				return flourType;
+			}
 			set
 			{
 				ValidateTypes(value, validFlourTypes);
@@ -68,7 +73,10 @@ namespace _05.PizzaCalories
 
 		public string BakingTechnique
 		{
-			get { return bakingTechnique; }
+			get
+			{
+				return bakingTechnique;
+			}
 			set
 			{
 				ValidateTypes(value, validBakingTechnique);

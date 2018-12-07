@@ -9,8 +9,8 @@ namespace _08.RawData
 
 		public Tire(int age, double pressure)
 		{
-			this.Age = age;
-			this.Pressure = pressure;
+			_age = age;
+			_pressure = pressure;
 		}
 
 		public int Age

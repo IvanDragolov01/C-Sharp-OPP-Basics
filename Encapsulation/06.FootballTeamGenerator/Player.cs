@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _06.FootballTeamGenerator
 {
@@ -18,12 +16,12 @@ namespace _06.FootballTeamGenerator
 
 		public Player(string name, double endurance, double sprint, double dribble, double passing, double shooting)
 		{
-			this.Name = name;
-			this.Endurance = endurance;
-			this.Sprint = sprint;
-			this.Dribble = dribble;
-			this.Passing = passing;
-			this.Shooting = shooting;
+			_name = name;
+			_endurance = endurance;
+			_sprint = sprint;
+			_dribble = dribble;
+			_passing = passing;
+			_shooting = shooting;
 			_skillLevel = (endurance + sprint + dribble + passing + shooting) / 5;
 		}
 
@@ -35,6 +33,7 @@ namespace _06.FootballTeamGenerator
 			{
 				bool valueNull = string.IsNullOrWhiteSpace(value);
 				bool valueEmpty = value == string.Empty;
+
 				if (valueNull || valueEmpty)
 				{
 					throw new ArgumentException("A name should not be empty.");
@@ -50,7 +49,7 @@ namespace _06.FootballTeamGenerator
 		{
 			set
 			{
-				this.ValidateStat(value, nameof(this.Shooting));
+				ValidateStat(value, nameof(Shooting));
 				_shooting = value;
 			}
 		}
@@ -59,7 +58,7 @@ namespace _06.FootballTeamGenerator
 		{
 			set
 			{
-				this.ValidateStat(value, nameof(this.Passing));
+				ValidateStat(value, nameof(Passing));
 				_passing = value;
 			}
 		}

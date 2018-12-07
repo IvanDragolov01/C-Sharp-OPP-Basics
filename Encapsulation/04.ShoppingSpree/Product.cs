@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _04.ShoppingSpree
+﻿namespace _04.ShoppingSpree
 {
 	public class Product
 	{
 		private string _name;
 		private decimal _price;
 
-		public Product(string _productName, decimal _productPrice)
+		public Product(string productName, decimal productPrice)
 		{
-			this.Name = _productName;
-			this.Price = _productPrice;
+			_name = productName;
+			_price = productPrice;
 		}
 
 		public string Name
 		{
-			get { return _name; }
+			get
+			{
+				return _name;
+			}
 			set
 			{
 				Validator.ValidateName(value);

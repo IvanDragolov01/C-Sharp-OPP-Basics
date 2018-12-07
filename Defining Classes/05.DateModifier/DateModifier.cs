@@ -11,12 +11,12 @@ namespace _05.DateModifier
 		{
 			if (string.IsNullOrEmpty(dateOne))
 			{
-				throw new ArgumentNullException((dateOne));
+				throw new ArgumentNullException(nameof(dateOne));
 			}
 
 			if (string.IsNullOrEmpty(dateTwo))
 			{
-				throw new ArgumentNullException((dateTwo));
+				throw new ArgumentNullException(nameof(dateTwo));
 			}
 
 			DateTime firstDate = DateTime.ParseExact(dateOne, "yyyy MM dd", CultureInfo.InvariantCulture);

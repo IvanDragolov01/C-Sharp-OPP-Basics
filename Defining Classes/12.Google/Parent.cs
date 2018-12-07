@@ -6,30 +6,30 @@ namespace _12.Google
 {
 	class Parent
 	{
-		private string name;
-		private string birthday;
+		private string _name;
+		private string _birthday;
 
 		public Parent(string name, string birthday)
 		{
-			this.Name = name;
-			this.Birthday = birthday;
+			_name = name;
+			_birthday = birthday;
 		}
 
 		public string Birthday
 		{
-			get { return this.birthday; }
-			set { this.birthday = value; }
+			get { return _birthday; }
+			set { _birthday = value; }
 		}
 
 		public string Name
 		{
-			get { return this.name; }
-			set { this.name = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public override string ToString()
 		{
-			return $"{this.Name} {this.Birthday}";
+			return $"{Name} {Birthday}";
 		}
 	}
 }

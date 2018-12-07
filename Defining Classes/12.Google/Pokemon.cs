@@ -11,25 +11,25 @@ namespace _12.Google
 
 		public Pokemon(string name, string type)
 		{
-			this.Name = name;
-			this.Type = type;
+			_name = name;
+			_type = type;
 		}
 
 		public string Type
 		{
-			get { return this._type; }
-			set { this._type = value; }
+			get { return _type; }
+			set { _type = value; }
 		}
 
 		public string Name
 		{
-			get { return this._name; }
-			set { this._name = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public override string ToString()
 		{
-			return $"{this.Name} {this.Type}";
+			return $"{Name} {Type}";
 		}
 	}
 }

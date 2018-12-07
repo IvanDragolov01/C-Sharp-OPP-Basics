@@ -22,10 +22,10 @@ namespace _04.OnlineRadioDatabase
 
 		public Song(string artist, string name, int minutes, int seconds)
 		{
-			ArtistName = artist;
-			SongName = name;
-			Minutes = minutes;
-			Seconds = seconds;
+			_artistName = artist;
+			_songName = name;
+			_minutes = minutes;
+			_seconds = seconds;
 		}
 
 		private string ArtistName

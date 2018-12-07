@@ -9,27 +9,27 @@ namespace _12.Google
 		private string _name;
 		private string _birthday;
 
-		public Child(string _name, string birthday)
+		public Child(string name, string birthday)
 		{
-			this.Name = _name;
-			this.Birthday = birthday;
+			_name = name;
+			_birthday = birthday;
 		}
 
 		public string Birthday
 		{
-			get { return this._birthday; }
-			set { this._birthday = value; }
+			get { return _birthday; }
+			set { _birthday = value; }
 		}
 
 		public string Name
 		{
-			get { return this._name; }
-			set { this._name = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public override string ToString()
 		{
-			return $"{this.Name} {this.Birthday}";
+			return $"{Name} {Birthday}";
 		}
 	}
 }

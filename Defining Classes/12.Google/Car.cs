@@ -11,25 +11,25 @@ namespace _12.Google
 
 		public Car(string model, int speed)
 		{
-			this.Model = _model;
-			this.Speed = speed;
+			_model = model;
+			_speed = speed;
 		}
 
 		public int Speed
 		{
-			get { return this._speed; }
-			set { this._speed = value; }
+			get { return _speed; }
+			set { _speed = value; }
 		}
 
 		public string Model
 		{
-			get { return this._model; }
-			set { this._model = value; }
+			get { return _model; }
+			set { _model = value; }
 		}
 
 		public override string ToString()
 		{
-			return $"{this.Model} {this.Speed}";
+			return $"{Model} {Speed}";
 		}
 	}
 }

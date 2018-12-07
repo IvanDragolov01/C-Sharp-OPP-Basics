@@ -11,75 +11,75 @@ namespace _12.Google
 		private List<Pokemon> _pokemons;
 		private List<Parent> _parents;
 		private List<Child> _children;
-		private Car car;
+		private Car _car;
 
 		public Person(string name)
 		{
-			this.Name = name;
-			this.Pokemons = new List<Pokemon>();
-			this.Parents = new List<Parent>();
-			this.Children = new List<Child>();
+			_name = name;
+			_pokemons = new List<Pokemon>();
+			_parents = new List<Parent>();
+			_children = new List<Child>();
 		}
 
 		public Car Car
 		{
-			get { return this.car; }
-			set { this.car = value; }
+			get { return _car; }
+			set { _car = value; }
 		}
 
 		public List<Child> Children
 		{
-			get { return this._children; }
-			set { this._children = value; }
+			get { return _children; }
+			set { _children = value; }
 		}
 
 		public List<Parent> Parents
 		{
-			get { return this._parents; }
-			set { this._parents = value; }
+			get { return _parents; }
+			set { _parents = value; }
 		}
 
 		public List<Pokemon> Pokemons
 		{
-			get { return this._pokemons; }
-			set { this._pokemons = value; }
+			get { return _pokemons; }
+			set { _pokemons = value; }
 		}
 
 		public Company Company
 		{
-			get { return this._company; }
-			set { this._company = value; }
+			get { return _company; }
+			set { _company = value; }
 		}
 
 		public string Name
 		{
-			get { return this._name; }
-			set { this._name = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendLine(this.Name)
+			sb.AppendLine(Name)
 				.AppendLine("Company:");
 
 			if (this.Company != null)
 			{
-				sb.AppendLine(this.Company.ToString());
+				sb.AppendLine(Company.ToString());
 			}
 
 			sb.AppendLine("Car:");
 
-			if (this.Car != null)
+			if (Car != null)
 			{
-				sb.AppendLine(this.Car.ToString());
+				sb.AppendLine(Car.ToString());
 			}
 
 			sb.AppendLine("Pokemon:");
 
-			if (this.Pokemons.Count != 0)
+			if (Pokemons.Count != 0)
 			{
-				foreach (Pokemon pokemon in this.Pokemons)
+				foreach (Pokemon pokemon in Pokemons)
 				{
 					sb.AppendLine(pokemon.ToString());
 				}
@@ -87,9 +87,9 @@ namespace _12.Google
 
 			sb.AppendLine("Parents:");
 
-			if (this.Parents.Count != 0)
+			if (Parents.Count != 0)
 			{
-				foreach (Parent parent in this.Parents)
+				foreach (Parent parent in Parents)
 				{
 					sb.AppendLine(parent.ToString());
 				}
@@ -97,9 +97,9 @@ namespace _12.Google
 
 			sb.AppendLine("Children:");
 
-			if (this.Children.Count != 0)
+			if (Children.Count != 0)
 			{
-				foreach (Child child in this.Children)
+				foreach (Child child in Children)
 				{
 					sb.AppendLine(child.ToString());
 				}

@@ -18,7 +18,10 @@ namespace _03.Mankind
 
 		public string FirstName
 		{
-			get { return firstName; }
+			get
+			{
+				return firstName;
+			}
 			set
 			{
 				if (char.IsLower(value[0]))
@@ -37,7 +40,10 @@ namespace _03.Mankind
 
 		public string LastName
 		{
-			get { return lastName; }
+			get
+			{
+				return lastName;
+			}
 			set
 			{
 				if (char.IsLower(value[0]))

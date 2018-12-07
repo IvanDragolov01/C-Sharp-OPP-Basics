@@ -12,14 +12,14 @@ namespace _07.Family_Tree
 
 		public Person()
 		{
-			this._children = new List<Person>();
-			this.Parents = new List<Person>();
+			_children = new List<Person>();
+			Parents = new List<Person>();
 		}
 
-		public Person(string _name)
+		public Person(string name)
 			: this()
 		{
-			this._name = _name;
+			_name = name;
 		}
 
 		public string FullName
@@ -64,12 +64,12 @@ namespace _07.Family_Tree
 
 		private static bool IsBirthday(string input)
 		{
-			return Char.IsDigit(input[0]);
+			return char.IsDigit(input[0]);
 		}
 
 		public override string ToString()
 		{
-			return $"{this.FullName} {this.Birthday}";
+			return $"{FullName} {Birthday}";
 		}
 	}
 }
