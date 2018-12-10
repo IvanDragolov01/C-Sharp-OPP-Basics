@@ -9,13 +9,12 @@ namespace _03.Ferrari
 			string driverName = Console.ReadLine();
 			Car ferrari = new Car();
 			ferrari.Driver = driverName;
-			ferrari.Model = "448-Spider";
+			ferrari.Model = "488-Spider";
 			Console.Write($"{ferrari.Model}/");
 			ferrari.Break();
 			ferrari.GasPedal();
 			Console.Write($"{ferrari.Driver}");
 			Console.WriteLine();
-
 		}
 	}
 }
