@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.BorderControl", "05.Bord
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.BirthdayCelebrations", "06.BirthdayCelebrations\06.BirthdayCelebrations.csproj", "{9A174428-A9AB-477D-AC38-BA4F7E8EB0FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonInfo", "PersonInfo\PersonInfo.csproj", "{9150B6DA-BB2C-48BD-859A-EDCB8C9AA44E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.FoodShortage", "07.FoodShortage\07.FoodShortage.csproj", "{B51915C1-BD31-4F5F-A9F9-2AC67AEAE65A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{9A174428-A9AB-477D-AC38-BA4F7E8EB0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A174428-A9AB-477D-AC38-BA4F7E8EB0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A174428-A9AB-477D-AC38-BA4F7E8EB0FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9150B6DA-BB2C-48BD-859A-EDCB8C9AA44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9150B6DA-BB2C-48BD-859A-EDCB8C9AA44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9150B6DA-BB2C-48BD-859A-EDCB8C9AA44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9150B6DA-BB2C-48BD-859A-EDCB8C9AA44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51915C1-BD31-4F5F-A9F9-2AC67AEAE65A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51915C1-BD31-4F5F-A9F9-2AC67AEAE65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51915C1-BD31-4F5F-A9F9-2AC67AEAE65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51915C1-BD31-4F5F-A9F9-2AC67AEAE65A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

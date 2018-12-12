@@ -6,4 +6,8 @@
     <RootNamespace>_06.BirthdayCelebrations</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\05.BorderControl\05.BorderControl.csproj" />
+  </ItemGroup>
+
 </Project>
