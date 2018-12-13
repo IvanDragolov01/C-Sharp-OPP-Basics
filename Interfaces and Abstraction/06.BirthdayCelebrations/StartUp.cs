@@ -35,7 +35,7 @@ namespace _06.BirthdayCelebrations
 				{
 					case "Citizen":
 						IBirthdate citizen = new Human(inputParts[1], int.Parse(inputParts[2]),
-							inputParts[3], inputParts[4]);birthdates.Add(citizen);
+							inputParts[3], inputParts[4]); birthdates.Add(citizen);
 						break;
 					case "Pet":
 						IBirthdate pet = new Pet(inputParts[1], inputParts[2]);

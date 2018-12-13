@@ -16,7 +16,10 @@ namespace _09.CollectionHierarchy
 			removedElements = new List<string>();
 		}
 
-		public int NumberOfElements { get => data.Count; }
+		public int NumberOfElements
+		{
+			get => data.Count;
+		}
 
 		public void Add(string element)
 		{

@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace _03.Ferrari
 {
 	public class Car : ICar
@@ -8,14 +9,26 @@ namespace _03.Ferrari
 
 		public string Model
 		{
-			get { return _model; }
-			set { _model = value; }
+			get
+			{
+				return _model;
+			}
+			set
+			{
+				_model = value;
+			}
 		}
 
 		public string Driver
 		{
-			get { return _driver; }
-			set { _driver = value; }
+			get
+			{
+				return _driver;
+			}
+			set
+			{
+				_driver = value;
+			}
 		}
 
 		public void Break()

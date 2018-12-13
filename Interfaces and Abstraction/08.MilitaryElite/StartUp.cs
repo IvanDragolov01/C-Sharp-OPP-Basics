@@ -64,6 +64,7 @@ namespace _08.MilitaryElite.Contracts
 							{
 								string codeName = tokens[i];
 								string missionState = tokens[++i];
+
 								try
 								{
 									IMission mission = new Mission(codeName, missionState);
@@ -86,7 +87,7 @@ namespace _08.MilitaryElite.Contracts
 				}
 				catch /*(Exception e)*/
 				{
-					
+
 				}
 			}
 

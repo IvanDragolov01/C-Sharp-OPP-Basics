@@ -15,6 +15,6 @@
 		string LastName
 		{
 			get;
-		} 
+		}
 	}
 }

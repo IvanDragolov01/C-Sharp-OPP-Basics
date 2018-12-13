@@ -2,6 +2,9 @@
 {
 	public interface IBirthable
 	{
-		string Birthdate { get; }
+		string Birthdate
+		{
+			get;
+		}
 	}
 }

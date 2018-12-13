@@ -40,7 +40,7 @@ namespace _08.MilitaryElite.Contracts
 				.AppendLine($"{nameof(Corps)}: {Corps.ToString()}")
 				.AppendLine($"{nameof(Missions)}:");
 			//priv = private
-			foreach (IMission mission  in Missions)
+			foreach (IMission mission in Missions)
 			{
 				builder.AppendLine($"  {mission.ToString()}");
 			}

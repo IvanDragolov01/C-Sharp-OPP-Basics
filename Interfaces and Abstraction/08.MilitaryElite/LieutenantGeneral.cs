@@ -24,7 +24,7 @@ namespace _08.MilitaryElite.Contracts
 		{
 			StringBuilder builder = new StringBuilder();
 			builder.AppendLine(base.ToString())
-				.AppendLine($"{nameof( Privates)}: ");
+				.AppendLine($"{nameof(Privates)}: ");
 			//priv = private
 			foreach (ISolider priv in Privates)
 			{
