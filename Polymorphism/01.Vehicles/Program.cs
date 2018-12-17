@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _01._Vehicles
+namespace _01.Vehicles
 {
 	class Program
 	{

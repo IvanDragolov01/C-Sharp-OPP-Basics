@@ -1,0 +1,16 @@
+﻿namespace _03._WildFarm
+{
+	public abstract class Food
+	{
+		public Food(int quantity)
+		{
+			Quantity = quantity;
+		}
+
+		public int Quantity
+		{
+			get;
+			set;
+		}
+	}
+}
