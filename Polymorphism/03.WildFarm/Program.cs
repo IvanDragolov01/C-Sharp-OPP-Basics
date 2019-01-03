@@ -102,6 +102,5 @@ namespace _03._WildFarm
 
 			return animal;
 		}
-
 	}
 }
