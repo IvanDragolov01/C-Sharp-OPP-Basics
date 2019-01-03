@@ -1,6 +1,6 @@
 ﻿namespace _01.Structure.Units.Harvester
 {
-	class SonicHarvester : Harvester
+	public class SonicHarvester : Harvester
 	{
 		public override string Type => "Sonic";
 

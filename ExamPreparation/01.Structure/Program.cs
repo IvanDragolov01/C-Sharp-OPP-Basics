@@ -7,7 +7,7 @@ namespace _01.Structure
 {
 	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			string input;
 			DraftManager draftmanager = new DraftManager();
