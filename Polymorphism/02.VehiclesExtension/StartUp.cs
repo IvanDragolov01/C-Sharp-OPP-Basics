@@ -5,18 +5,18 @@ namespace _02.VehiclesExtension
 {
 	public class Startup
 	{
-		private static Car car;
-		private static Truck truck;
-		private static Bus bus;
+		private static Car _car;
+		private static Truck _truck;
+		private static Bus _bus;
 
 		public static void Main()
 		{
 			ParseInput();
 			int numberOfCommands = int.Parse(Console.ReadLine());
 			ParseCommand(numberOfCommands);
-			Console.WriteLine(car);
-			Console.WriteLine(truck);
-			Console.WriteLine(bus);
+			Console.WriteLine(_car);
+			Console.WriteLine(_truck);
+			Console.WriteLine(_bus);
 		}
 
 		private static void ParseInput()
@@ -26,9 +26,9 @@ namespace _02.VehiclesExtension
 			string[] busParts = Console.ReadLine().Split(' ');
 
 
-			car = new Car(double.Parse(carParts[1]), double.Parse(carParts[2]), double.Parse(carParts[3]));
-			truck = new Truck(double.Parse(truckParts[1]), double.Parse(truckParts[2]), double.Parse(truckParts[3]));
-			bus = new Bus(double.Parse(busParts[1]), double.Parse(busParts[2]), double.Parse(busParts[3]));
+			_car = new Car(double.Parse(carParts[1]), double.Parse(carParts[2]), double.Parse(carParts[3]));
+			_truck = new Truck(double.Parse(truckParts[1]), double.Parse(truckParts[2]), double.Parse(truckParts[3]));
+			_bus = new Bus(double.Parse(busParts[1]), double.Parse(busParts[2]), double.Parse(busParts[3]));
 		}
 
 		private static void ParseCommand(int numberOfCommands)
@@ -47,7 +47,7 @@ namespace _02.VehiclesExtension
 						RefuelCommand(commandParts);
 						break;
 					case "DriveEmpty":
-						bus.DriveEmpty(double.Parse(commandParts[2]));
+						_bus.DriveEmpty(double.Parse(commandParts[2]));
 						break;
 				}
 			}
@@ -60,13 +60,13 @@ namespace _02.VehiclesExtension
 			switch (vehicle)
 			{
 				case "Car":
-					car.Refuel(double.Parse(commandParts[2]));
+					_car.Refuel(double.Parse(commandParts[2]));
 					break;
 				case "Truck":
-					truck.Refuel(double.Parse(commandParts[2]));
+					_truck.Refuel(double.Parse(commandParts[2]));
 					break;
 				case "Bus":
-					bus.Refuel(double.Parse(commandParts[2]));
+					_bus.Refuel(double.Parse(commandParts[2]));
 					break;
 			}
 		}
@@ -78,13 +78,13 @@ namespace _02.VehiclesExtension
 			switch (vehicle)
 			{
 				case "Car":
-					car.Drive(double.Parse(commandParts[2]));
+					_car.Drive(double.Parse(commandParts[2]));
 					break;
 				case "Truck":
-					truck.Drive(double.Parse(commandParts[2]));
+					_truck.Drive(double.Parse(commandParts[2]));
 					break;
 				case "Bus":
-					bus.Drive(double.Parse(commandParts[2]));
+					_bus.Drive(double.Parse(commandParts[2]));
 					break;
 			}
 		}
