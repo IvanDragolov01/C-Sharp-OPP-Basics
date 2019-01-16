@@ -8,9 +8,9 @@
 
 		protected Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)
 		{
-			FuelQuantity = fuelQuantity > tankCapacity ? 0 : fuelQuantity;
-			FuelConsumption = fuelConsumption;
-			TankCapacity = tankCapacity;
+			FuelQuantity = _fuelQuantity > _tankCapacity ? 0 : _fuelQuantity;
+			FuelConsumption = _fuelConsumption;
+			TankCapacity = _tankCapacity;
 		}
 
 		public double TankCapacity

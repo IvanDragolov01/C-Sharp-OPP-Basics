@@ -13,7 +13,7 @@ namespace _02.VehiclesExtension.Models
 
 		public override void Drive(double distance)
 		{
-			double neededFuel = distance * (base.FuelConsumption + ACConsumption);
+			double neededFuel = distance * (FuelConsumption + ACConsumption);
 
 			if (neededFuel <= FuelQuantity)
 			{

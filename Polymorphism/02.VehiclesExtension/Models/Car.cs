@@ -17,7 +17,7 @@ namespace _02.VehiclesExtension.Models
 
 			if (neededFuel <= FuelQuantity)
 			{
-				base.FuelQuantity -= neededFuel;
+				FuelQuantity -= neededFuel;
 				Console.WriteLine($"Car travelled {distance} km");
 			}
 			else

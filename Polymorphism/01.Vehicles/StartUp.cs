@@ -32,6 +32,7 @@ namespace _01.Vehicles
 			{
 				string[] commandParts = Console.ReadLine().Split(' ');
 				string command = commandParts[0];
+
 				switch (command)
 				{
 					case "Drive":
@@ -47,6 +48,7 @@ namespace _01.Vehicles
 		private static void RefuelCommand(string[] commandParts)
 		{
 			string vehicle = commandParts[1];
+
 			switch (vehicle)
 			{
 				case "Car":
@@ -61,6 +63,7 @@ namespace _01.Vehicles
 		private static void DriveCommand(string[] commandParts)
 		{
 			string vehicle = commandParts[1];
+
 			switch (vehicle)
 			{
 				case "Car":
