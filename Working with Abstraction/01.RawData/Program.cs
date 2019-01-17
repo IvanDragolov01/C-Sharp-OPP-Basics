@@ -34,7 +34,7 @@ namespace _01.RawData
 
 			if (command == "fragile")
 			{
-				IEnumerable<Car> frag = cars.Where(x => x._cargoType == "fragile" && x.tires.Any(y => y.Key < 1));
+				IEnumerable<Car> frag = cars.Where(x => x._cargoType == "fragile" && x._tires.Any(y => y.Key < 1));
 				IEnumerable<string> frag2 = frag.Select(x => x._model);
 				List<string> fragile = frag2.ToList();
 					

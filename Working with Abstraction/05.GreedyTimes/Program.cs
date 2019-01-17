@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace _05.GreedyTimes
 {
-	public class Program
+	public class Program 
 	{
 		static void Main(string[] args)
 		{
@@ -91,6 +91,7 @@ namespace _05.GreedyTimes
 						{
 							continue;
 						}
+
 						break;
 				}
 
@@ -105,6 +106,7 @@ namespace _05.GreedyTimes
 				}
 
 				bag[type][name] += count;
+
 				if (type == "Gold")
 				{
 					gold += count;

@@ -5,12 +5,12 @@ using System.Text;
 
 public class RaceTower
 {
-	private const string crashReason = "Crashed";
+	private const string CrashReason = "Crashed";
 	private TyreFactory _tyreFactory;
 	private DriverFactory _driverFactory;
 	private IList<Driver> _racingDrivers;
 	private Stack<Driver> _failedDrivers;
-	private Track track;
+	private Track _track;
 
 	public RaceTower()
 	{
@@ -20,11 +20,11 @@ public class RaceTower
 		_failedDrivers = new Stack<Driver>();
 	}
 
-	public bool IsRaceOver => track.CurrentLap == track.LapsNumber;
+	public bool IsRaceOver => _track.CurrentLap == _track.LapsNumber;
 
 	public void SetTrackInfo(int lapsNumber, int trackLength)
 	{
-		track = new Track(lapsNumber, trackLength);
+		_track = new Track(lapsNumber, trackLength);
 	}
 
 	public void RegisterDriver(List<string> commandArgs)
@@ -78,11 +78,11 @@ public class RaceTower
 		StringBuilder builder = new StringBuilder();
 		int numberOfLaps = int.Parse(commandArgs[0]);
 
-		if (numberOfLaps > track.LapsNumber - track.CurrentLap)
+		if (numberOfLaps > _track.LapsNumber - _track.CurrentLap)
 		{
 			try
 			{
-				throw new ArgumentException(string.Format(OutputMessages.InvalidLaps, track.CurrentLap));
+				throw new ArgumentException(string.Format(OutputMessages.InvalidLaps, _track.CurrentLap));
 			}
 			catch (ArgumentException e)
 			{
@@ -98,7 +98,7 @@ public class RaceTower
 
 				try
 				{
-					driver.CompleteLap(track.TrackLength);
+					driver.CompleteLap(_track.TrackLength);
 				}
 				catch (ArgumentException e)
 				{
@@ -109,7 +109,7 @@ public class RaceTower
 				}
 			}
 
-			track.CurrentLap++;
+			_track.CurrentLap++;
 
 			List<Driver> orderedDrivers = _racingDrivers
 				.OrderByDescending(d => d.TotalTime)
@@ -126,7 +126,7 @@ public class RaceTower
 				{
 					index++;
 					builder.AppendLine(string.Format
-						(OutputMessages.OvertakeMessage, overtakingDriver.Name, targetDriver.Name, this.track.CurrentLap));
+						(OutputMessages.OvertakeMessage, overtakingDriver.Name, targetDriver.Name, this._track.CurrentLap));
 				}
 				else
 				{
@@ -160,14 +160,14 @@ public class RaceTower
 		bool enduranceDriver = overtakingDriver is EnduranceDriver &&
 			overtakingDriver.Car.Tyre is HardTyre;
 
-		bool crash = (aggressiveDriver && track.Weather == Weather.Foggy) ||
-			(enduranceDriver && track.Weather == Weather.Rainy);
+		bool crash = (aggressiveDriver && _track.Weather == Weather.Foggy) ||
+			(enduranceDriver && _track.Weather == Weather.Rainy);
 
 		if ((aggressiveDriver || enduranceDriver) && timeDiff <= 3)
 		{
 			if (crash)
 			{
-				overtakingDriver.Fail(crashReason);
+				overtakingDriver.Fail(CrashReason);
 				return false;
 			}
 
@@ -188,7 +188,7 @@ public class RaceTower
 	public string GetLeaderboard()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.AppendLine($"Lap {track.CurrentLap}/{track.LapsNumber}");
+		builder.AppendLine($"Lap {_track.CurrentLap}/{_track.LapsNumber}");
 
 		IEnumerable<Driver> leaderboardDrivers = _racingDrivers
 			.OrderBy(d => d.TotalTime)
@@ -218,6 +218,6 @@ public class RaceTower
 		}
 
 		Weather weather = (Weather)weatherObj;
-		track.Weather = weather;
+		_track.Weather = weather;
 	}
 }

@@ -7,49 +7,53 @@
 
 	public class TextArea : IInput
 	{
-		private int x;
-		private int y;
-		private int width;
-		private int height;
-		private int textCursorPosition;
-		private Position displayCursor;
-		private const int OFFSET = 37;
-		private IEnumerable<string> lines = new List<string>();
-		private string text = string.Empty;
-		private static char[] forbiddenCharacters = { ';' };
+		private int _x;
+		private int _y;
+		private int _width;
+		private int _height;
+		private int _textCursorPosition;
+		private Position _displayCursor;
+		private const int Offset = 37;
+		private IEnumerable<string> _lines = new List<string>();
+		private string _text = string.Empty;
+		private static char[] _forbiddenCharacters = { ';' };
 
-		private int MaxLength { get; set; }
+		private int MaxLength
+		{
+			get;
+			set;
+		}
 
-		public int Left { get => x; }
-		public int Top { get => y; }
+		public int Left { get => _x; }
+		public int Top { get => _y; }
 
 		public IEnumerable<string> Lines
 		{
-			get => lines;
+			get => _lines;
 		}
 
 		public string Text
 		{
-			get => text;
+			get => _text;
 			set
 			{
-				text = value;
-				lines = StringProcessor.Split(value);
+				_text = value;
+				_lines = StringProcessor.Split(value);
 			}
 		}
 
 		public Position DisplayCursor
 		{
-			get => displayCursor;
+			get => _displayCursor;
 		}
 
 		public TextArea(int x, int y, int width, int height, int maxLength)
 		{
-			this.x = x;
-			this.y = y;
-			this.width = width;
-			this.height = height;
-			displayCursor = new Position(x, y);
+			_x = x;
+			_y = y;
+			_width = width;
+			_height = height;
+			_displayCursor = new Position(x, y);
 			MaxLength = maxLength;
 		}
 
@@ -57,12 +61,12 @@
 		{
 			if (Text.Length < MaxLength)
 			{
-				string stringBefore = Text.Substring(0, textCursorPosition);
-				string stringAfter = Text.Substring(textCursorPosition, Text.Length - textCursorPosition);
+				string stringBefore = Text.Substring(0, _textCursorPosition);
+				string stringAfter = Text.Substring(_textCursorPosition, Text.Length - _textCursorPosition);
 
 				Text = stringBefore + character + stringAfter;
 
-				textCursorPosition++;
+				_textCursorPosition++;
 				ForumViewEngine.DrawTextArea(this);
 				return true;
 			}
@@ -84,7 +88,7 @@
 				{
 					Delete();
 				}
-				else if (Text.Length == MaxLength || forbiddenCharacters.Contains(keyInfo.KeyChar))
+				else if (Text.Length == MaxLength || _forbiddenCharacters.Contains(keyInfo.KeyChar))
 				{
 					Console.Beep(415, 260);
 					continue;
@@ -105,18 +109,18 @@
 
 		public void Delete()
 		{
-			if (textCursorPosition > 0)
+			if (_textCursorPosition > 0)
 			{
-				string stringBefore = Text.Substring(0, textCursorPosition);
-				string stringAfter = Text.Substring(textCursorPosition, Text.Length - textCursorPosition);
+				string stringBefore = Text.Substring(0, _textCursorPosition);
+				string stringAfter = Text.Substring(_textCursorPosition, Text.Length - _textCursorPosition);
 
 				stringBefore = stringBefore.Substring(0, stringBefore.Length - 1);
 				Text = stringBefore + stringAfter;
-				textCursorPosition--;
+				_textCursorPosition--;
 				ForumViewEngine.DrawTextArea(this);
 			}
 
-			lines = StringProcessor.Split(Text);
+			_lines = StringProcessor.Split(Text);
 		}
 
 	}

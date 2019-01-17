@@ -21,6 +21,7 @@ namespace _06.CompanyRoster
 			{
 				return _name;
 			}
+
 			set
 			{
 				_name = value;
@@ -29,11 +30,19 @@ namespace _06.CompanyRoster
 
 		public List<Employee> Employees
 		{
-			get { return _employees; }
-			private set { _employees = value; }
+			get
+			{
+				return _employees;
+			}
+
+			private set
+			{
+				_employees = value;
+			}
 		}
 
-		public decimal AverageSalary => Employees.Select(e => e.Salary)
+		public decimal AverageSalary => Employees
+			.Select(e => e.Salary)
 			.Average();
 
 		public void AddEmployee(Employee employee)

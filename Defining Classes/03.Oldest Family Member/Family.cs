@@ -5,33 +5,33 @@ namespace _03.Oldest_Family_Member
 {
 	class Family
 	{
-		private List<AddingPerson> people;
+		private List<AddingPerson> _people;
 
 		public Family()
 		{
-			people = new List<AddingPerson>();
+			_people = new List<AddingPerson>();
 		}
 
 		public List<AddingPerson> People
 		{
 			get
 			{
-				return people;
+				return _people;
 			}
 			set
 			{
-				people = value;
+				_people = value;
 			}
 		}
 
 		public void AddMember(AddingPerson member)
 		{
-			people.Add(member);
+			_people.Add(member);
 		}
 
 		public AddingPerson GetOldestMember()
 		{
-			return people.OrderByDescending(m => m.Age).FirstOrDefault();
+			return _people.OrderByDescending(m => m.Age).FirstOrDefault();
 		}
 	}
 }

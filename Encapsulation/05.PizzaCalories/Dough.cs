@@ -6,26 +6,26 @@ namespace _05.PizzaCalories
 {
 	public class Dough
 	{
-		private const int minWeight = 1;
-		private const int maxWeight = 200;
-		private const int defaultMultiplier = 2;
+		private const int MinWeight = 1;
+		private const int MaxWeight = 200;
+		private const int DefaultMultiplier = 2;
 
-		private Dictionary<string, double> validFlourTypes = new Dictionary<string, double>
+		private Dictionary<string, double> _validFlourTypes = new Dictionary<string, double>
 		{
 			["white"] = 1.5,
 			["wholegrain"] = 1.0,
 		};
 
-		private Dictionary<string, double> validBakingTechnique = new Dictionary<string, double>
+		private Dictionary<string, double> _validBakingTechnique = new Dictionary<string, double>
 		{
 			["crispy"] = 0.9,
 			["chewy"] = 1.1,
 			["homemade"] = 1.0,
 		};
 
-		private double weight;
-		private string flourType;
-		private string bakingTechnique;
+		private double _weight;
+		private string _flourType;
+		private string _bakingTechnique;
 
 		public Dough(string flourType, string bakingTechnique, double weight)
 		{
@@ -34,27 +34,27 @@ namespace _05.PizzaCalories
 			Weight = weight;
 		}
 
-		private double FlourMultiplier => validFlourTypes[FlourType];
+		private double FlourMultiplier => _validFlourTypes[FlourType];
 
-		private double BakingTechniqueMultiplier => validBakingTechnique[BakingTechnique];
+		private double BakingTechniqueMultiplier => _validBakingTechnique[BakingTechnique];
 
 		public double Calories =>
-			defaultMultiplier * Weight * FlourMultiplier * BakingTechniqueMultiplier;
+			DefaultMultiplier * Weight * FlourMultiplier * BakingTechniqueMultiplier;
 
 		public double Weight
 		{
 			get
 			{
-				return weight;
+				return _weight;
 			}
 			set
 			{
-				if (value < minWeight || value > maxWeight)
+				if (value < MinWeight || value > MaxWeight)
 				{
-					throw new ArgumentException($"Dough weight should be in the range [{minWeight}..{maxWeight}].");
+					throw new ArgumentException($"Dough weight should be in the range [{MinWeight}..{MaxWeight}].");
 				}
 
-				weight = value;
+				_weight = value;
 			}
 		}
 
@@ -62,12 +62,12 @@ namespace _05.PizzaCalories
 		{
 			get
 			{
-				return flourType;
+				return _flourType;
 			}
 			set
 			{
-				ValidateTypes(value, validFlourTypes);
-				flourType = value.ToLower();
+				ValidateTypes(value, _validFlourTypes);
+				_flourType = value.ToLower();
 			}
 		}
 
@@ -75,12 +75,12 @@ namespace _05.PizzaCalories
 		{
 			get
 			{
-				return bakingTechnique;
+				return _bakingTechnique;
 			}
 			set
 			{
-				ValidateTypes(value, validBakingTechnique);
-				bakingTechnique = value.ToLower();
+				ValidateTypes(value, _validBakingTechnique);
+				_bakingTechnique = value.ToLower();
 			}
 		}
 

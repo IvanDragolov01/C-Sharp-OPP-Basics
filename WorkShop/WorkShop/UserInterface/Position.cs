@@ -4,35 +4,35 @@ namespace Forum.App
 {
 	public class Position
 	{
-		private int left;
-		private int top;
+		private int _left;
+		private int _top;
 
-		public Position(int left, int top)
+		public Position(int _left, int _top)
 		{
-			Left = left;
-			Top = top;
+			Left = _left;
+			Top = _top;
 		}
 
 		public int Top
 		{
 			get
 			{
-				return top;
+				return _top;
 			}
 			set
 			{
-				top = value;
+				_top = value;
 			}
 		}
 		public int Left
 		{
 			get
 			{
-				return left;
+				return _left;
 			}
 			set
 			{
-				left = value;
+				_left = value;
 			}
 		}
 

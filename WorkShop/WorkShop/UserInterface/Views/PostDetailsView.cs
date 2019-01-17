@@ -7,9 +7,9 @@
 
 	public class PostDetailsView : IView
 	{
-		private const int AUTHOR_OFFSET = 8;
-		private const int LEFT_OFFSET = 18;
-		private const int TOP_OFFSET = 7;
+		private const int AuthorOffset = 8;
+		private const int LeftOffset = 18;
+		private const int TopOffset = 7;
 
 		public PostDetailsView(PostViewModel post, bool isLoggedIn = false)
 		{
@@ -71,19 +71,19 @@
 				new Label($"Author: {Post.Author}", authorPosition),
 			};
 
-			int leftPosition = consoleCenter.Left - LEFT_OFFSET;
+			int leftPosition = consoleCenter.Left - LeftOffset;
 
 			int lineCount = Post.Content.Count;
 
 			// Add post contents
 			for (int i = 0; i < lineCount; i++)
 			{
-				Position position = new Position(leftPosition, consoleCenter.Top - (TOP_OFFSET - i));
+				Position position = new Position(leftPosition, consoleCenter.Top - (TopOffset - i));
 				ILabel label = new Label(Post.Content[i], position);
 				labels.Add(label);
 			}
 
-			int currentRow = consoleCenter.Top - (TOP_OFFSET - lineCount) + 1;
+			int currentRow = consoleCenter.Top - (TopOffset - lineCount) + 1;
 
 			InitializeButtons(leftPosition, currentRow);
 

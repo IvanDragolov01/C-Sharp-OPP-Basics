@@ -72,10 +72,10 @@ namespace _02.BookShop
 		public override string ToString()
 		{
 			StringBuilder builder = new StringBuilder();
-			builder.AppendLine($"Type: {this.GetType().Name}")
-				.AppendLine($"Title: {this.Title}")
-				.AppendLine($"Author: {this.Author}")
-				.AppendLine($"Price: {this.Price:F2}");
+			builder.AppendLine($"Type: {GetType().Name}")
+				.AppendLine($"Title: {Title}")
+				.AppendLine($"Author: {Author}")
+				.AppendLine($"Price: {Price:F2}");
 
 			string result = builder.ToString().TrimEnd();
 			return result;

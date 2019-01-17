@@ -5,7 +5,7 @@ namespace _01.Person
 {
 	public class Person
 	{
-		public const int _minLength = 3;
+		public const int MinLength = 3;
 		private string _name;
 		private int _age;
 
@@ -19,7 +19,7 @@ namespace _01.Person
 			{
 				if (value.Length < 3)
 				{
-					throw new ArgumentException($"Name's length should not be less than {_minLength} symbols!");
+					throw new ArgumentException($"Name's length should not be less than {MinLength} symbols!");
 				}
 
 				_name = value;

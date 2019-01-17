@@ -73,6 +73,9 @@ namespace _04.Hospital
 			while (command != "End")
 			{
 				string[] args = command.Split();
+				bool trytoParse = int.TryParse(args[1], out int room);
+				List<string> department = departments[args[0]][room - 1];
+				List<string> doctor = doctors[args[0] + args[1]];
 
 				if (args.Length == 1)
 				{
@@ -81,16 +84,16 @@ namespace _04.Hospital
 						.Where(x => x.Count > 0)
 						.SelectMany(x => x)));
 				}
-				else if (args.Length == 2 && int.TryParse(args[1], out int room))
+				else if (args.Length == 2 && trytoParse)
 				{
 					Console.WriteLine(string
-						.Join("\n", departments[args[0]][room - 1]
+						.Join("\n",department 
 						.OrderBy(x => x)));
 				}
 				else
 				{
 					Console.WriteLine(string
-						.Join("\n", doctors[args[0] + args[1]]
+						.Join("\n", doctor 
 						.OrderBy(x => x)));
 				}
 

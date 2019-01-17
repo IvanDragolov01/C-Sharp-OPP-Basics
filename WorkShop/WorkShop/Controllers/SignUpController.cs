@@ -1,17 +1,20 @@
 ﻿namespace Forum.App.Controllers
 {
+	using System;
 	using Forum.App;
 	using Forum.App.Controllers.Contracts;
 	using Forum.App.UserInterface;
 	using Forum.App.UserInterface.Contracts;
-	using System;
 	using WorkShop.Controllers.Services;
 
 	public class SignUpController : IController, IReadUserInfoController
 	{
 		private enum Command
 		{
-			ReadUsername, ReadPassword, SingUp, Back
+			ReadUsername,
+			ReadPassword,
+			SingUp,
+			Back
 		}
 
 		public enum SingUpStatus
@@ -19,8 +22,8 @@
 			Success, DetailsError, UsernameTakenError
 		}
 
-		private const string DETAILS_ERROR = "Invalid Username or Password!";
-		private const string USERNAME_TAKEN_ERROR = "Username already in use!";
+		private const string DetailsError = "Invalid Username or Password!";
+		private const string UsernameTakenError = "Username already in use!";
 
 		private string ErrorMessage
 		{
@@ -58,10 +61,10 @@
 						case SingUpStatus.Success:
 							return MenuState.SuccessfulLogIn;
 						case SingUpStatus.DetailsError:
-							ErrorMessage = DETAILS_ERROR;
+							ErrorMessage = DetailsError;
 							return MenuState.Error;
 						case SingUpStatus.UsernameTakenError:
-							ErrorMessage = USERNAME_TAKEN_ERROR;
+							ErrorMessage = UsernameTakenError;
 							return MenuState.Error;
 					}
 
@@ -70,7 +73,7 @@
 					ResetSingUp();
 					return MenuState.Back;
 				default:
-					throw new NotSupportedException();
+					throw new InvalidOperationException();
 			}
 		}
 

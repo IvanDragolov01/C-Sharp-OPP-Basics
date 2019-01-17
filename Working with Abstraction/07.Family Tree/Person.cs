@@ -24,26 +24,54 @@ namespace _07.Family_Tree
 
 		public string FullName
 		{
-			get { return _name; }
-			set { _name = value; }
+			get
+			{
+				return _name;
+			}
+
+			set
+			{
+				_name = value;
+			}
 		}
 
 		public string Birthday
 		{
-			get { return _birthday; }
-			set { _birthday = value; }
+			get
+			{
+				return _birthday;
+			}
+
+			set
+			{
+				_birthday = value;
+			}
 		}
 
 		public List<Person> Parents
 		{
-			get { return _parents; }
-			set { _parents = value; }
+			get
+			{
+				return _parents;
+			}
+
+			set
+			{
+				_parents = value;
+			}
 		}
 
 		public List<Person> Children
 		{
-			get { return _children; }
-			set { _children = value; }
+			get
+			{
+				return _children;
+			}
+
+			set
+			{
+				_children = value;
+			}
 		}
 
 		public static Person CreatePerson(string personInput)

@@ -7,8 +7,8 @@
 
 	internal class ForumViewEngine
 	{
-		private ConsoleColor backgroundColor;
-		private ConsoleColor highlightColor;
+		private ConsoleColor _backgroundColor;
+		private ConsoleColor _highlightColor;
 
 		public ForumViewEngine()
 		{
@@ -82,11 +82,11 @@
 		{
 			get
 			{
-				return backgroundColor;
+				return _backgroundColor;
 			}
 			set
 			{
-				backgroundColor = value;
+				_backgroundColor = value;
 			}
 		}
 
@@ -94,7 +94,7 @@
 		{
 			get
 			{
-				return highlightColor;
+				return _highlightColor;
 			}
 			set
 			{
@@ -105,7 +105,7 @@
 					value = (ConsoleColor)((int)value % (int)maxColor);
 				}
 
-				highlightColor = value;
+				_highlightColor = value;
 			}
 		}
 

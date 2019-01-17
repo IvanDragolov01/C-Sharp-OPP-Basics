@@ -6,11 +6,11 @@
 
 	public class AddPostView : IView
 	{
-		private TextArea textArea;
+		private TextArea _textArea;
 
 		public AddPostView(PostViewModel post, TextArea textArea, bool error = false)
 		{
-			this.textArea = textArea;
+			_textArea = textArea;
 
 			if (error)
 			{
@@ -56,11 +56,11 @@
 		{
 			get
 			{
-				return textArea;
+				return _textArea;
 			}
 			set
 			{
-				textArea = value;
+				_textArea = value;
 			}
 		}
 
@@ -87,6 +87,7 @@
 			}
 
 			string[] buttonContents = new string[] { Title, Category, "Write", "Post" };
+
 			Position[] buttonPositions = new Position[]
 			{
 				new Position(consoleCenter.Left - 10, consoleCenter.Top - 12), // Title: 

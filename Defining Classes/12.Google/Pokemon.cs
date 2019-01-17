@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _12.Google
+﻿namespace _12.Google
 {
 	class Pokemon
 	{
@@ -17,14 +13,26 @@ namespace _12.Google
 
 		public string Type
 		{
-			get { return _type; }
-			set { _type = value; }
+			get
+			{
+				return _type;
+			}
+			set
+			{
+				_type = value;
+			}
 		}
 
 		public string Name
 		{
-			get { return _name; }
-			set { _name = value; }
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				_name = value;
+			}
 		}
 
 		public override string ToString()

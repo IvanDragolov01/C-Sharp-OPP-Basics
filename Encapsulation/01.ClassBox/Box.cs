@@ -3,9 +3,7 @@
 	public class Box
 	{
 		private readonly double _length;
-
 		private readonly double _width;
-
 		private readonly double _height;
 
 		public Box(double length, double width, double height)

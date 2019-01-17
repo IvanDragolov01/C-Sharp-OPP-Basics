@@ -7,7 +7,7 @@
 
 	public class ReplyViewModel
 	{
-		private const int LINE_LENGHT = 37;
+		private const int LineLength = 37;
 
 		public ReplyViewModel()
 		{
@@ -37,9 +37,9 @@
 			char[] contentChars = content.ToCharArray();
 			List<string> contentLines = new List<string>();
 
-			for (int lineCounter = 0; lineCounter < contentChars.Length; lineCounter += LINE_LENGHT)
+			for (int lineCounter = 0; lineCounter < contentChars.Length; lineCounter += LineLength)
 			{
-				IEnumerable<char> rowCharacters = contentChars.Skip(lineCounter).Take(lineCounter + LINE_LENGHT);
+				IEnumerable<char> rowCharacters = contentChars.Skip(lineCounter).Take(lineCounter + LineLength);
 				string line = string.Join("", rowCharacters);
 				contentLines.Add(line);
 			}

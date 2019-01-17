@@ -6,9 +6,9 @@ namespace _05.PizzaCalories
 {
 	public class Topping
 	{
-		private const int minWeight = 1;
-		private const int maxWeight = 50;
-		private const int defaultMultiplier = 2;
+		private const int MinWeight = 1;
+		private const int MaxWeight = 50;
+		private const int DefaultMultiplier = 2;
 
 		private Dictionary<string, double> validTypes = new Dictionary<string, double>
 		{
@@ -18,8 +18,8 @@ namespace _05.PizzaCalories
 			["sauce"] = 0.9,
 		};
 
-		private string type;
-		private double weight;
+		private string _type;
+		private double _weight;
 
 		public Topping(string type, double weight)
 		{
@@ -28,14 +28,14 @@ namespace _05.PizzaCalories
 			Weight = weight;
 		}
 
-		private double TypeMultiplier => validTypes[type];
-		public double Calories => defaultMultiplier * this.Weight * TypeMultiplier;
+		private double TypeMultiplier => validTypes[_type];
+		public double Calories => DefaultMultiplier * Weight * TypeMultiplier;
 
 		private void ValidateWeight(string type, double weight)
 		{
-			if (weight < minWeight || weight > maxWeight)
+			if (weight < MinWeight || weight > MaxWeight)
 			{
-				throw new ArgumentException($"{type} weight should be in the range [{minWeight}..{maxWeight}].");
+				throw new ArgumentException($"{type} weight should be in the range [{MinWeight}..{MaxWeight}].");
 			}
 		}
 
@@ -43,7 +43,7 @@ namespace _05.PizzaCalories
 		{
 			get
 			{
-				return type;
+				return _type;
 			}
 			set
 			{
@@ -52,7 +52,7 @@ namespace _05.PizzaCalories
 					throw new ArgumentException($"Cannot place {value} on top of your pizza.");
 				}
 
-				type = value.ToLower();
+				_type = value.ToLower();
 			}
 		}
 
@@ -60,11 +60,11 @@ namespace _05.PizzaCalories
 		{
 			get
 			{
-				return weight;
+				return _weight;
 			}
 			set
 			{
-				weight = value;
+				_weight = value;
 			}
 		}
 	}

@@ -4,7 +4,7 @@ namespace _02.CarSalesman
 {
 	public class Car
 	{
-		private const string offset = "  ";
+		private const string Offset = "  ";
 
 		public string _model;
 		public Engine _engine;
@@ -48,8 +48,8 @@ namespace _02.CarSalesman
 			StringBuilder sb = new StringBuilder();
 			sb.AppendFormat("{0}:\n", _model);
 			sb.Append(this._engine.ToString());
-			sb.AppendFormat("{0}Weight: {1}\n", offset, _weight == -1 ? "n/a" : _weight.ToString());
-			sb.AppendFormat("{0}Color: {1}", offset, _color);
+			sb.AppendFormat("{0}Weight: {1}\n", Offset, _weight == -1 ? "n/a" : _weight.ToString());
+			sb.AppendFormat("{0}Color: {1}", Offset, _color);
 
 			return sb.ToString();
 		}

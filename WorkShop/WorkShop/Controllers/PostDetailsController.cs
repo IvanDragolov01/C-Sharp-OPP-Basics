@@ -9,12 +9,6 @@
 
 	public class PostDetailsController : IController, IUserRestrictedController
 	{
-		private enum Command
-		{
-			Back,
-			AddReply
-		}
-
 		public bool LoggedInUser
 		{
 			get;
@@ -27,20 +21,24 @@
 			private set;
 		}
 
+		private enum Command
+		{
+			Back,
+			AddReply,
+		}
+
 		public MenuState ExecuteCommand(int index)
 		{
 			switch ((Command)index)
 			{
+				case Command.AddReply:
+					return MenuState.AddReplyToPost;
 				case Command.Back:
 					ForumViewEngine.ResetBuffer();
 					return MenuState.Back;
-				case Command.AddReply:
-					return MenuState.AddReplyToPost;
 				default:
-					break;
+					throw new InvalidCommandException();
 			}
-
-			throw new InvalidCommandException();
 		}
 
 		public IView GetView(string userName)

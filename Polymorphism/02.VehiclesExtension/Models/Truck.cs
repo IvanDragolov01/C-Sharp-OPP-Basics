@@ -4,7 +4,7 @@ namespace _02.VehiclesExtension.Models
 {
 	public class Truck : Vehicle
 	{
-		private const double ACConsumption = 1.6;
+		private const double AcConsumption = 1.6;
 		private const double UsedFuel = 95;
 
 		public Truck(double fuelQuantity, double fuelConsumption, double tankCapacity)
@@ -14,7 +14,7 @@ namespace _02.VehiclesExtension.Models
 
 		public override void Drive(double distance)
 		{
-			double neededFuel = distance * (FuelConsumption + ACConsumption);
+			double neededFuel = distance * (FuelConsumption + AcConsumption);
 
 			if (neededFuel <= FuelQuantity)
 			{

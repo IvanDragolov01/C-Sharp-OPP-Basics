@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _08.RawData
+﻿namespace _08.RawData
 {
 	public class Engine
 	{
@@ -17,14 +13,26 @@ namespace _08.RawData
 
 		public int Speed
 		{
-			get { return _speed; }
-			set { _speed = value; }
+			get
+			{
+				return _speed;
+			}
+			set
+			{
+				_speed = value;
+			}
 		}
 
 		public int Power
 		{
-			get { return _power; }
-			set { _power = value; }
+			get
+			{
+				return _power;
+			}
+			set
+			{
+				_power = value;
+			}
 		}
 	}
 }

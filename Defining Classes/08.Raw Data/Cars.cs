@@ -12,10 +12,10 @@ namespace _08.RawData
 
 		public Car(string model, Engine engine, Cargo cargo, List<Tire> tires)
 		{
-			this.Model = model ?? throw new ArgumentNullException(nameof(model));
-			this.Engine = engine ?? throw new ArgumentNullException(nameof(engine));
-			this.Cargo = cargo ?? throw new ArgumentNullException(nameof(cargo));
-			this.Tires = tires ?? throw new ArgumentNullException(nameof(tires));
+			Model = model ?? throw new ArgumentNullException(nameof(model));
+			Engine = engine ?? throw new ArgumentNullException(nameof(engine));
+			Cargo = cargo ?? throw new ArgumentNullException(nameof(cargo));
+			Tires = tires ?? throw new ArgumentNullException(nameof(tires));
 		}
 
 		public string Model

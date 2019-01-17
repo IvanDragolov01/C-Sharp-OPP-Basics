@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _09.RectangleIntersection
 {
@@ -23,8 +21,14 @@ namespace _09.RectangleIntersection
 
 		public string Id
 		{
-			get { return _id; }
-			set { _id = value; }
+			get
+			{
+				return _id;
+			}
+			set
+			{
+				_id = value;
+			}
 		}
 
 		public bool IsThereIntersection(Rectangle rectangle)

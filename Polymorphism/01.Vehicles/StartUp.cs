@@ -5,16 +5,16 @@ namespace _01.Vehicles
 {
 	public class Startup
 	{
-		private static Car car;
-		private static Truck truck;
+		private static Car _car;
+		private static Truck _truck;
 
 		public static void Main()
 		{
 			ParseInput();
 			int numberOfCommands = int.Parse(Console.ReadLine());
 			ParseCommand(numberOfCommands);
-			Console.WriteLine(car);
-			Console.WriteLine(truck);
+			Console.WriteLine(_car);
+			Console.WriteLine(_truck);
 		}
 
 		private static void ParseInput()
@@ -22,8 +22,8 @@ namespace _01.Vehicles
 			string[] carParts = Console.ReadLine().Split(' ');
 			string[] truckParts = Console.ReadLine().Split(' ');
 
-			car = new Car(double.Parse(carParts[1]), double.Parse(carParts[2]));
-			truck = new Truck(double.Parse(truckParts[1]), double.Parse(truckParts[2]));
+			_car = new Car(double.Parse(carParts[1]), double.Parse(carParts[2]));
+			_truck = new Truck(double.Parse(truckParts[1]), double.Parse(truckParts[2]));
 		}
 
 		private static void ParseCommand(int numberOfCommands)
@@ -52,10 +52,10 @@ namespace _01.Vehicles
 			switch (vehicle)
 			{
 				case "Car":
-					car.Refuel(double.Parse(commandParts[2]));
+					_car.Refuel(double.Parse(commandParts[2]));
 					break;
 				case "Truck":
-					truck.Refuel(double.Parse(commandParts[2]));
+					_truck.Refuel(double.Parse(commandParts[2]));
 					break;
 			}
 		}
@@ -67,10 +67,10 @@ namespace _01.Vehicles
 			switch (vehicle)
 			{
 				case "Car":
-					car.Drive(double.Parse(commandParts[2]));
+					_car.Drive(double.Parse(commandParts[2]));
 					break;
 				case "Truck":
-					truck.Drive(double.Parse(commandParts[2]));
+					_truck.Drive(double.Parse(commandParts[2]));
 					break;
 			}
 		}

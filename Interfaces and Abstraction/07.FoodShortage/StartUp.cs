@@ -1,9 +1,9 @@
-﻿namespace _07.FoodShortage
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace _07.FoodShortage
+{
 	public class Startup
 	{
 		public static void Main()

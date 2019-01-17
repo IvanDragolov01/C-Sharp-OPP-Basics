@@ -2,7 +2,7 @@
 
 public abstract class Tyre
 {
-	private double degradation;
+	private double _degradation;
 
 	protected Tyre(string name, double hardness)
 	{
@@ -25,7 +25,7 @@ public abstract class Tyre
 	{
 		get
 		{
-			return degradation;
+			return _degradation;
 		}
 
 		protected set
@@ -35,7 +35,7 @@ public abstract class Tyre
 				throw new ArgumentException(OutputMessages.BlownTyre);
 			}
 
-			degradation = value;
+			_degradation = value;
 		}
 	}
 

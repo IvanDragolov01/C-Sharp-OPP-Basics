@@ -18,8 +18,10 @@ namespace _09.RectangleIntersection
 			while (numberOfIntersectionChecks > 0)
 			{
 				string[] pair = Console.ReadLine().Split();
-				Rectangle firstRect = rectangles.Where(r => r.Id == pair[0]).FirstOrDefault();
-				Rectangle secondRect = rectangles.Where(r => r.Id == pair[1]).FirstOrDefault();
+				Rectangle firstRect = rectangles.Where(r => r.Id == pair[0])
+					.FirstOrDefault();
+				Rectangle secondRect = rectangles.Where(r => r.Id == pair[1])
+					.FirstOrDefault();
 				Console.WriteLine(firstRect.IsThereIntersection(secondRect) ? "true" : "false");
 				numberOfIntersectionChecks--;
 			}

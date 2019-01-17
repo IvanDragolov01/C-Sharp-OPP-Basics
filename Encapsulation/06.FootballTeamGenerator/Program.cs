@@ -87,7 +87,8 @@ namespace _06.FootballTeamGenerator
 				return;
 			}
 
-			Player player = new Player(command[2], double.Parse(command[3]), double.Parse(command[4]), double.Parse(command[5]), double.Parse(command[6]), double.Parse(command[7]));
+			Player player = new Player(command[2], double.Parse(command[3]), double.Parse(command[4]), 
+				double.Parse(command[5]), double.Parse(command[6]), double.Parse(command[7]));
 			team.AddPlayer(player);
 		}
 	}

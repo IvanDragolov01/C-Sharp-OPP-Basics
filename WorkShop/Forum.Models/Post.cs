@@ -4,8 +4,8 @@ namespace Forum.Models
 {
 	public class Post
 	{
-		private int postId;
-		private List<int> list;
+		private int _postId;
+		private List<int> _list;
 
 		public int Id
 		{
@@ -55,11 +55,11 @@ namespace Forum.Models
 
 		public Post(int postId, string title, string content, int id, List<int> list)
 		{
-			this.postId = postId;
+			_postId = postId;
 			Title = title;
 			Content = content;
 			Id = id;
-			this.list = list;
+			_list = list;
 		}
 	}
 }

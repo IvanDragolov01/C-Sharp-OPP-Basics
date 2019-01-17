@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _04.OnlineRadioDatabase
+﻿namespace _04.OnlineRadioDatabase
 {
 	public class Song
 	{
-		private const int _ArtistMinLength = 3;
-		private const int _ArtistMaxLength = 20;
-		private const int _NameMinLength = 3;
-		private const int _NameMaxLength = 30;
-		private const int _MinutesMin = 0;
-		private const int _MinutesMax = 14;
-		private const int _SecondsMin = 0;
-		private const int _SecondsMax = 59;
+		private const int ArtistMinLength = 3;
+		private const int ArtistMaxLength = 20;
+		private const int NameMinLength = 3;
+		private const int NameMaxLength = 30;
+		private const int MinutesMin = 0;
+		private const int MinutesMax = 14;
+		private const int SecondsMin = 0;
+		private const int SecondsMax = 59;
 
 		private string _artistName;
 		private string _songName;
@@ -32,9 +28,9 @@ namespace _04.OnlineRadioDatabase
 		{
 			set
 			{
-				if (value.Length < _ArtistMinLength || value.Length > _ArtistMaxLength)
+				if (value.Length < ArtistMinLength || value.Length > ArtistMaxLength)
 				{
-					throw new InvalidArtistNameException(_ArtistMinLength, _ArtistMaxLength);
+					throw new InvalidArtistNameException(ArtistMinLength, ArtistMaxLength);
 				}
 
 				_artistName = value;
@@ -45,9 +41,9 @@ namespace _04.OnlineRadioDatabase
 		{
 			set
 			{
-				if (value.Length < _NameMinLength || value.Length > _NameMaxLength)
+				if (value.Length < NameMinLength || value.Length > NameMaxLength)
 				{
-					throw new InvalidSongNameException(_NameMinLength, _NameMaxLength);
+					throw new InvalidSongNameException(NameMinLength, NameMaxLength);
 				}
 
 				_songName = value;
@@ -60,12 +56,11 @@ namespace _04.OnlineRadioDatabase
 			{
 				return _minutes;
 			}
-
 			private set
 			{
-				if (value < _MinutesMin || value > _MinutesMax)
+				if (value < MinutesMin || value > MinutesMax)
 				{
-					throw new InvalidSongMinutesException(_MinutesMin, _MinutesMax);
+					throw new InvalidSongMinutesException(MinutesMin, MinutesMax);
 				}
 
 				_minutes = value;
@@ -76,17 +71,17 @@ namespace _04.OnlineRadioDatabase
 		{
 			get
 			{
-				return this._seconds;
+				return _seconds;
 			}
 
 			private set
 			{
-				if (value < _SecondsMin || value > _SecondsMax)
+				if (value < SecondsMin || value > SecondsMax)
 				{
-					throw new InvalidSongSecondsException(_SecondsMin, _SecondsMax);
+					throw new InvalidSongSecondsException(SecondsMin, SecondsMax);
 				}
 
-				this._seconds = value;
+				_seconds = value;
 			}
 		}
 	}

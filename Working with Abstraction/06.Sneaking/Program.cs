@@ -81,7 +81,8 @@ namespace _06.Sneaking
 					}
 				}
 
-				if (samPosition[1] < getEnemy[1] && room[getEnemy[0]][getEnemy[1]] == 'd' && getEnemy[0] == samPosition[0])
+				if (samPosition[1] < getEnemy[1] && room[getEnemy[0]][getEnemy[1]] == 'd' &&
+					getEnemy[0] == samPosition[0])
 				{
 					room[samPosition[0]][samPosition[1]] = 'X';
 					Console.WriteLine($"Sam died at {samPosition[0]}, {samPosition[1]}");

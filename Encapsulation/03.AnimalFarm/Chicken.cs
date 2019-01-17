@@ -8,7 +8,7 @@
 		public Chicken(string name, int age)
 		{
 			_name = name;
-			age = age;
+			_age = age;
 		}
 
 		public string Name
@@ -27,11 +27,11 @@
 		{
 			get
 			{
-				return this._age;
+				return _age;
 			}
 			set
 			{
-				this._age = value;
+				_age = value;
 			}
 		}
 
@@ -39,13 +39,13 @@
 		{
 			get
 			{
-				return this.CalculateProductPerDay();
+				return CalculateProductPerDay();
 			}
 		}
 
 		private double CalculateProductPerDay()
 		{
-			switch (this.Age)
+			switch (Age)
 			{
 				case 0:
 				case 1:

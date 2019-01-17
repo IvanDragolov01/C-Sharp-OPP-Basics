@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace _03.Mankind
 {
@@ -9,7 +8,7 @@ namespace _03.Mankind
 	{
 		private const int FacNumMinLength = 5;
 		private const int FacNumMaxLength = 10;
-		private string facultyNumber;
+		private string _facultyNumber;
 
 		public Student(string firstName, string lastName, string facultyNumber)
 			: base(firstName, lastName)
@@ -27,7 +26,7 @@ namespace _03.Mankind
 					throw new ArgumentException("Invalid faculty number!");
 				}
 
-				facultyNumber = value;
+				_facultyNumber = value;
 			}
 		}
 
@@ -35,7 +34,7 @@ namespace _03.Mankind
 		{
 			StringBuilder builder = new StringBuilder();
 
-			builder.Append(base.ToString()).AppendLine($"Faculty number: {facultyNumber}");
+			builder.Append(base.ToString()).AppendLine($"Faculty number: {_facultyNumber}");
 
 			return builder.ToString();
 		}

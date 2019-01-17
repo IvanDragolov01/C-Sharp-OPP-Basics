@@ -33,7 +33,10 @@ namespace _02.ClassBoxDataValidation
 
 		public double Width
 		{
-			get { return _width; }
+			get
+			{
+				return _width;
+			}
 			private set
 			{
 				if (value <= 0)

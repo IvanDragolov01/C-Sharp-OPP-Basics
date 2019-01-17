@@ -2,9 +2,9 @@
 
 public class Car
 {
-	private const double maxFuel = 160;
+	private const double MaxFuel = 160;
 
-	private double fuelAmount;
+	private double _fuelAmount;
 
 	public Car(int hp, double fuelAmount, Tyre tyre)
 	{
@@ -22,7 +22,7 @@ public class Car
 	{
 		get
 		{
-			return fuelAmount;
+			return FuelAmount;
 		}
 		private set
 		{
@@ -31,7 +31,7 @@ public class Car
 				throw new ArgumentException(OutputMessages.OutOfFuel);
 			}
 
-			fuelAmount = Math.Min(value, maxFuel);
+			FuelAmount = Math.Min(value, MaxFuel);
 		}
 	}
 

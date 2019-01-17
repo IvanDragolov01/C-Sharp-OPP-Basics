@@ -10,31 +10,31 @@ namespace _01.Structure.BusinessLogic
 {
 	public class DraftManager
 	{
-		private List<Harvester> harvesters;
-		private List<Provider> providers;
-		private HarvesterFactory harvesterFactory;
-		private ProviderFactory providerFactory;
-		private string mode;
-		private double totalEnergyStored;
-		private double totalMinedOre;
+		private List<Harvester> _harvesters;
+		private List<Provider> _providers;
+		private HarvesterFactory _harvesterFactory;
+		private ProviderFactory _providerFactory;
+		private string _mode;
+		private double _totalEnergyStored;
+		private double _totalMinedOre;
 
 		public DraftManager()
 		{
-			harvesters = new List<Harvester>();
-			providers = new List<Provider>();
-			harvesterFactory = new HarvesterFactory();
-			providerFactory = new ProviderFactory();
-			mode = "Full";
-			totalEnergyStored = 0;
-			totalMinedOre = 0;
+			_harvesters = new List<Harvester>();
+			_providers = new List<Provider>();
+			_harvesterFactory = new HarvesterFactory();
+			_providerFactory = new ProviderFactory();
+			_mode = "Full";
+			_totalEnergyStored = 0;
+			_totalMinedOre = 0;
 		}
 
 		public string RegisterHarvester(List<string> arguments)
 		{
 			try
 			{
-				Harvester harvester = harvesterFactory.CreateHarvester(arguments);
-				harvesters.Add(harvester);
+				Harvester harvester = _harvesterFactory.CreateHarvester(arguments);
+				_harvesters.Add(harvester);
 				return $"Successfully registered {harvester.Type} Harvester - {harvester.Id}.";
 			}
 			catch (ArgumentException ex)
@@ -46,8 +46,8 @@ namespace _01.Structure.BusinessLogic
 		{
 			try
 			{
-				Provider provider = providerFactory.CreateProvider(arguments);
-				providers.Add(provider);
+				Provider provider = _providerFactory.CreateProvider(arguments);
+				_providers.Add(provider);
 				return $"Successfully registered {provider.Type} Provider - {provider.Id}.";
 			}
 			catch (ArgumentException ex)
@@ -58,19 +58,19 @@ namespace _01.Structure.BusinessLogic
 
 		public string Day()
 		{
-			double dayEnergyProvided = providers.Sum(p => p.EnergyOutput);
-			totalEnergyStored += dayEnergyProvided;
+			double dayEnergyProvided = _providers.Sum(p => p.EnergyOutput);
+			_totalEnergyStored += dayEnergyProvided;
 			double dayEnergyRquired, dayMinedOre;
 
-			if (mode == "Full")
+			if (_mode == "Full")
 			{
-				dayEnergyRquired = harvesters.Sum(h => h.EnergyRequirement);
-				dayMinedOre = harvesters.Sum(h => h.OreOutput);
+				dayEnergyRquired = _harvesters.Sum(h => h.EnergyRequirement);
+				dayMinedOre = _harvesters.Sum(h => h.OreOutput);
 			}
-			else if (mode == "Half")
+			else if (_mode == "Half")
 			{
-				dayEnergyRquired = harvesters.Sum(h => h.EnergyRequirement) * 0.6;
-				dayMinedOre = harvesters.Sum(h => h.OreOutput) * 0.5;
+				dayEnergyRquired = _harvesters.Sum(h => h.EnergyRequirement) * 0.6;
+				dayMinedOre = _harvesters.Sum(h => h.OreOutput) * 0.5;
 			}
 			else
 			{
@@ -80,10 +80,10 @@ namespace _01.Structure.BusinessLogic
 
 			double realDayMinedOre = 0;
 
-			if (totalEnergyStored >= dayEnergyRquired)
+			if (_totalEnergyStored >= dayEnergyRquired)
 			{
-				totalMinedOre += dayMinedOre;
-				totalEnergyStored -= dayEnergyRquired;
+				_totalMinedOre += dayMinedOre;
+				_totalEnergyStored -= dayEnergyRquired;
 				realDayMinedOre = dayMinedOre;
 			}
 
@@ -94,8 +94,8 @@ namespace _01.Structure.BusinessLogic
 
 		public string Mode(List<string> arguments)
 		{
-			mode = arguments[0];
-			return $"Successfully changed working mode to {mode} Mode";
+			_mode = arguments[0];
+			return $"Successfully changed working mode to {_mode} Mode";
 		}
 
 		public string Check(List<string> arguments)
@@ -103,8 +103,8 @@ namespace _01.Structure.BusinessLogic
 			string id = arguments[0];
 			// operator ?? check if left side have null if have get right side.
 			//But if left side do not have null get left side only and no check right side.
-			Unit unit = (Unit)harvesters.FirstOrDefault(h => h.Id == id) ??
-				providers.FirstOrDefault(p => p.Id == id);
+			Unit unit = (Unit)_harvesters.FirstOrDefault(h => h.Id == id) ??
+				_providers.FirstOrDefault(p => p.Id == id);
 
 			if (unit != null)
 			{
@@ -119,8 +119,8 @@ namespace _01.Structure.BusinessLogic
 		public string ShutDown()
 		{
 			return $"System Shutdown " + Environment.NewLine +
-				$"Total Energy Stored: { totalEnergyStored}" + Environment.NewLine +
-				$"Total Mined Plumbus Ore: { totalMinedOre}";
+				$"Total Energy Stored: { _totalEnergyStored}" + Environment.NewLine +
+				$"Total Mined Plumbus Ore: { _totalMinedOre}";
 		}
 	}
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace _06.CompanyRoster
+﻿namespace _06.CompanyRoster
 {
 	public class Employee
 	{
@@ -12,8 +10,8 @@ namespace _06.CompanyRoster
 
 		//public Employee()
 		//{
-		//	this.email = "n/a";
-		//	this.Age = -1;
+		//	email = "n/a";
+		//	Age = -1;
 		//}
 		public Employee(string name, string position, decimal salary, int age = - 1, string email = "n/a")
 		{
@@ -26,32 +24,62 @@ namespace _06.CompanyRoster
 
 		public string Name
 		{
-			get { return _name; }
-			set { _name = value; }
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				_name = value;
+			}
 		}
 
 		public decimal Salary
 		{
-			get { return _salary; }
-			set { _salary = value; }
+			get
+			{
+				return _salary;
+			}
+			set
+			{
+				_salary = value;
+			}
 		}
 
 		public int Age
 		{
-			get { return _age; }
-			set { _age = value; }
+			get
+			{
+				return _age;
+			}
+			set
+			{
+				_age = value;
+			}
 		}
 
 		public string Email
 		{
-			get { return _email; }
-			set { _email = value; }
+			get
+			{
+				return _email;
+			}
+			set
+			{
+				_email = value;
+			}
 		}
 
 		public string Position
 		{
-			get { return _position; }
-			set { _position = value; }
+			get
+			{
+				return _position;
+			}
+			set
+			{
+				_position = value;
+			}
 		}
 	}
 }

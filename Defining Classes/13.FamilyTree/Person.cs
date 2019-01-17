@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace _13.FamilyTree
 {
@@ -89,7 +88,7 @@ namespace _13.FamilyTree
 
 		private static bool IsBirthday(string input)
 		{
-			return Char.IsDigit(input[0]);
+			return char.IsDigit(input[0]);
 		}
 
 		public override string ToString()

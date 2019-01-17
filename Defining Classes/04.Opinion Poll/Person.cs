@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _04.Opinion_Poll
+﻿namespace _04.Opinion_Poll
 {
 	public class Person
 	{
@@ -11,8 +7,8 @@ namespace _04.Opinion_Poll
 
 		public Person(string name, int age)
 		{
-			this._name = name;
-			this._age = age;
+			_name = name;
+			_age = age;
 		}
 
 		public string Name

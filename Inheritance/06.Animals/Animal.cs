@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace _06.Animals
@@ -20,7 +19,10 @@ namespace _06.Animals
 
 		public string Name
 		{
-			get { return _name; }
+			get
+			{
+				return _name;
+			}
 			set
 			{
 				NotEmptyValidation(value);
@@ -80,9 +82,9 @@ namespace _06.Animals
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendLine($"{this.GetType().Name}")
-				.AppendLine($"{this.Name} {Age} {Gender}")
-				.AppendLine(this.ProduceSound());
+			sb.AppendLine($"{GetType().Name}")
+				.AppendLine($"{Name} {Age} {Gender}")
+				.AppendLine(ProduceSound());
 
 			string result = sb.ToString().TrimEnd();
 			return result;

@@ -11,7 +11,10 @@
 	{
 		private enum Command
 		{
-			ReadUsername, ReadPassword, LogIn, Back
+			ReadUsername,
+			ReadPassword,
+			LogIn,
+			Back
 		}
 
 		public string Username

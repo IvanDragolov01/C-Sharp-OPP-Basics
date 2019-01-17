@@ -6,7 +6,7 @@
 
 	public class MainController : IController, IUserRestrictedController
 	{
-		private const int COMMAND_COUNT = 3;
+		private const int CommandCount = 3;
 
 		public MainController()
 		{
@@ -64,12 +64,16 @@
 
 		private enum GuestCommand
 		{
-			Categories, Login, SignUp
+			Categories,
+			Login,
+			SignUp
 		}
 
 		private enum UserCommand
 		{
-			Categories, AddPost, LogOut
+			Categories,
+			AddPost,
+			LogOut
 		}
 	}
 }

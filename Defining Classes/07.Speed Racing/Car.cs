@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _07.SpeedRacing
 {
@@ -21,26 +19,50 @@ namespace _07.SpeedRacing
 
 		public int Distance
 		{
-			get { return _distance; }
-			set { _distance = value; }
+			get
+			{
+				return _distance;
+			}
+			set
+			{
+				_distance = value;
+			}
 		}
 
 		public double FuelConsumption
 		{
-			get { return _fuelConsumption; }
-			set { _fuelConsumption = value; }
+			get
+			{
+				return _fuelConsumption;
+			}
+			set
+			{
+				_fuelConsumption = value;
+			}
 		}
 
 		public double AmountOfFuel
 		{
-			get { return _amountOfFuel; }
-			set { _amountOfFuel = value; }
+			get
+			{
+				return _amountOfFuel;
+			}
+			set
+			{
+				_amountOfFuel = value;
+			}
 		}
 
 		public string Model
 		{
-			get { return _model; }
-			set { _model = value; }
+			get
+			{
+				return _model;
+			}
+			set
+			{
+				_model = value;
+			}
 		}
 
 		public void Drive(int distance)

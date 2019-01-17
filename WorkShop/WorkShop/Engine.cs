@@ -8,48 +8,48 @@
 
 	public class Engine
 	{
-		private ForumViewEngine forumViewer;
-		private MenuController menuController;
-		private IEnumerable<IController> controllers;
+		private ForumViewEngine _forumViewer;
+		private MenuController _menuController;
+		private IEnumerable<IController> _controllers;
 
 		public Engine()
 		{
-			forumViewer = new ForumViewEngine();
-			controllers = InitializeControllers();
+			_forumViewer = new ForumViewEngine();
+			_controllers = InitializeControllers();
 
-			menuController = new MenuController(controllers, forumViewer);
+			_menuController = new MenuController(_controllers, _forumViewer);
 		}
 
 		internal void Run()
 		{
 			while (true)
 			{
-				forumViewer.Mark(menuController.CurrentLabel);
+				_forumViewer.Mark(_menuController.CurrentLabel);
 
 				ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 				ConsoleKey key = keyInfo.Key;
 
-				forumViewer.Mark(menuController.CurrentLabel, false);
+				_forumViewer.Mark(_menuController.CurrentLabel, false);
 
 				switch (key)
 				{
 					case ConsoleKey.Backspace:
 					case ConsoleKey.Escape:
-						menuController.Back();
+						_menuController.Back();
 						break;
 					case ConsoleKey.Home:
 						break;
 					case ConsoleKey.LeftArrow:
 					case ConsoleKey.UpArrow:
-						menuController.PreviousOption();
+						_menuController.PreviousOption();
 						break;
 					case ConsoleKey.Tab:
 					case ConsoleKey.RightArrow:
 					case ConsoleKey.DownArrow:
-						menuController.NextOption();
+						_menuController.NextOption();
 						break;
 					case ConsoleKey.Enter:
-						menuController.ExecuteCommand();
+						_menuController.ExecuteCommand();
 						break;
 				}
 			}

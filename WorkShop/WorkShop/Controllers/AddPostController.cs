@@ -10,14 +10,18 @@
 
 	public class AddPostController : IController
 	{
-		private enum Command { AddTitle, AddCategory, Write, Post}
-		private const int COMMAND_COUNT = 4;
-		private const int TEXT_AREA_WIDTH = 37;
-		private const int TEXT_AREA_HEIGHT = 18;
-		private const int POST_MAX_LENGTH = 660;
+		private const int CommandCount = 4;
+		private const int TextAreaWidth = 37;
+		private const int TextAreaHeight = 18;
+		private const int PostMaxLength = 660;
 
-		private static int centerTop = Position.ConsoleCenter().Top;
-		private static int centerLeft = Position.ConsoleCenter().Left;
+		private static int _centerTop = Position.ConsoleCenter().Top;
+		private static int _centerLeft = Position.ConsoleCenter().Left;
+
+		public AddPostController()
+		{
+			ResetPost();
+		}
 
 		public PostViewModel Post
 		{
@@ -37,9 +41,12 @@
 			private set;
 		}
 
-		public AddPostController()
+		private enum Command
 		{
-			ResetPost();
+			AddTitle,
+			AddCategory,
+			Write,
+			Post
 		}
 
 		public MenuState ExecuteCommand(int index)
@@ -66,9 +73,9 @@
 					}
 
 					return MenuState.PostAdded;
+				default:
+					throw new InvalidCommandException();
 			}
-
-			throw new InvalidCommandException();
 		}
 
 		public IView GetView(string userName)
@@ -93,8 +100,8 @@
 		{
 			Error = false;
 			Post = new PostViewModel();
-			TextArea = new TextArea(centerLeft - 18, centerTop - 7,
-				TEXT_AREA_WIDTH, TEXT_AREA_HEIGHT, POST_MAX_LENGTH);
+			TextArea = new TextArea(_centerLeft - 18, _centerTop - 7,
+				TextAreaWidth, TextAreaHeight, PostMaxLength);
 		}
 	}
 }

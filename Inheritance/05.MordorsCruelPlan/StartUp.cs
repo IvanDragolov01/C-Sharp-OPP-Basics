@@ -11,6 +11,7 @@ namespace _05.MordorsCruelPlan
 		{
 			List<Foods.Food> foods = new List<Foods.Food>();
 			string[] inputParts = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
 			foreach (string foodName in inputParts)
 			{
 				Foods.Food food = FoodFactory.GetFood(foodName);

@@ -4,15 +4,15 @@ namespace _01.Structure.Units.Harvester
 {
 	public abstract class Harvester : Unit
 	{
-		public const double maxEnergyRequirement = 10_000;
-		private double oreOutput;
-		private double energyRequirement;
+		public const double MaxEnergyRequirement = 10_000;
+		private double _oreOutput;
+		private double _energyRequirement;
 
 		public double OreOutput
 		{
 			get
 			{
-				return oreOutput;
+				return _oreOutput;
 			}
 			private set
 			{
@@ -21,7 +21,7 @@ namespace _01.Structure.Units.Harvester
 					throw new ArgumentException("Harvester is not registered, because of it's ОreOutput");
 				}
 
-				oreOutput = value;
+				_oreOutput = value;
 			}
 		}
 
@@ -29,16 +29,16 @@ namespace _01.Structure.Units.Harvester
 		{
 			get
 			{
-				return energyRequirement;
+				return _energyRequirement;
 			}
 			private set
 			{
-				if (value < 0 || value >= maxEnergyRequirement)
+				if (value < 0 || value >= MaxEnergyRequirement)
 				{
 					throw new ArgumentException("Harvester is not registered, because of it's EnergyRequirement");
 				}
 
-				energyRequirement = value;
+				_energyRequirement = value;
 			}
 		}
 
@@ -53,7 +53,7 @@ namespace _01.Structure.Units.Harvester
 		{
 			return $"{Type} Harvester - {Id}" + Environment.NewLine +
 				$"Ore Output: {OreOutput}" + Environment.NewLine +
-				$"Energy Requirement: {energyRequirement}";
+				$"Energy Requirement: {_energyRequirement}";
 		}
 	}
 }

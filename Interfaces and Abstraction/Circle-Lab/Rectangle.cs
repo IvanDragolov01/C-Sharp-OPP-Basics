@@ -2,8 +2,8 @@
 
 public class Rectangle : IDrawable
 {
-	private int width;
-	private int height;
+	private int _width;
+	private int _height;
 
 	public Rectangle(int width, int height)
 	{
@@ -15,7 +15,7 @@ public class Rectangle : IDrawable
 	{
 		get
 		{
-			return height;
+			return _height;
 		}
 
 		private set
@@ -25,7 +25,7 @@ public class Rectangle : IDrawable
 				throw new ArgumentException("Height must be positive!");
 			}
 
-			height = value;
+			_height = value;
 		}
 	}
 
@@ -33,7 +33,7 @@ public class Rectangle : IDrawable
 	{
 		get
 		{
-			return width;
+			return _width;
 		}
 
 		private set
@@ -43,7 +43,7 @@ public class Rectangle : IDrawable
 				throw new ArgumentException("Width must be positive!");
 			}
 
-			width = value;
+			_width = value;
 		}
 	}
 

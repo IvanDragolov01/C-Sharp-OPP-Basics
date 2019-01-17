@@ -7,17 +7,17 @@
 
 	public class CategoryView : IView
 	{
-		private const int PREV_BUTTON = 1;
-		private const int NEXT_BUTTON = 2;
-		private const int NAME_MAX_LENGTH = 14;
-		private const int WHITESPACE_COUNT = 27;
-		private static int centerTop = Console.WindowHeight / 2;
-		private static int centerLeft = Console.WindowWidth / 2;
-		private string categoryName;
+		private const int PrevButton = 1;
+		private const int NextButton = 2;
+		private const int NameMaxLength = 14;
+		private const int WhiteSpaceCount = 27;
+		private static int _centerTop = Console.WindowHeight / 2;
+		private static int _centerLeft = Console.WindowWidth / 2;
+		private string _categoryName;
 
 		public CategoryView(string categoryName, string[] postNames, bool isFirstPage = false, bool isLastPage = false)
 		{
-			this.categoryName = categoryName;
+			_categoryName = categoryName;
 			PostTitles = postNames;
 
 			IsFirstPage = isFirstPage;
@@ -67,6 +67,7 @@
 		private void InitializeButtons(Position consoleCenter)
 		{
 			string[] defaultButtonContent = new string[] { "Back", "Previous Page", "Next Page" };
+
 			Position[] defaultButtonPositions = new Position[]
 			{
 				new Position(consoleCenter.Left + 15, consoleCenter.Top - 12), // Back   
@@ -113,7 +114,7 @@
 
 		private void InitializeStaticLabels(Position consoleCenter)
 		{
-			string[] labelContent = new string[] { string.Format("CATEGORY: {0}", categoryName), "Title", /*"Replies"*/ };
+			string[] labelContent = new string[] { string.Format("CATEGORY: {0}", _categoryName), "Title", /*"Replies"*/ };
 			Position[] labelPositions = new Position[]
 			{
 				new Position(consoleCenter.Left - 18, consoleCenter.Top - 12), // CATEGORY: {0}

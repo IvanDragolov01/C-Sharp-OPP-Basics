@@ -65,10 +65,6 @@
 		{
 			string[] labelContents = new string[]
 			{
-            //@"
-            //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-            //█        ▀█▄▀▄▀██████ ▀█▄▀▄▀██████
-            //            ▀█▄█▄███▀    ▀█▄█▄███",
                 "FORUM",
 				string.Format("Hi, {0}", Username),
 			};
@@ -88,7 +84,9 @@
 				Labels[i] = new Label(labelContents[i], labelPositions[i]);
 			}
 
-			Labels[lastIndex] = new Label(labelContents[lastIndex], labelPositions[lastIndex], string.IsNullOrWhiteSpace(Username));
+			Labels[lastIndex] = new Label(labelContents[lastIndex],
+				labelPositions[lastIndex],
+				string.IsNullOrWhiteSpace(Username));
 		}
 	}
 }

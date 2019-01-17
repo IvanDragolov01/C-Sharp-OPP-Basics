@@ -4,8 +4,8 @@ namespace _01.Structure.Units.Provider
 {
 	public abstract class Provider : Unit
 	{
-		public const double maxEnergyOutput = 10_000;
-		private double energyOutput;
+		public const double MaxEnergyOutput = 10_000;
+		private double _energyOutput;
 
 		protected Provider(string id, double energyOutput)
 			: base(id)
@@ -17,23 +17,23 @@ namespace _01.Structure.Units.Provider
 		{
 			get
 			{
-				return energyOutput;
+				return _energyOutput;
 			}
 			private set
 			{
-				if (value < 0 || value >= maxEnergyOutput)
+				if (value < 0 || value >= MaxEnergyOutput)
 				{
 					throw new ArgumentException("Provider is not registered, because of it's EnergyOutput");
 				}
 
-				energyOutput = value;
+				_energyOutput = value;
 			}
 		}
 
 		public override string ToString()
 		{
 			return $"{Type} Provider - {Id}" + Environment.NewLine +
-				$"Energy Output: {energyOutput}";
+				$"Energy Output: {_energyOutput}";
 		}
 	}
 }

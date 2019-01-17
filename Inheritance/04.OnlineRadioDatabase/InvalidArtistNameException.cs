@@ -2,8 +2,8 @@
 {
 	internal class InvalidArtistNameException : InvalidSongException
 	{
-		private int artistMinLength;
-		private int artistMaxLength;
+		private int _artistMinLength;
+		private int _artistMaxLength;
 
 		public InvalidArtistNameException() : base()
 		{

@@ -2,7 +2,7 @@
 
 public class Circle : IDrawable
 {
-	private int radius;
+	private int _radius;
 
 	public Circle(int radius)
 	{
@@ -13,9 +13,8 @@ public class Circle : IDrawable
 	{
 		get
 		{
-			return radius;
+			return _radius;
 		}
-
 		private set
 		{
 			if (value <= 0)
@@ -23,7 +22,7 @@ public class Circle : IDrawable
 				throw new ArgumentException("Radius must be positive!");
 			}
 
-			radius = value;
+			_radius = value;
 		}
 	}
 

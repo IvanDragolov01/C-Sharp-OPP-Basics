@@ -29,10 +29,12 @@ public class Engine
 					break;
 				case "CompleteLaps":
 					string result = _raceTower.CompleteLaps(methodArgs);
+
 					if (!string.IsNullOrWhiteSpace(result))
 					{
 						Console.WriteLine(result);
 					}
+
 					break;
 				case "Box":
 					_raceTower.DriverBoxes(methodArgs);

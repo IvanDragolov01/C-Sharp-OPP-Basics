@@ -1,4 +1,4 @@
-﻿.using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -117,7 +117,7 @@ namespace _13.FamilyTree
 
 		private static void SetChild(List<Person> familyTree, Person parent, string childInput)
 		{
-			var child = familyTree.FirstOrDefault(c => c.FullName == childInput || c.Birthday == childInput);
+			Person child = familyTree.FirstOrDefault(c => c.FullName == childInput || c.Birthday == childInput);
 
 			if (child == null)
 			{

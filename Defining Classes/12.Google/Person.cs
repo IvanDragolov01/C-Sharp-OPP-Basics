@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace _12.Google
@@ -23,38 +22,74 @@ namespace _12.Google
 
 		public Car Car
 		{
-			get { return _car; }
-			set { _car = value; }
+			get
+			{
+				return _car;
+			}
+			set
+			{
+				_car = value;
+			}
 		}
 
 		public List<Child> Children
 		{
-			get { return _children; }
-			set { _children = value; }
+			get
+			{
+				return _children;
+			}
+			set
+			{
+				_children = value;
+			}
 		}
 
 		public List<Parent> Parents
 		{
-			get { return _parents; }
-			set { _parents = value; }
+			get
+			{
+				return _parents;
+			}
+			set
+			{
+				_parents = value;
+			}
 		}
 
 		public List<Pokemon> Pokemons
 		{
-			get { return _pokemons; }
-			set { _pokemons = value; }
+			get
+			{
+				return _pokemons;
+			}
+			set
+			{
+				_pokemons = value;
+			}
 		}
 
 		public Company Company
 		{
-			get { return _company; }
-			set { _company = value; }
+			get
+			{
+				return _company;
+			}
+			set
+			{
+				_company = value;
+			}
 		}
 
 		public string Name
 		{
-			get { return _name; }
-			set { _name = value; }
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				_name = value;
+			}
 		}
 
 		public override string ToString()
@@ -63,7 +98,7 @@ namespace _12.Google
 			sb.AppendLine(Name)
 				.AppendLine("Company:");
 
-			if (this.Company != null)
+			if (Company != null)
 			{
 				sb.AppendLine(Company.ToString());
 			}

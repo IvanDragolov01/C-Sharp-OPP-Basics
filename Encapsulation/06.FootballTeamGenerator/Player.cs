@@ -27,8 +27,10 @@ namespace _06.FootballTeamGenerator
 
 		public string Name
 		{
-			get { return _name; }
-
+			get
+			{
+				return _name;
+			}
 			private set
 			{
 				bool valueNull = string.IsNullOrWhiteSpace(value);
@@ -43,7 +45,13 @@ namespace _06.FootballTeamGenerator
 			}
 		}
 
-		public double SkillLevel { get { return _skillLevel; } }
+		public double SkillLevel
+		{
+			get
+			{
+				return _skillLevel;
+			}
+		}
 
 		private double Shooting
 		{
@@ -67,7 +75,7 @@ namespace _06.FootballTeamGenerator
 		{
 			set
 			{
-				this.ValidateStat(value, nameof(this.Dribble));
+				ValidateStat(value, nameof(Dribble));
 				_dribble = value;
 			}
 		}
@@ -76,7 +84,7 @@ namespace _06.FootballTeamGenerator
 		{
 			set
 			{
-				this.ValidateStat(value, nameof(this.Sprint));
+				ValidateStat(value, nameof(Sprint));
 				_sprint = value;
 			}
 		}
@@ -85,7 +93,7 @@ namespace _06.FootballTeamGenerator
 		{
 			set
 			{
-				this.ValidateStat(value, nameof(this.Endurance));
+				ValidateStat(value, nameof(Endurance));
 				_endurance = value;
 			}
 		}

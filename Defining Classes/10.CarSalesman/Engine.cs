@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace _10.CarSalesman
 {
 	class Engine
 	{
-		private const string OFFSET = "  ";
+		private const string Offset = "  ";
 		public string _model;
 		public int _power;
 		public int _displacement;
@@ -47,10 +45,11 @@ namespace _10.CarSalesman
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendFormat("{0}{1}:\n", OFFSET, _model);
-			sb.AppendFormat("{0}{0}Power: {1}\n", OFFSET, _power);
-			sb.AppendFormat("{0}{0}Displacement: {1}\n", OFFSET, _displacement == -1 ? "n/a" : _displacement.ToString());
-			sb.AppendFormat("{0}{0}Efficiency: {1}\n", OFFSET, _efficiency);
+			sb.AppendFormat("{0}{1}:\n", Offset, _model);
+			sb.AppendFormat("{0}{0}Power: {1}\n", Offset, _power);
+			sb.AppendFormat("{0}{0}Displacement: {1}\n", Offset, _displacement == -1 ? "n/a" : _displacement
+				.ToString());
+			sb.AppendFormat("{0}{0}Efficiency: {1}\n", Offset, _efficiency);
 
 			return sb.ToString();
 		}

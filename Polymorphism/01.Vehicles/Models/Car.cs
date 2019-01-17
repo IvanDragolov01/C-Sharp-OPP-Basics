@@ -5,14 +5,14 @@ namespace _01.Vehicles
 {
 	public class Car : Vehicle
 	{
-		private const double ACConsumption = 0.9;
+		private const double AcConsumption = 0.9;
 
 		public Car(double fuelQuantity, double fuelConsumption)
 			: base(fuelQuantity, fuelConsumption) { }
 
 		public override void Drive(double distance)
 		{
-			double neededFuel = distance * (FuelConsumption + ACConsumption);
+			double neededFuel = distance * (FuelConsumption + AcConsumption);
 
 			if (neededFuel <= FuelQuantity)
 			{

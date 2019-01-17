@@ -17,14 +17,26 @@ namespace _12.Google
 
 		public int Speed
 		{
-			get { return _speed; }
-			set { _speed = value; }
+			get
+			{
+				return _speed;
+			}
+			set
+			{
+				_speed = value;
+			}
 		}
 
 		public string Model
 		{
-			get { return _model; }
-			set { _model = value; }
+			get
+			{
+				return _model;
+			}
+			set
+			{
+				_model = value;
+			}
 		}
 
 		public override string ToString()

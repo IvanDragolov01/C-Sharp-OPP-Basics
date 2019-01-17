@@ -31,7 +31,6 @@ namespace _11.PokemonTrainer
 			{
 				return _name;
 			}
-
 			private set
 			{
 				if (string.IsNullOrEmpty(value))
@@ -43,7 +42,13 @@ namespace _11.PokemonTrainer
 			}
 		}
 
-		public int Badges { get { return _badges; } }
+		public int Badges
+		{
+			get
+			{
+				return _badges;
+			}
+		}
 
 		public void AddABadge()
 		{

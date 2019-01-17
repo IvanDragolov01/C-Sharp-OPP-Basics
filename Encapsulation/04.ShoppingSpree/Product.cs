@@ -26,7 +26,10 @@
 
 		public decimal Price
 		{
-			get { return _price; }
+			get
+			{
+				return _price;
+			}
 			set
 			{
 				Validator.ValidateMoney(value);
@@ -36,7 +39,7 @@
 
 		public override string ToString()
 		{
-			return this.Name;
+			return Name;
 		}
 	}
 }

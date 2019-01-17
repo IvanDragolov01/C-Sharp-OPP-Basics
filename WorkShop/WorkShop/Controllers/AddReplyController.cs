@@ -10,21 +10,24 @@
 
 	public class AddReplyController : IController
 	{
-		private enum Command { Write, Post }
-		private const int TEXT_AREA_WIDTH = 37;
-		private const int TEXT_AREA_HEIGHT = 6;
-		private const int POST_MAX_LENGTH = 220;
+		private const int TextAreaWidth = 37;
+		private const int TextAreaHeight = 6;
+		private const int PostMaxLength = 220;
 
-		private static int centerTop = Position.ConsoleCenter().Top;
-		private static int centerLeft = Position.ConsoleCenter().Left;
+		private static int _centerTop = Position.ConsoleCenter().Top;
+		private static int _centerLeft = Position.ConsoleCenter().Left;
+		private PostViewModel postViewModel;
+
+		public AddReplyController()
+		{
+			ResetReply();
+		}
 
 		public ReplyViewModel Reply
 		{
 			get;
 			private set;
 		}
-
-		private PostViewModel postViewModel;
 
 		public TextArea TextArea
 		{
@@ -38,9 +41,10 @@
 			private set;
 		}
 
-		public AddReplyController()
+		private enum Command
 		{
-			ResetReply();
+			Write,
+			Post
 		}
 
 		public MenuState ExecuteCommand(int index)
@@ -50,20 +54,20 @@
 				case Command.Write:
 					TextArea.Write();
 					Reply.Content = TextArea.Lines.ToArray();
-					return MenuState.AddPost;
+					return MenuState.AddReply;
 				case Command.Post:
-					bool replyAdded = PostService.TrySaveReply(Reply, postViewModel.PostId);
+					bool validAdded = PostService.TrySaveReply(Reply, postViewModel.PostId);
 
-					if (!replyAdded)
+					if (!validAdded)
 					{
 						Error = true;
 						return MenuState.Rerender;
 					}
 
 					return MenuState.ReplyAdded;
+				default:
+					throw new InvalidCommandException();
 			}
-
-			throw new InvalidCommandException();
 		}
 
 		public IView GetView(string userName)
@@ -77,8 +81,8 @@
 			Error = false;
 			Reply = new ReplyViewModel();
 			int contentLength = postViewModel?.Content.Count ?? 0;
-			TextArea = new TextArea(centerLeft - 18, centerTop + contentLength - 7,
-				TEXT_AREA_WIDTH, TEXT_AREA_HEIGHT, POST_MAX_LENGTH);
+			TextArea = new TextArea(_centerLeft - 18, _centerTop + contentLength - 6,
+				TextAreaWidth, TextAreaHeight, PostMaxLength);
 		}
 
 		public void SetPostId(int postId)

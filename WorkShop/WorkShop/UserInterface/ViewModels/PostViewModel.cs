@@ -1,14 +1,13 @@
 ﻿namespace Forum.App.UserInterface.ViewModels
 {
 	using Forum.Models;
-	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using WorkShop.Controllers.Services;
 
 	public class PostViewModel
 	{
-		private const int LINE_LENGHT = 37;
+		private const int LineLength = 37;
 
 		public PostViewModel()
 		{
@@ -30,9 +29,9 @@
 			char[] contentChars = content.ToCharArray();
 			List<string> contentLines = new List<string>();
 
-			for (int lineCounter = 0; lineCounter < contentLines.Count; lineCounter += LINE_LENGHT)
+			for (int lineCounter = 0; lineCounter < contentLines.Count; lineCounter += LineLength)
 			{
-				IEnumerable<char> rowCharacters = contentChars.Skip(lineCounter).Take(lineCounter + LINE_LENGHT);
+				IEnumerable<char> rowCharacters = contentChars.Skip(lineCounter).Take(lineCounter + LineLength);
 				string line = string.Join("", rowCharacters);
 				contentLines.Add(line);
 			}

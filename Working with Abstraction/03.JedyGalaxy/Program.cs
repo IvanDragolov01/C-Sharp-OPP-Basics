@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-
+using System.Collections.Generic;
 namespace _03.JedyGalaxy
 {
 	public class Program
@@ -8,7 +8,7 @@ namespace _03.JedyGalaxy
 		static void Main()
 		{
 			string[] dim = Console.ReadLine().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-			System.Collections.Generic.IEnumerable<int> dim2 = dim.Select(int.Parse);
+			IEnumerable<int> dim2 = dim.Select(int.Parse);
 			int[] dimentions =dim2.ToArray();
 			int x = dimentions[0];
 			int y = dimentions[1];
@@ -29,10 +29,10 @@ namespace _03.JedyGalaxy
 			while (command != "Let the Force be with you")
 			{
 				string[] ivoSector = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-				System.Collections.Generic.IEnumerable<int> ivoSector2 = ivoSector.Select(int.Parse);
+				IEnumerable<int> ivoSector2 = ivoSector.Select(int.Parse);
 				int[] ivoS = ivoSector2.ToArray();
 				string[] evilPosition = Console.ReadLine().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-				var evilPosition2 = evilPosition.Select(int.Parse);
+				IEnumerable<int> evilPosition2 = evilPosition.Select(int.Parse);
 				int[] evil = evilPosition2.ToArray();
 				int xEvil = evil[0];
 				int yEvil = evil[1];

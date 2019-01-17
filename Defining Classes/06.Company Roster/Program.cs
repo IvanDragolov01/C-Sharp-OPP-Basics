@@ -44,7 +44,7 @@ namespace _06.CompanyRoster
 		static Employee ParseEmployee(string[] emptyInput)
 		{
 			string name = emptyInput[0];
-			decimal salary = Decimal.Parse(emptyInput[1]);
+			decimal salary = decimal.Parse(emptyInput[1]);
 			string position = emptyInput[2];
 			string email = "n/a";
 			int age = -1;

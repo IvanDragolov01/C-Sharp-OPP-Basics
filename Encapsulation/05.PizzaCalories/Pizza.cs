@@ -6,11 +6,11 @@ namespace _05.PizzaCalories
 {
 	public class Pizza
 	{
-		private const int minLength = 1;
-		private const int maxLength = 15;
-		private const int minTopping = 0;
-		private const int maxTopping = 10;
-		private string name;
+		private const int MinLength = 1;
+		private const int MaxLength = 15;
+		private const int MinTopping = 0;
+		private const int MaxTopping = 10;
+		private string _name;
 
 		public Pizza()
 		{
@@ -42,24 +42,32 @@ namespace _05.PizzaCalories
 		{
 			get
 			{
-				return name;
+				return _name;
 			}
 			set
 			{
 				bool valueNull = string.IsNullOrEmpty(value);
-				bool valueLength = value.Length > maxLength;
+				bool valueLength = value.Length > MaxLength;
 
 				if (valueNull || valueLength)
 				{
-					throw new ArgumentException($"Pizza name should be between {minLength} and {maxLength} symbols.");
+					throw new ArgumentException($"Pizza name should be between {MinLength} and {MaxLength} symbols.");
 				}
 
-				name = value;
+				_name = value;
 			}
 		}
 
-		private Dough Dough { get; set; }
-		private List<Topping> Toppings { get; set; }
+		private Dough Dough
+		{
+			get;
+			set;
+		}
+		private List<Topping> Toppings
+		{
+			get;
+			set;
+		}
 
 		public void SetDough(Dough dough)
 		{
@@ -71,9 +79,9 @@ namespace _05.PizzaCalories
 			Toppings.Add(topping);
 			int toppingscount = Toppings.Count;
 
-			if (toppingscount > maxTopping)
+			if (toppingscount > MaxTopping)
 			{
-				throw new ArgumentException($"Number of toppings should be in range [{minTopping}..{maxTopping}].");
+				throw new ArgumentException($"Number of toppings should be in range [{MinTopping}..{MaxTopping}].");
 			}
 		}
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace _06.FootballTeamGenerator
 {
@@ -18,11 +17,15 @@ namespace _06.FootballTeamGenerator
 
 		public string Name
 		{
-			get { return _name; }
+			get
+			{
+				return _name;
+			}
 			private set
 			{
 				bool valueNull = string.IsNullOrWhiteSpace(value);
 				bool valueEmpty = value == string.Empty;
+
 				if (valueNull || valueEmpty)
 				{
 					throw new ArgumentException("A name should not be empty.");

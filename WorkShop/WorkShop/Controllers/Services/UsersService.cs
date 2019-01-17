@@ -45,10 +45,10 @@ namespace WorkShop.Controllers.Services
 			return userExists;
 		}
 
-		public static User GetUser(int id)
+		public static User GetUser(int userId)
 		{
 			ForumData forumdata = new ForumData();
-			User user = forumdata.Users.Single(u => u.Id == id);
+			User user = forumdata.Users.Single(u => u.Id == userId);
 			return user;
 		}
 

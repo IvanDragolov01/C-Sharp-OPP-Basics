@@ -6,11 +6,15 @@ namespace _04.ShoppingSpree
 	{
 		private string _name;
 		private decimal _money;
-		private List<Product> Products { get; set; }
+		private List<Product> Products
+		{
+			get;
+			set;
+		}
 
 		public Person()
 		{
-			this.Products = new List<Product>();
+			Products = new List<Product>();
 		}
 
 		public Person(string name, decimal money)
@@ -50,7 +54,7 @@ namespace _04.ShoppingSpree
 		{
 			if (Money < product.Price)
 			{
-				return $"{this._name} can't afford {product.Name}";
+				return $"{_name} can't afford {product.Name}";
 			}
 
 			Money = Money - product.Price;
@@ -66,7 +70,7 @@ namespace _04.ShoppingSpree
 			string report = "Nothing bought";
 			string productsOutput = product > 0 ?
 				 productsJoin : report;
-			string name = this.Name;
+			string name = Name;
 			string productsOut = productsOutput;
 			string result = $"{name} - {productsOut}";
 			return result;

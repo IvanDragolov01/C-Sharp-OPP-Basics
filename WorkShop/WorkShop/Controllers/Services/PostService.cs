@@ -1,7 +1,6 @@
 ﻿using Forum.App.UserInterface.ViewModels;
 using Forum.Data;
 using Forum.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,17 +8,17 @@ namespace WorkShop.Controllers.Services
 {
 	internal static class PostService
 	{
-		public static Category GetCategory(int id)
+		public static Category GetCategory(int categoryId)
 		{
 			ForumData forumdata = new ForumData();
-			Category category = forumdata.Categories.Single(c => c.Id == id);
+			Category category = forumdata.Categories.Find(c => c.Id == categoryId);
 			return category;
 		}
 
-		public static IList<ReplyViewModel> GetPostReplies(int id)
+		public static IList<ReplyViewModel> GetPostReplies(int postId)
 		{
 			ForumData forumdata = new ForumData();
-			Post post = forumdata.Posts.SingleOrDefault(p => p.Id == id);
+			Post post = forumdata.Posts.Find(p => p.Id == postId);
 			List<ReplyViewModel> replies = new List<ReplyViewModel>();
 
 			foreach (int replyId in post.ReplyIds)
@@ -34,15 +33,16 @@ namespace WorkShop.Controllers.Services
 		public static string[] GetAllCategoryNames()
 		{
 			ForumData forumData = new ForumData();
-			return forumData.Categories.Select(c => c.Name).ToArray();
+			string[] allCategories = forumData.Categories.Select(c => c.Name).ToArray();
+			return allCategories;
 		}
 
 		public static IEnumerable<Post> GetPostsByCategory(int categoryId)
 		{
-			ForumData forumdata = new ForumData();
-			Category category = forumdata.Categories.Single(c => c.Id == categoryId);
-			List<Post> forumata1 = forumdata.Posts;
-			return forumata1.Where(p => category.PostIds.Contains(p.Id)).ToList();
+			ForumData forumData = new ForumData();
+			ICollection<int> postIds = forumData.Categories.First(c => c.Id == categoryId).PostIds;
+			IEnumerable<Post> posts = forumData.Posts.Where(p => postIds.Contains(p.Id));
+			return posts;
 		}
 
 		public static PostViewModel GetPostViewModel(int postId)
@@ -50,60 +50,51 @@ namespace WorkShop.Controllers.Services
 			ForumData forumData = new ForumData();
 			Post post = forumData
 				.Posts
-				.Single(p => p.Id == postId);
-			return new PostViewModel(post);
+				.Find(p => p.Id == postId);
+			PostViewModel pvm = new PostViewModel(post);
+			return pvm;
 		}
 
 		private static Category EnsureCategory(PostViewModel postViewModel, ForumData forumData)
 		{
-			Category category = forumData
-				.Categories
-				.SingleOrDefault(c => c.Name == postViewModel.Category);
-
+			string categoryName = postViewModel.Category;
+			Category category = forumData.Categories.FirstOrDefault(c => c.Name == categoryName);
 			if (category == null)
 			{
-				List<Category> categories = forumData
-					.Categories;
-				int id = categories
-					.LastOrDefault()?.Id + 1 ?? 1;
-				category = new Category(id, postViewModel.Category, new List<int>());
-				forumData
-						.Categories
-					.Add(category);
-				forumData.SaveChanges();
+				List<Category> categories = forumData.Categories;
+				int categoryId = categories.Any() ? categories.Last().Id + 1 : 1;
+				category = new Category(categoryId, categoryName, new List<int>());
+				forumData.Categories.Add(category);
 			}
-
 			return category;
 		}
 
 		public static bool TrySavePost(PostViewModel postViewModel)
 		{
-			bool isTitleValid = !string.IsNullOrWhiteSpace(postViewModel.Title);
-			bool isContentValid = postViewModel
-				.Content
-				.Any();
-			bool isCategoryValid = !string
-				.IsNullOrWhiteSpace(postViewModel.Category);
+			bool emptyCategory = string.IsNullOrWhiteSpace(postViewModel.Category);
+			bool emptyTitle = string.IsNullOrWhiteSpace(postViewModel.Title);
+			bool emptyContent = !postViewModel.Content.Any();
 
-			if (!isTitleValid || !isContentValid || !isCategoryValid)
+			if (emptyCategory || emptyTitle || emptyContent)
 			{
 				return false;
 			}
 
 			ForumData forumData = new ForumData();
 			Category category = EnsureCategory(postViewModel, forumData);
-			int postId = forumData.Posts.LastOrDefault()?.Id + 1 ?? 1;
-			User author = UsersService.GetUser(postViewModel.Author, forumData);
+
+			int postId = forumData.Posts.Any() ? forumData.Posts.LastOrDefault().Id + 1 : 1;
+			User author = forumData.Users.Single(u => u.Username == postViewModel.Author);
+			int authorId = author.Id;
 			string content = string.Join("", postViewModel.Content);
 
-			Post post = new Post(postId, postViewModel.Title, content, category.Id, author.Id, new List<int>());
+			Post post = new Post(postId, postViewModel.Title, content, category.Id, authorId, new List<int>());
 
 			forumData.Posts.Add(post);
-			category.PostIds.Add(postId);
-			author.PostIds.Add(postId);
+			author.PostIds.Add(post.Id);
+			category.PostIds.Add(post.Id);
 			forumData.SaveChanges();
 			postViewModel.PostId = postId;
-
 			return true;
 		}
 
@@ -116,10 +107,12 @@ namespace WorkShop.Controllers.Services
 
 			ForumData forumData = new ForumData();
 			User author = UsersService.GetUser(replyViewModel.Author, forumData);
-			var post = forumData.Posts.Single(p => p.Id == postId);
+			int authorId = author.Id;
+			Post post = forumData.Posts.Single(p => p.Id == postId);
 			int replyId = forumData.Replies.LastOrDefault()?.Id + 1 ?? 1;
 			string content = string.Join("", replyViewModel.Content);
-			Reply reply = new Reply(replyId, content, author.Id, postId);
+
+			Reply reply = new Reply(replyId, content, authorId, postId);
 
 			forumData.Replies.Add(reply);
 			post.ReplyIds.Add(replyId);

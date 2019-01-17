@@ -7,8 +7,8 @@ namespace _03.Mankind
 	{
 		private const int LastNameMinLength = 3;
 		private const int FirstNameMinLength = 4;
-		private string firstName;
-		private string lastName;
+		private string _firstName;
+		private string _lastName;
 
 		public Human(string firstName, string lastName)
 		{
@@ -20,21 +20,21 @@ namespace _03.Mankind
 		{
 			get
 			{
-				return firstName;
+				return _firstName;
 			}
 			set
 			{
 				if (char.IsLower(value[0]))
 				{
-					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(firstName)}");
+					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(_firstName)}");
 				}
 
 				if (value.Length < FirstNameMinLength)
 				{
-					throw new ArgumentException($"Expected length at least {FirstNameMinLength} symbols! Argument: {nameof(firstName)}");
+					throw new ArgumentException($"Expected length at least {FirstNameMinLength} symbols! Argument: {nameof(_firstName)}");
 				}
 
-				firstName = value;
+				_firstName = value;
 			}
 		}
 
@@ -42,28 +42,28 @@ namespace _03.Mankind
 		{
 			get
 			{
-				return lastName;
+				return _lastName;
 			}
 			set
 			{
 				if (char.IsLower(value[0]))
 				{
-					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(lastName)}");
+					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(_lastName)}");
 				}
 
 				if (value.Length < LastNameMinLength)
 				{
-					throw new ArgumentException($"Expected length at least {LastNameMinLength} symbols! Argument: {nameof(lastName)}");
+					throw new ArgumentException($"Expected length at least {LastNameMinLength} symbols! Argument: {nameof(_lastName)}");
 				}
 
-				lastName = value;
+				_lastName = value;
 			}
 		}
 
 		public override string ToString()
 		{
 			StringBuilder builder = new StringBuilder();
-			builder.AppendLine($"First Name: {firstName}").AppendLine($"Last Name: {lastName}");
+			builder.AppendLine($"First Name: {_firstName}").AppendLine($"Last Name: {_lastName}");
 
 			return builder.ToString();
 		}

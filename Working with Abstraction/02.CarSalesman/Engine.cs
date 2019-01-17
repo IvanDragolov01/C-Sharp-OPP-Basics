@@ -4,7 +4,7 @@ namespace _02.CarSalesman
 {
 	public class Engine
 	{
-		private const string offset = "  ";
+		private const string Offset = "  ";
 
 		public string _model;
 		public int _power;
@@ -46,11 +46,11 @@ namespace _02.CarSalesman
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.AppendFormat("{0}{1}:\n", offset, this._model);
-			sb.AppendFormat("{0}{0}Power: {1}\n", offset, this._power);
-			sb.AppendFormat("{0}{0}Displacement: {1}\n", offset, this._displacement == -1 ? "n/a" : this._displacement
+			sb.AppendFormat("{0}{1}:\n", Offset, _model);
+			sb.AppendFormat("{0}{0}Power: {1}\n", Offset, _power);
+			sb.AppendFormat("{0}{0}Displacement: {1}\n", Offset, _displacement == -1 ? "n/a" : _displacement
 				.ToString());
-			sb.AppendFormat("{0}{0}Efficiency: {1}\n", offset, this._efficiency);
+			sb.AppendFormat("{0}{0}Efficiency: {1}\n", Offset, _efficiency);
 
 			return sb.ToString();
 		}

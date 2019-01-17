@@ -5,43 +5,43 @@ namespace _09.CollectionHierarchy
 {
 	public class MyList : IMylist
 	{
-		private List<string> data;
-		private List<int> indexes;
-		private List<string> removedElements;
+		private List<string> _data;
+		private List<int> _indexes;
+		private List<string> _removedElements;
 
 		public MyList()
 		{
-			data = new List<string>();
-			indexes = new List<int>();
-			removedElements = new List<string>();
+			_data = new List<string>();
+			_indexes = new List<int>();
+			_removedElements = new List<string>();
 		}
 
 		public int NumberOfElements
 		{
-			get => data.Count;
+			get => _data.Count;
 		}
 
 		public void Add(string element)
 		{
-			indexes.Add(0);
-			data.Insert(0, element);
+			_indexes.Add(0);
+			_data.Insert(0, element);
 		}
 
 		public void Remove()
 		{
-			string firstElement = data[0];
-			removedElements.Add(firstElement);
-			data.RemoveAt(0);
+			string firstElement = _data[0];
+			_removedElements.Add(firstElement);
+			_data.RemoveAt(0);
 		}
 
 		public void GetRemovedElements()
 		{
-			Console.WriteLine($"{string.Join(" ", removedElements)}");
+			Console.WriteLine($"{string.Join(" ", _removedElements)}");
 		}
 
 		public override string ToString()
 		{
-			return $"{string.Join(" ", indexes)}";
+			return $"{string.Join(" ", _indexes)}";
 		}
 	}
 }
