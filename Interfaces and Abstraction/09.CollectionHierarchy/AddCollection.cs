@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace _09.CollectionHierarchy
 {
@@ -15,6 +16,11 @@ namespace _09.CollectionHierarchy
 
 		public void Add(string element)
 		{
+			if (element == null)
+			{
+				throw new ArgumentNullException(nameof(element));
+			}
+
 			int index = _data.Count;
 			_indexes.Add(index);
 			_data.Add(element);

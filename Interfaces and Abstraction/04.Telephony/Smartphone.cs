@@ -10,7 +10,7 @@ namespace _04.Telephony
 
 		public Smartphone(string model)
 		{
-			model = _model;
+			_model = model;
 		}
 
 		public string Browse(string website)
