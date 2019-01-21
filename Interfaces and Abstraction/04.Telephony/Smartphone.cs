@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace _04.Telephony
@@ -14,6 +15,10 @@ namespace _04.Telephony
 
 		public string Browse(string website)
 		{
+			if (website == null)
+			{
+				throw new ArgumentNullException(nameof(website));
+			}
 
 			bool hasDigit = website.Any(char.IsDigit);
 

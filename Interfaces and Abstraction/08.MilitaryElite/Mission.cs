@@ -46,7 +46,9 @@ namespace _08.MilitaryElite.Contracts
 
 		public override string ToString()
 		{
-			return $"Code Name: {CodeName} State: {State.ToString()}";
+			string result = $"Code Name: {CodeName} State: {State.ToString()}";
+
+			return result;
 		}
 	}
 }

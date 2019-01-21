@@ -45,7 +45,10 @@ namespace _08.MilitaryElite.Contracts
 				builder.AppendLine($"  {mission.ToString()}");
 			}
 
-			string result = builder.ToString().TrimEnd();
+			string result = builder
+				.ToString()
+				.TrimEnd();
+
 			return result;
 		}
 	}
